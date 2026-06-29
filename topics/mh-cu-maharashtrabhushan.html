@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maharashtra Bhushan and state awards — MPSC</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2430;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#6db33f;--accent2:#34804f;--done:#3fb950;--bar-bg:#21262d;--pre:#388bfd;--mains:#d29922;--int:#a371f7;--mh:#3fb950;--chip:#21262d;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:14px 20px}
+.title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.title h1{font-size:20px;margin:0}
+.home{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}.home:hover{border-color:var(--accent);color:var(--text)}
+.logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+.stats{margin-left:auto;font-size:13px;color:var(--muted)}.stats b{color:var(--accent)}
+.progress-wrap{margin-top:10px;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:10px;background:var(--bar-bg);border-radius:99px;overflow:hidden}
+.bar>span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--done));transition:width .35s}
+.pct{font-size:13px;color:var(--muted);min-width:42px;text-align:right}
+.stagebar{margin-top:8px;display:flex;gap:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.toolbar{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px}.tab{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:8px;font-size:13px;cursor:pointer}
+.tab.active{border-color:var(--accent);color:var(--accent)}
+.toolbar input[type=search]{flex:1;min-width:180px;background:var(--panel2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:14px}
+button{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:13px;cursor:pointer}button:hover{border-color:var(--accent)}
+.danger:hover{border-color:#f85149;color:#f85149}
+main{max-width:1040px;margin:0 auto;padding:20px}
+section.sec{margin-bottom:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sec-head{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none;background:var(--panel2)}.sec-head:hover{background:#222b38}
+.sec-head .vname{font-size:16px;font-weight:700}.sec-head .vcount{font-size:12px;color:var(--muted);min-width:48px;text-align:right}
+.sec-head .minibar{margin-left:auto;width:90px;height:7px;background:var(--bar-bg);border-radius:99px;overflow:hidden}.sec-head .minibar>span{display:block;height:100%;width:0;background:var(--done)}
+.sec-head .chev{transition:transform .2s;color:var(--muted)}section.sec.collapsed .chev{transform:rotate(-90deg)}section.sec.collapsed .sec-body{display:none}
+.sec-body{padding:6px 10px 14px}
+.grp{margin:14px 8px 4px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);font-weight:700;border-top:1px solid var(--border);padding-top:12px}.grp:first-child{border-top:none;padding-top:4px}
+ul.topics{list-style:none;margin:0;padding:0}
+li.topic{display:flex;align-items:flex-start;gap:10px;padding:6px 10px;border-radius:8px}li.topic:hover{background:var(--panel2)}
+li.topic input{margin-top:3px;width:16px;height:16px;accent-color:var(--done);cursor:pointer;flex:none}
+li.topic label{cursor:pointer;font-size:14.5px}li.topic.done label{color:var(--muted);text-decoration:line-through}
+.badge{font-size:10px;font-weight:700;padding:1px 6px;border-radius:99px;flex:none;margin-left:4px;vertical-align:middle}
+.b-PRE{background:rgba(56,139,253,.18);color:var(--pre)}.b-MAINS{background:rgba(210,153,34,.18);color:var(--mains)}.b-INT{background:rgba(163,113,247,.18);color:var(--int)}
+.b-MH{background:transparent;color:var(--mh);border:1px solid var(--mh)}
+.hidden{display:none !important}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+@media(max-width:560px){.sec-head .minibar{width:60px}.stats{margin-left:0}}
+
+.content{max-width:820px;margin:0 auto;padding:8px 20px 60px}
+.content h2{font-size:20px;margin:26px 0 8px;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:5px}
+.content h3{font-size:16px;margin:18px 0 6px}
+.content p{margin:8px 0}
+.content ul,.content ol{margin:8px 0 8px 4px;padding-left:22px}
+.content li{margin:4px 0}
+.content code{background:var(--bar-bg);padding:1px 5px;border-radius:5px;color:#79c0ff;font-size:13px}
+.content blockquote{border-left:3px solid var(--accent);margin:10px 0;padding:4px 14px;color:var(--muted)}
+.content table{border-collapse:collapse;margin:12px 0;width:100%;font-size:14px}
+.content th,.content td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+.content th{background:var(--panel2)}
+.content hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+.crumb{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}
+.crumb:hover{border-color:var(--accent);color:var(--text)}
+.disclaimer{margin-top:30px;padding:12px 16px;background:var(--panel);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:12.5px}
+</style></head><body>
+<header><div class="title"><a class="crumb" href="../maharashtra.html">← Maharashtra (Static GK & State-Specific)</a>
+<div class="logo">महा</div></div>
+<h1 style="font-size:21px;margin:10px 0 4px">Maharashtra Bhushan and state awards <span class="badge b-PRE">PRE</span><span class="badge b-MAINS">MAINS</span><span class="badge b-INT">INT</span><span class="badge b-MH">MH</span></h1></header>
+<main class="content"><h2>Overview</h2>
+<p><strong>Maharashtra Bhushan</strong> is the State of Maharashtra&#x27;s highest civilian award — given annually since <strong>1996</strong> to individuals who have made exceptional contributions in any field. The award carries a citation and a <strong>cash prize of ₹25 lakh</strong> (enhanced from time to time). Maharashtra also gives annual state awards for literature (<strong>Maharashtra Sahitya Puraskars</strong>), folk arts (<strong>Vithabai Award</strong>), sports (<strong>Shiv Chhatrapati Sports Award</strong>), and social service. MPSC tests the Maharashtra Bhushan recipients, year, and the fields for which the award was given.</p>
+<h2>In-Depth</h2>
+<h3>Maharashtra Bhushan Award Recipients</h3>
+<table>
+<tr><th>Recipient</th><th>Year</th><th>Field</th><th>Key Work / Contribution</th></tr>
+<tr><td>Pandit Bhimsen Joshi</td><td>1996 (1st)</td><td>Classical music (Kirana gharana, Hindustani vocal)</td><td>Kirana Gharana vocal; Bhajan: "Raghupati Raghav" with Balamurali Krishna; Padma Vibhushan 2008; Bharat Ratna 2009; born Gadag (Karnataka) but Maharashtra career; died Pune 2011</td></tr>
+<tr><td>P.L. Deshpande ("PuLa")</td><td>1999</td><td>Marathi literature, humour, arts</td><td>Maharashtra's most beloved writer-humourist; Vyakti ani Valli, Batatyachi Chawl; died 12 June 2000; Maharashtra mourned</td></tr>
+<tr><td>Lata Mangeshkar</td><td>1997</td><td>Music (playback singing)</td><td>Queen of Melody; ~30,000 songs; Bharat Ratna 2001; Phalke Award 1989</td></tr>
+<tr><td>Sunil Gavaskar</td><td>2001</td><td>Cricket</td><td>"Little Master"; 10,000 Test runs (first batsman); 34 Test centuries; Mumbai</td></tr>
+<tr><td>Baba Amte (Murlidhar Devidas Amte)</td><td>2000</td><td>Social service, leprosy rehabilitation</td><td>Anandvan (forest of joy) — leprosy rehabilitation centre in Chandrapur, Vidarbha; Narmada Bachao Andolan supporter; Padma Vibhushan 1986; Magsaysay Award; died 2008</td></tr>
+<tr><td>Vishwanath Satyanarayana</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Vilasrao Deshmukh</td><td>2012 (posthumous)</td><td>Public service (politician)</td><td>Former CM of Maharashtra; died 2012; posthumous</td></tr>
+<tr><td>Ramdas Nayak</td><td>2007</td><td>Medicine (cancer research)</td><td>Mumbai; pioneer cancer surgeon; oncology</td></tr>
+<tr><td>Sachin Tendulkar</td><td>2002</td><td>Cricket</td><td>Batting maestro; Mumbai; later Bharat Ratna 2014</td></tr>
+<tr><td>Sharad Pawar</td><td>2008</td><td>Public service (politics + cricket administration)</td><td>NCP founder; BCCI president; Union Agriculture Minister; Pune</td></tr>
+<tr><td>Pandurang Shastri Athavale (Dada)</td><td>2005</td><td>Social reform, spiritual movement</td><td>Swadhyay Parivar movement (self-study); Bhakti farms, fishermen cooperatives; Magsaysay Award 1996; Templeton Prize 1997; died 2003; posthumous Maharashtra Bhushan 2005</td></tr>
+<tr><td>Anna Hazare</td><td>2011</td><td>Social activism, RTI, anti-corruption</td><td>Ralegan Siddhi village development; Jan Lokpal movement 2011; Padma Bhushan 1992</td></tr>
+<tr><td>Nanasaheb Dharmadhikari</td><td>2013</td><td>Social service</td><td>Parivar Prabodan Trust; social reform; Pune</td></tr>
+<tr><td>Appasaheb Dharmadhikari</td><td>2016</td><td>Social service</td><td>Social reform philanthropy; Pune</td></tr>
+<tr><td>Sindhutai Sapkal</td><td>2020</td><td>Social service (orphan welfare)</td><td>"Mother of orphans"; raised 1,400+ orphaned children; Wardha; died 2022; Padma Shri 2022</td></tr>
+<tr><td>Suyash Jadhav</td><td>2022</td><td>Sports (Para-swimming)</td><td>Para-swimmer; Asian Para Games gold; Pune</td></tr>
+</table>
+<h3>Maharashtra Shiv Chhatrapati Sports Award</h3>
+<ul>
+<li>Maharashtra&#x27;s highest sports award; given annually since <strong>1974</strong> (one of India&#x27;s oldest state sports awards).</li>
+<li>Named after Chhatrapati Shivaji Maharaj.</li>
+<li>Given in multiple categories (cricket, kabaddi, wrestling, athletics, hockey, weightlifting, etc.).</li>
+<li>Recipients receive <strong>certificate + trophy + cash prize</strong> from state government.</li>
+<li>Notable recipients: Sunil Gavaskar, Sachin Tendulkar, Milind Soman (early career), P.V. Sindhu was not from MH but received national counterpart.</li>
+</ul>
+<h3>Vithabai Narayangaonkar Award</h3>
+<ul>
+<li>Maharashtra state award for <strong>Lavani / folk arts</strong> performers.</li>
+<li>Named after <strong>Vithabai Narayangaonkar</strong> — legendary Lavani performer from Narayangaon (Pune).</li>
+<li>Recognises lifelong contributions in Tamasha, Lavani, Powada, Kirtan, and allied folk arts.</li>
+</ul>
+<h3>Maharashtra Sahitya Purskar and Kabir Puraskar</h3>
+<ul>
+<li><strong>Maharashtra Foundation Awards</strong> (USA-based; for literature + social work by Maharashtra figures).</li>
+<li><strong>Kabir Puraskar</strong>: State award for writers working to promote social harmony and communal amity.</li>
+</ul>
+<h3>Anna Hazare and Ralegan Siddhi</h3>
+<ul>
+<li><strong>Anna Hazare (Kisan Baburao Hazare)</strong>: Received Maharashtra Bhushan (2011).</li>
+<li>Ralegan Siddhi (Ahmednagar): Model village transformation; watershed development; banning liquor; community work from 1970s.</li>
+<li>Jan Lokpal Movement (2011): Fast at Jantar Mantar, Delhi; mobilized anti-corruption movement; inspired RTI movement (1997 MH).</li>
+<li><strong>Padma Bhushan 1992</strong> (earlier award from central govt).</li>
+</ul>
+<h3>Sindhutai Sapkal — Special Note</h3>
+<ul>
+<li><strong>Sindhutai Sapkal (1948–2022)</strong>: Called &quot;Mai&quot; (Mother) by thousands; raised 1,400+ orphaned children from across India; despite her own poverty, ran several rehabilitation homes; Maharashtra Bhushan 2020; Padma Shri 2022 (died 4 January 2022; award announced posthumously).</li>
+</ul>
+<h2>Maharashtra Connection</h2>
+<p>The Maharashtra Bhushan captures the state&#x27;s social ecology — from Pandit Bhimsen Joshi (classical music) to Anna Hazare (village development) to Sindhutai Sapkal (child welfare). The award&#x27;s breadth across music, cricket, social reform, and medicine reflects Maharashtra&#x27;s pluralistic excellence. Maharashtra&#x27;s state sports award (Shiv Chhatrapati) predates the national Rajiv Gandhi Khel Ratna (now Dhyan Chand Khel Ratna) by several decades.</p>
+<h2>Key Facts</h2>
+<ul>
+<li>Maharashtra Bhushan 1st recipient: <strong>Pandit Bhimsen Joshi (1996)</strong>; Kirana Gharana; Padma Vibhushan 2008, Bharat Ratna 2009</li>
+<li>PuLa Deshpande: <strong>1999</strong>; Vyakti ani Valli; died 2000</li>
+<li>Baba Amte: <strong>2000</strong>; Anandvan leprosy centre, Chandrapur</li>
+<li>Anna Hazare: <strong>2011</strong>; Ralegan Siddhi; Jan Lokpal movement</li>
+<li>Sindhutai Sapkal: <strong>2020</strong>; &quot;Mother of orphans&quot;; 1,400+ orphans raised; Padma Shri 2022</li>
+<li>Shiv Chhatrapati Sports Award: <strong>Since 1974</strong>; Maharashtra&#x27;s highest sports award</li>
+</ul>
+<h2>Memory Aids</h2>
+<ul>
+<li>1st Maharashtra Bhushan = <strong>PtBhimsen Joshi, 1996</strong> = &quot;B for Bhushan = Bhimsen&#x27;s Beginning&quot;</li>
+<li>PuLa = <strong>1999</strong> (died 2000) = &quot;PuLa&#x27;s last award before leaving&quot;</li>
+<li>Baba Amte = <strong>Anandvan</strong> = &quot;anand = joy in leprosy forest&quot; = Chandrapur</li>
+<li>Sindhutai = <strong>1,400 children</strong> + <strong>2020 award</strong> + died <strong>January 2022</strong></li>
+</ul>
+<h2>Exam Traps</h2>
+<ul>
+<li>Maharashtra Bhushan started in <strong>1996</strong> (NOT 1990 or 1985).</li>
+<li>Pandit Bhimsen Joshi got Maharashtra Bhushan (1996), Padma Vibhushan (2008), and Bharat Ratna (2009) — three different awards at different times.</li>
+<li>Sindhutai Sapkal&#x27;s <strong>Padma Shri was posthumous (2022)</strong> — she died 4 January 2022.</li>
+</ul>
+<h2>Previous-Year Trend</h2>
+<p>First Maharashtra Bhushan recipient (Bhimsen Joshi 1996), PuLa Deshpande (1999), Baba Amte (Anandvan; 2000), Sindhutai Sapkal (Mother of orphans; 2020), Anna Hazare (Ralegan Siddhi; Jan Lokpal), and Shiv Chhatrapati Sports Award (since 1974) appear in MPSC Prelims GS (Awards/Culture). (Inferred trend.)</p>
+<h2>Questions</h2>
+<p><strong>Prelims (MCQ-style):</strong></p>
+<ol>
+<li>[Expected] The first recipient of Maharashtra Bhushan Award (1996) was? — <em>Pandit Bhimsen Joshi (classical vocalist, Kirana Gharana)</em></li>
+<li>[Expected] Anandvan, the leprosy rehabilitation centre in Chandrapur, was established by? — <em>Baba Amte (Murlidhar Devidas Amte) — Maharashtra Bhushan 2000</em></li>
+<li>[Expected] Sindhutai Sapkal received Maharashtra Bhushan in 2020 for? — <em>Raising over 1,400 orphaned children (known as &quot;Mother of Orphans&quot;)</em></li>
+<li>[Expected] Maharashtra&#x27;s state sports award, named after Chhatrapati Shivaji Maharaj, has been given since? — <em>1974 (Shiv Chhatrapati Sports Award)</em></li>
+</ol>
+<p><strong>Mains (descriptive):</strong></p>
+<ol>
+<li>[Expected] Discuss the contributions of Maharashtra Bhushan recipients in social service (Baba Amte, Sindhutai Sapkal, Anna Hazare) and their impact on Maharashtra&#x27;s welfare landscape.</li>
+<li>[Expected] Examine P.L. Deshpande&#x27;s contribution to Marathi literature and popular culture, with reference to his key works.</li>
+</ol>
+<h2>Linkages</h2>
+<ul>
+<li>mh-cu-bharatratna (several Maharashtra Bhushan recipients also received Bharat Ratna/Padma awards)</li>
+<li>mh-cu-literature (PuLa Deshpande — literature award + Maharashtra Bhushan)</li>
+<li>mh-cu-folkarts (Vithabai Narayangaonkar Award → Lavani artists)</li>
+</ul>
+<div class="disclaimer">Study notes generated for MPSC preparation. Cross-check current schemes,
+latest data and exact dates before the exam.</div></main></body></html>
