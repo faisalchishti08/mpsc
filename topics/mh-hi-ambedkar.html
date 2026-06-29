@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. B.R. Ambedkar — Mahad, Kalaram, Constitution — MPSC</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2430;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#6db33f;--accent2:#34804f;--done:#3fb950;--bar-bg:#21262d;--pre:#388bfd;--mains:#d29922;--int:#a371f7;--mh:#3fb950;--chip:#21262d;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:14px 20px}
+.title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.title h1{font-size:20px;margin:0}
+.home{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}.home:hover{border-color:var(--accent);color:var(--text)}
+.logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+.stats{margin-left:auto;font-size:13px;color:var(--muted)}.stats b{color:var(--accent)}
+.progress-wrap{margin-top:10px;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:10px;background:var(--bar-bg);border-radius:99px;overflow:hidden}
+.bar>span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--done));transition:width .35s}
+.pct{font-size:13px;color:var(--muted);min-width:42px;text-align:right}
+.stagebar{margin-top:8px;display:flex;gap:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.toolbar{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px}.tab{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:8px;font-size:13px;cursor:pointer}
+.tab.active{border-color:var(--accent);color:var(--accent)}
+.toolbar input[type=search]{flex:1;min-width:180px;background:var(--panel2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:14px}
+button{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:13px;cursor:pointer}button:hover{border-color:var(--accent)}
+.danger:hover{border-color:#f85149;color:#f85149}
+main{max-width:1040px;margin:0 auto;padding:20px}
+section.sec{margin-bottom:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sec-head{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none;background:var(--panel2)}.sec-head:hover{background:#222b38}
+.sec-head .vname{font-size:16px;font-weight:700}.sec-head .vcount{font-size:12px;color:var(--muted);min-width:48px;text-align:right}
+.sec-head .minibar{margin-left:auto;width:90px;height:7px;background:var(--bar-bg);border-radius:99px;overflow:hidden}.sec-head .minibar>span{display:block;height:100%;width:0;background:var(--done)}
+.sec-head .chev{transition:transform .2s;color:var(--muted)}section.sec.collapsed .chev{transform:rotate(-90deg)}section.sec.collapsed .sec-body{display:none}
+.sec-body{padding:6px 10px 14px}
+.grp{margin:14px 8px 4px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);font-weight:700;border-top:1px solid var(--border);padding-top:12px}.grp:first-child{border-top:none;padding-top:4px}
+ul.topics{list-style:none;margin:0;padding:0}
+li.topic{display:flex;align-items:flex-start;gap:10px;padding:6px 10px;border-radius:8px}li.topic:hover{background:var(--panel2)}
+li.topic input{margin-top:3px;width:16px;height:16px;accent-color:var(--done);cursor:pointer;flex:none}
+li.topic label{cursor:pointer;font-size:14.5px}li.topic.done label{color:var(--muted);text-decoration:line-through}
+.badge{font-size:10px;font-weight:700;padding:1px 6px;border-radius:99px;flex:none;margin-left:4px;vertical-align:middle}
+.b-PRE{background:rgba(56,139,253,.18);color:var(--pre)}.b-MAINS{background:rgba(210,153,34,.18);color:var(--mains)}.b-INT{background:rgba(163,113,247,.18);color:var(--int)}
+.b-MH{background:transparent;color:var(--mh);border:1px solid var(--mh)}
+.hidden{display:none !important}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+@media(max-width:560px){.sec-head .minibar{width:60px}.stats{margin-left:0}}
+
+.content{max-width:820px;margin:0 auto;padding:8px 20px 60px}
+.content h2{font-size:20px;margin:26px 0 8px;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:5px}
+.content h3{font-size:16px;margin:18px 0 6px}
+.content p{margin:8px 0}
+.content ul,.content ol{margin:8px 0 8px 4px;padding-left:22px}
+.content li{margin:4px 0}
+.content code{background:var(--bar-bg);padding:1px 5px;border-radius:5px;color:#79c0ff;font-size:13px}
+.content blockquote{border-left:3px solid var(--accent);margin:10px 0;padding:4px 14px;color:var(--muted)}
+.content table{border-collapse:collapse;margin:12px 0;width:100%;font-size:14px}
+.content th,.content td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+.content th{background:var(--panel2)}
+.content hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+.crumb{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}
+.crumb:hover{border-color:var(--accent);color:var(--text)}
+.disclaimer{margin-top:30px;padding:12px 16px;background:var(--panel);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:12.5px}
+</style></head><body>
+<header><div class="title"><a class="crumb" href="../maharashtra.html">← Maharashtra (Static GK & State-Specific)</a>
+<div class="logo">महा</div></div>
+<h1 style="font-size:21px;margin:10px 0 4px">Dr. B.R. Ambedkar — Mahad, Kalaram, Constitution <span class="badge b-PRE">PRE</span><span class="badge b-MAINS">MAINS</span><span class="badge b-INT">INT</span><span class="badge b-MH">MH</span></h1></header>
+<main class="content"><h2>Overview</h2>
+<p><strong>Dr. Bhimrao Ramji Ambedkar (1891–1956)</strong> is Maharashtra&#x27;s — and India&#x27;s — greatest Dalit leader, architect of the Indian Constitution, and a towering intellectual. His journey from an untouchable childhood in Ambavade (Ratnagiri) to chairing the Drafting Committee of the Constitution is India&#x27;s greatest story of social mobility through education. For MPSC, Ambedkar&#x27;s satyagrahas (<strong>Mahad 1927</strong>, Kalaram temple 1930), writings, Constitution drafting, and conversion to Buddhism (1956) are core high-frequency topics.</p>
+<h2>In-Depth</h2>
+<h3>Early Life and Education</h3>
+<table>
+<tr><th>Milestone</th><th>Year</th><th>Detail</th></tr>
+<tr><td>Born</td><td>14 April 1891</td><td>Ambavade (Mhow, MP — he was born at Mhow; ancestral village: Ambavade, Ratnagiri, Maharashtra)</td></tr>
+<tr><td>First degrees</td><td>1912–13</td><td>BA from Bombay University (Elphinstone College) — first Mahar to achieve this</td></tr>
+<tr><td>Columbia University (NY)</td><td>1913–16</td><td>MA, PhD (1917) under John Dewey; dissertation on "National Dividend of India"</td></tr>
+<tr><td>LSE and Gray's Inn (London)</td><td>1920–23</td><td>DSc (Economics); called to the Bar</td></tr>
+<tr><td>Second PhD (Columbia)</td><td>1927</td><td>Published "The Problem of the Rupee"; economics scholar</td></tr>
+</table>
+<h3>Major Satyagrahas</h3>
+<h4>Mahad Satyagraha (1927)</h4>
+<ul>
+<li><strong>Location</strong>: Mahad, Raigad district (on the banks of the <strong>Chowdar Tank / Chawdar Talab</strong>).</li>
+<li><strong>Date</strong>: <strong>20 March 1927</strong> — led thousands of Dalits to drink water from the Chowdar Tank (public tank) from which they were excluded.</li>
+<li>Significance: First major assertion of civil rights for untouchables in Maharashtra; symbolically equivalent to Gandhiji&#x27;s Dandi March but for social rights.</li>
+<li><strong>Second Mahad session (25 December 1927)</strong>: Ambedkar burned a copy of <strong>Manusmriti</strong> — the Hindu lawbook that codified caste discrimination. This is one of the most dramatic acts of social protest in Indian history.</li>
+<li>25 December is observed as <strong>Manusmriti Dahan Din</strong> by Dalit organisations.</li>
+</ul>
+<h4>Kalaram Temple Satyagraha (1930)</h4>
+<ul>
+<li><strong>Location</strong>: Kalaram Temple, Nashik — a prominent Ram temple from which Dalits (Mahars) were excluded.</li>
+<li><strong>Date</strong>: 2 March 1930 — Ambedkar led a procession of thousands to enter the Kalaram Temple; upper-caste groups blocked entry; protest continued for five years until 1935.</li>
+<li>Significance: Even after years, the temple remained barred for Dalits — this drove Ambedkar&#x27;s declaration: <strong>&quot;I was born a Hindu, but will not die a Hindu.&quot;</strong></li>
+</ul>
+<h3>Constitution Drafting</h3>
+<ul>
+<li>Ambedkar was appointed <strong>Law Minister</strong> in the first Union Cabinet (1947) by Nehru.</li>
+<li>Elected to the Drafting Committee of the Constituent Assembly; elected <strong>Chairman of the Drafting Committee</strong> — effectively the chief architect of the Constitution.</li>
+<li>Key contributions to the Constitution:</li>
+<li><strong>Article 17</strong>: Abolition of untouchability.</li>
+<li><strong>Article 15</strong>: Prohibition of discrimination on grounds of religion, race, caste, sex, place of birth.</li>
+<li><strong>Article 16</strong>: Equality of opportunity in public employment; reservations for SC/ST.</li>
+<li><strong>Article 46</strong>: Directive Principle — promote educational and economic interests of weaker sections.</li>
+<li><strong>Articles 330, 332, 335</strong>: Reservations for SC/ST in Parliament, State Legislatures, services.</li>
+<li>Opposed <strong>Uniform Civil Code</strong> deferral; later resigned (1951) over Hindu Code Bill&#x27;s non-passage.</li>
+</ul>
+<h3>Writings</h3>
+<ul>
+<li><strong>&quot;The Annihilation of Caste&quot; (1936)</strong>: Speech written for the Jat-Pat Todak Mandal; never delivered (organisers cancelled); self-published; the most devastating intellectual attack on the caste system; Gandhi and Ambedkar had a famous public debate over it.</li>
+<li><strong>&quot;Who Were the Shudras?&quot; (1946)</strong>: Argued that Shudras were originally Aryans who lost status.</li>
+<li><strong>&quot;Pakistan or the Partition of India&quot; (1945)</strong>: Analysed communal question.</li>
+<li><strong>&quot;The Buddha and His Dhamma&quot; (1956)</strong>: Completed just before his death; the Buddhist text for the neo-Buddhist movement.</li>
+<li><strong>&quot;Castes in India: Their Mechanism, Genesis and Development&quot; (1916)</strong>: His Columbia paper — first systematic sociological study of Indian caste.</li>
+</ul>
+<h3>Conversion to Buddhism (14 October 1956)</h3>
+<ul>
+<li><strong>Date</strong>: <strong>14 October 1956</strong>, Nagpur — at <strong>Deekshabhoomi</strong>.</li>
+<li>Ambedkar led ~<strong>5–6 lakh Dalits</strong> in converting to Buddhism in a mass ceremony at Deekshabhoomi.</li>
+<li>This is called the <strong>Dhammachakra Pravartan Din</strong> (Day of Conversion/Dhamma Revolution).</li>
+<li>He chose Buddhism because it rejected caste and the concept of the soul (Atman) while promoting equality, reason, and ethics.</li>
+<li><strong>Died</strong>: <strong>6 December 1956</strong> (just 47 days after conversion) — &quot;Mahaparinirvan Din&quot; observed on 6 December.</li>
+<li><strong>Deekshabhoomi (Nagpur)</strong>: The stupa at Deekshabhoomi is the largest hollow stupa in Asia; millions gather on 14 October each year; a pilgrimage site.</li>
+<li><strong>Chaitya Bhoomi (Mumbai)</strong>: His memorial at Dadar, Mumbai; he died at his Delhi home, cremated in Mumbai; millions gather on 6 December.</li>
+</ul>
+<h2>Maharashtra Connection</h2>
+<p>Ambedkar&#x27;s life map is Maharashtra&#x27;s map: born in Ratnagiri ancestral roots, educated in Bombay (Elphinstone), rose to prominence through Mahad (Raigad) and Nashik (Kalaram), died in Delhi, and cremated in Mumbai. <strong>Deekshabhoomi (Nagpur)</strong> and <strong>Chaitya Bhoomi (Mumbai)</strong> are Maharashtra&#x27;s most important Ambedkari pilgrimage sites. <strong>14 April</strong> (Ambedkar Jayanti) is a national and Maharashtra public holiday; <strong>6 December</strong> (Mahaparinirvan Din) draws millions to Chaitya Bhoomi.</p>
+<h2>Key Facts</h2>
+<ul>
+<li>Born: <strong>14 April 1891</strong>, Mhow (MP); Maharashtra ancestral village: Ambavade, Ratnagiri</li>
+<li>Mahad Satyagraha: <strong>20 March 1927</strong> (water rights); Manusmriti burned: <strong>25 December 1927</strong></li>
+<li>Kalaram Temple Satyagraha: <strong>2 March 1930</strong>, Nashik</li>
+<li>Constitution: Chairman, <strong>Drafting Committee</strong>; key Articles: <strong>17, 15, 16, 46, 330–335</strong></li>
+<li>Conversion to Buddhism: <strong>14 October 1956</strong>, Deekshabhoomi, Nagpur</li>
+<li>Died: <strong>6 December 1956</strong> — Mahaparinirvan Din</li>
+<li>&quot;Annihilation of Caste&quot;: <strong>1936</strong>; &quot;The Buddha and His Dhamma&quot;: <strong>1956</strong></li>
+<li>Deekshabhoomi (Nagpur): Largest hollow stupa in Asia</li>
+</ul>
+<h2>Memory Aids</h2>
+<ul>
+<li>Birth: <strong>14 April 1891</strong> → &quot;April 14 = Ambedkar Jayanti&quot;</li>
+<li>Mahad = <strong>20 March 1927</strong>; Manusmriti = <strong>25 December 1927</strong> — same year, different dates</li>
+<li>Conversion: <strong>14 October 1956</strong>; death: <strong>6 December 1956</strong> → 53 days apart</li>
+<li>Deekshabhoomi = <strong>Nagpur</strong>; Chaitya Bhoomi = <strong>Mumbai (Dadar)</strong></li>
+</ul>
+<h2>Exam Traps</h2>
+<ul>
+<li>Ambedkar was born at <strong>Mhow (MP)</strong> — NOT at Ambavade (Ratnagiri), which is his ancestral village. Both MH and MP can appear as options.</li>
+<li>Mahad Satyagraha water event = <strong>20 March 1927</strong>; Manusmriti burning = <strong>25 December 1927</strong> — same year, two events.</li>
+<li>He resigned as <strong>Law Minister</strong> in <strong>1951</strong> (over Hindu Code Bill) — NOT in 1947.</li>
+</ul>
+<h2>Previous-Year Trend</h2>
+<p>Ambedkar&#x27;s Mahad Satyagraha (1927), Kalaram Temple (1930), Constitution&#x27;s Drafting Committee chairmanship, conversion to Buddhism at Deekshabhoomi (1956), &quot;Annihilation of Caste,&quot; and 6 December (Mahaparinirvan Din) appear in virtually every MPSC exam. (Inferred trend.)</p>
+<h2>Questions</h2>
+<p><strong>Prelims (MCQ-style):</strong></p>
+<ol>
+<li>[Asked] The Mahad Satyagraha was led by Dr. Ambedkar in? — <em>1927 (20 March)</em></li>
+<li>[Asked] Where did Dr. Ambedkar convert to Buddhism along with lakhs of followers in 1956? — <em>Deekshabhoomi, Nagpur (14 October 1956)</em></li>
+<li>[Expected] Dr. Ambedkar&#x27;s famous work &quot;The Annihilation of Caste&quot; was written in? — <em>1936</em></li>
+<li>[Expected] Which Article of the Constitution, largely championed by Ambedkar, abolishes untouchability? — <em>Article 17</em></li>
+<li>[Expected] Dr. Ambedkar&#x27;s Mahaparinirvan Din (death anniversary) is observed on? — <em>6 December</em></li>
+</ol>
+<p><strong>Mains (descriptive):</strong></p>
+<ol>
+<li>[Expected] Examine Dr. Ambedkar&#x27;s contribution to India&#x27;s Constitution-making with specific reference to the rights of scheduled castes.</li>
+<li>[Expected] Discuss the significance of the Mahad Satyagraha (1927) and the Kalaram Temple Satyagraha (1930) in the Dalit rights movement.</li>
+<li>[Expected] Why did Dr. Ambedkar convert to Buddhism? Analyse the social and philosophical basis of his decision.</li>
+</ol>
+<h2>Linkages</h2>
+<ul>
+<li>mh-hi-phule (Phule — earlier reformer; Ambedkar built on his legacy)</li>
+<li>mh-hi-shahu (Rajarshi Shahu — supported young Ambedkar&#x27;s education)</li>
+<li>pol-cf-preamble (Constitution — Ambedkar&#x27;s role)</li>
+<li>mh-hi-battles (Bhima Koregaon 1818 — Ambedkar&#x27;s symbolic site)</li>
+</ul>
+<div class="disclaimer">Study notes generated for MPSC preparation. Cross-check current schemes,
+latest data and exact dates before the exam.</div></main></body></html>
