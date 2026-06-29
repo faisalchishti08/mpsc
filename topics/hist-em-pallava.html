@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pallavas and Cholas — administration, art — MPSC</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2430;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#6db33f;--accent2:#34804f;--done:#3fb950;--bar-bg:#21262d;--pre:#388bfd;--mains:#d29922;--int:#a371f7;--mh:#3fb950;--chip:#21262d;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:14px 20px}
+.title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.title h1{font-size:20px;margin:0}
+.home{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}.home:hover{border-color:var(--accent);color:var(--text)}
+.logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+.stats{margin-left:auto;font-size:13px;color:var(--muted)}.stats b{color:var(--accent)}
+.progress-wrap{margin-top:10px;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:10px;background:var(--bar-bg);border-radius:99px;overflow:hidden}
+.bar>span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--done));transition:width .35s}
+.pct{font-size:13px;color:var(--muted);min-width:42px;text-align:right}
+.stagebar{margin-top:8px;display:flex;gap:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.toolbar{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px}.tab{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:8px;font-size:13px;cursor:pointer}
+.tab.active{border-color:var(--accent);color:var(--accent)}
+.toolbar input[type=search]{flex:1;min-width:180px;background:var(--panel2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:14px}
+button{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:13px;cursor:pointer}button:hover{border-color:var(--accent)}
+.danger:hover{border-color:#f85149;color:#f85149}
+main{max-width:1040px;margin:0 auto;padding:20px}
+section.sec{margin-bottom:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sec-head{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none;background:var(--panel2)}.sec-head:hover{background:#222b38}
+.sec-head .vname{font-size:16px;font-weight:700}.sec-head .vcount{font-size:12px;color:var(--muted);min-width:48px;text-align:right}
+.sec-head .minibar{margin-left:auto;width:90px;height:7px;background:var(--bar-bg);border-radius:99px;overflow:hidden}.sec-head .minibar>span{display:block;height:100%;width:0;background:var(--done)}
+.sec-head .chev{transition:transform .2s;color:var(--muted)}section.sec.collapsed .chev{transform:rotate(-90deg)}section.sec.collapsed .sec-body{display:none}
+.sec-body{padding:6px 10px 14px}
+.grp{margin:14px 8px 4px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);font-weight:700;border-top:1px solid var(--border);padding-top:12px}.grp:first-child{border-top:none;padding-top:4px}
+ul.topics{list-style:none;margin:0;padding:0}
+li.topic{display:flex;align-items:flex-start;gap:10px;padding:6px 10px;border-radius:8px}li.topic:hover{background:var(--panel2)}
+li.topic input{margin-top:3px;width:16px;height:16px;accent-color:var(--done);cursor:pointer;flex:none}
+li.topic label{cursor:pointer;font-size:14.5px}li.topic.done label{color:var(--muted);text-decoration:line-through}
+.badge{font-size:10px;font-weight:700;padding:1px 6px;border-radius:99px;flex:none;margin-left:4px;vertical-align:middle}
+.b-PRE{background:rgba(56,139,253,.18);color:var(--pre)}.b-MAINS{background:rgba(210,153,34,.18);color:var(--mains)}.b-INT{background:rgba(163,113,247,.18);color:var(--int)}
+.b-MH{background:transparent;color:var(--mh);border:1px solid var(--mh)}
+.hidden{display:none !important}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+@media(max-width:560px){.sec-head .minibar{width:60px}.stats{margin-left:0}}
+
+.content{max-width:820px;margin:0 auto;padding:8px 20px 60px}
+.content h2{font-size:20px;margin:26px 0 8px;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:5px}
+.content h3{font-size:16px;margin:18px 0 6px}
+.content p{margin:8px 0}
+.content ul,.content ol{margin:8px 0 8px 4px;padding-left:22px}
+.content li{margin:4px 0}
+.content code{background:var(--bar-bg);padding:1px 5px;border-radius:5px;color:#79c0ff;font-size:13px}
+.content blockquote{border-left:3px solid var(--accent);margin:10px 0;padding:4px 14px;color:var(--muted)}
+.content table{border-collapse:collapse;margin:12px 0;width:100%;font-size:14px}
+.content th,.content td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+.content th{background:var(--panel2)}
+.content hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+.crumb{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}
+.crumb:hover{border-color:var(--accent);color:var(--text)}
+.disclaimer{margin-top:30px;padding:12px 16px;background:var(--panel);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:12.5px}
+</style></head><body>
+<header><div class="title"><a class="crumb" href="../history.html">← History & Indian Culture</a>
+<div class="logo">H</div></div>
+<h1 style="font-size:21px;margin:10px 0 4px">Pallavas and Cholas — administration, art <span class="badge b-PRE">PRE</span><span class="badge b-MAINS">MAINS</span></h1></header>
+<main class="content"><h2>Overview</h2>
+<p>The <strong>Pallava dynasty (c. 275–897 CE)</strong> ruled from <strong>Kanchipuram (Tamil Nadu)</strong> and created the foundational monuments of South Indian temple architecture — the <strong>Shore Temple at Mahabalipuram (Mamallapuram)</strong> and the <strong>rathas</strong> (monolithic temples) — while also being fierce rivals of the Chalukyas of Badami. Their administrative innovations influenced later dynasties. The <strong>Imperial Cholas</strong> (850–1279 CE), their successors, are studied here for their iconic administration, <em>mandalam</em> system, and naval reach. MPSC tests Pallava monuments, the Chalukya-Pallava rivalry, and Chola administration.</p>
+<h2>In-Depth</h2>
+<h3>Pallava Dynasty — Key Rulers</h3>
+<table>
+<tr><th>Ruler</th><th>Reign (approx.)</th><th>Key Achievement</th></tr>
+<tr><td>Simhavishnu</td><td>c. 537–590 CE</td><td>Founder of the great Pallava line; defeated the Kalabhras</td></tr>
+<tr><td>Mahendravarman I</td><td>c. 590–630 CE</td><td>Rock-cut cave temples; converted from Jainism to Shaivism; *Mattavilasa Prahasana*</td></tr>
+<tr><td>Narasimhavarman I (Mamalla)</td><td>c. 630–668 CE</td><td>Greatest Pallava; sacked Badami (*Vatapikonda*); built Mamallapuram monuments</td></tr>
+<tr><td>Mahendravarman III</td><td>c. 668–670 CE</td><td>Short reign</td></tr>
+<tr><td>Paramesvaravarman I</td><td>c. 670–695 CE</td><td>Continued Chalukya rivalry</td></tr>
+<tr><td>Narasimhavarman II (Rajasimha)</td><td>c. 695–722 CE</td><td>Built Shore Temple, Kailasanatha Temple (Kanchipuram)</td></tr>
+<tr><td>Aparajitavarman</td><td>c. 879–897 CE</td><td>Last Pallava; defeated by Aditya Chola I</td></tr>
+</table>
+<h3>Pallava Architecture — Mamallapuram and Kanchipuram</h3>
+<p>The Pallavas created a distinctive phase in South Indian temple architecture, evolving from rock-cut to structural:</p>
+<p><strong>Phase 1 — Rock-cut caves (Mahendravarman I style)</strong>:</p>
+<ul>
+<li>Single-storey cave temples with flat roofs; square pillars with lion base (<em>yali</em>); no tower.</li>
+<li>Sites: Mandagapattu, Mahabalipuram, Tiruchirappalli.</li>
+</ul>
+<p><strong>Phase 2 — Monolithic Rathas (Narasimhavarman I / Mamalla style)</strong>:</p>
+<ul>
+<li><strong>Seven Pagodas / Pancha Rathas (Mahabalipuram)</strong>: Five monolithic temples carved from single granite outcrops, named after the Pandavas. They were <strong>never completed</strong> (no sanctum, no deity installed) — experimental architectural prototypes.</li>
+<li>Each ratha demonstrates a different architectural form: <strong>Dharmaraja Ratha</strong> (largest; multi-storied Dravidian tower), <strong>Bhima Ratha</strong> (barrel-vaulted roof — Buddhist chaitya influence), <strong>Draupadi Ratha</strong> (simplest; grass-hut form origin), <strong>Arjuna Ratha</strong> (the model for later Dravidian towers), <strong>Nakula-Sahadeva Ratha</strong> (apsidal/elephant-back roof).</li>
+</ul>
+<p><strong>Phase 3 — Structural temples (Rajasimha style)</strong>:</p>
+<ul>
+<li><strong>Shore Temple, Mahabalipuram</strong> (c. 700–728 CE): Narasimhavarman II. First free-standing structural stone temple in south India with a proper <em>shikhara</em> (tower). Faces the sea. UNESCO World Heritage Site (1984).</li>
+<li><strong>Kailasanatha Temple, Kanchipuram</strong> (c. 685–705 CE): greatest Pallava structural temple; became the model for the Virupaksha Temple at Pattadakal (Chalukya).</li>
+</ul>
+<h3>Administration</h3>
+<ul>
+<li><strong>Mandalam</strong>: the Pallava kingdom was divided into <em>mandalams</em> (provinces), sub-divided into <em>kottams</em> (divisions), then <em>nadus</em> (sub-divisions), then <em>urs</em> (villages).</li>
+<li><strong>Village assemblies</strong>: Pallava-era inscriptions (especially at Uttaramerur, under later overlords) describe <strong>village assemblies</strong> (<em>sabha</em> for Brahmin villages, <em>ur</em> for others) with elected committees (<em>variyam</em>) handling finance, tanks, gardens. A sophisticated <strong>local self-government</strong> system.</li>
+<li>The Uttaramerur inscription (c. 919–920 CE, under Chola Parantaka I) famously records the eligibility rules for election to village committees — evidence of proto-democratic local governance.</li>
+</ul>
+<h3>Imperial Cholas (850–1279 CE)</h3>
+<p>The Cholas who defeated the last Pallava founded an empire that reached its peak under <strong>Rajaraja I (985–1014 CE)</strong> and <strong>Rajendra I (1014–1044 CE)</strong>:</p>
+<p><strong>Administration</strong>:</p>
+<ul>
+<li><strong>Mandalam → Valnadu → Nadu → Kurram/Kottam → Ur</strong> — layered administrative hierarchy.</li>
+<li><strong>Village-level self-government</strong>: <em>Sabha</em> (Brahmin villages) and <em>Ur</em> assemblies continued; sub-committees (<em>variyam</em>) specialised (e.g., <em>pon-variyam</em> for gold/finance).</li>
+<li><strong>Land revenue</strong>: assessed through cadastral surveys; recorded on copper plates.</li>
+</ul>
+<p><strong>Military and Naval Power</strong>:</p>
+<ul>
+<li><strong>Rajendra I</strong> sent a naval expedition c. 1025 CE to <strong>Southeast Asia</strong> — captured the <strong>Srivijaya</strong> empire&#x27;s ports (modern Malaysia/Sumatra) to protect trade routes. This is the <strong>longest naval expedition in ancient Indian history</strong>.</li>
+<li>Also sent troops to the Ganga (northern campaign) — took the title <em>Gangaikondacholan</em> (&quot;Chola who conquered the Ganga&quot;).</li>
+<li>Founded new capital <strong>Gangaikondacholapuram</strong> (Tamil Nadu).</li>
+</ul>
+<p><strong>Art and Architecture</strong>:</p>
+<ul>
+<li><strong>Brihadesvara Temple, Thanjavur</strong> (Rajaraja I, c. 1010 CE): largest Dravidian temple; 63-m tower (<em>vimana</em>); entire temple plan in proportion; UNESCO WHS (1987, Chola Temples group).</li>
+<li><strong>Nataraja (Dancing Shiva)</strong> bronze sculpture reached its artistic peak under the Cholas.</li>
+<li><strong>Bronze casting</strong> (<em>cire perdue</em> / lost-wax): Chola bronzes of Nataraja, Parvati, Uma-Maheshvara are among the finest metal sculptures in the world.</li>
+</ul>
+<h2>Maharashtra Connection</h2>
+<p>Not directly Maharashtra-specific. However, Pallava architectural traditions directly influenced the <strong>Western Chalukyas</strong> (who bordered Maharashtra) — the Kailasanatha Temple at Kanchipuram was the model for the Virupaksha Temple at Pattadakal (Karnataka, near Maharashtra). Chola maritime power intersected with Deccan trade networks through the eastern Deccan corridor. The village assembly tradition documented at <strong>Uttaramerur</strong> influenced scholarship on ancient Indian local governance, relevant to Maharashtra&#x27;s panchayat history comparisons.</p>
+<h2>Key Facts</h2>
+<ul>
+<li>Pallava capital: <strong>Kanchipuram (Tamil Nadu)</strong>.</li>
+<li><em>Vatapikonda</em> = &quot;Conqueror of Vatapi (Badami)&quot;: title of <strong>Narasimhavarman I</strong>.</li>
+<li>Shore Temple: <strong>Mahabalipuram</strong>; built c. <strong>700–728 CE</strong>; UNESCO WHS <strong>1984</strong>.</li>
+<li>Pancha Rathas: <strong>five</strong> monolithic temples; named after Pandavas; never completed.</li>
+<li>Kailasanatha Temple: <strong>Kanchipuram</strong>; model for Pattadakal&#x27;s Virupaksha Temple.</li>
+<li>Rajendra I: naval expedition to Srivijaya c. <strong>1025 CE</strong> — longest ancient Indian naval campaign.</li>
+<li>Brihadesvara Temple: <strong>Thanjavur</strong>; by Rajaraja I; c. <strong>1010 CE</strong>; UNESCO WHS <strong>1987</strong>.</li>
+<li>Uttaramerur inscription: documents Chola-era <strong>village assembly (sabha)</strong> election rules.</li>
+</ul>
+<h2>Memory Aids</h2>
+<ul>
+<li>Pallavas: &quot;<strong>Maha → Nara (Mamalla) → Nara II (Rajasimha)</strong>&quot; — Mahendravarman, Narasimhavarman I, Narasimhavarman II.</li>
+<li>Shore Temple = Mahabalipuram = <strong>1984 UNESCO</strong>; Brihadesvara = Thanjavur = <strong>1987 UNESCO</strong>.</li>
+<li>&quot;<strong>Rajendra = Gangaikonda + Srivijaya</strong>&quot; — two directional campaigns.</li>
+<li>Pancha Rathas: &quot;<strong>5 rathas, 0 deities, all prototype</strong>.&quot;</li>
+</ul>
+<h2>Exam Traps</h2>
+<ul>
+<li><strong>Shore Temple</strong> UNESCO year is <strong>1984</strong> — Brihadesvara (Thanjavur) is <strong>1987</strong>; both are Tamil Nadu but different years.</li>
+<li><strong>Narasimhavarman I (Mamalla)</strong> built the Pancha Rathas at Mamallapuram — NOT Narasimhavarman II (Rajasimha) who built the Shore Temple. Two different Narasimhavarmans.</li>
+<li><strong>Uttaramerur inscription</strong> is a <strong>Chola-era</strong> document about village assemblies — not Pallava; though the Pallava administrative tradition preceded it.</li>
+<li>Chola <strong>Nataraja</strong> bronze: this is a Chola achievement, not Pallava — don&#x27;t attribute Chola bronzes to Pallavas.</li>
+</ul>
+<h2>Previous-Year Trend</h2>
+<p>High frequency. MPSC Prelims: <em>Vatapikonda</em> (Narasimhavarman I), Shore Temple UNESCO year (1984), Pancha Rathas location (Mamallapuram), Rajendra I&#x27;s Srivijaya expedition, Brihadesvara Temple (Rajaraja I). Mains: Chola administration (mandalam, village assemblies), Chola naval power, or Pallava-Chalukya rivalry. (Inferred trend.)</p>
+<h2>Questions</h2>
+<p><strong>Prelims (MCQ-style):</strong></p>
+<ol>
+<li>[Asked] The Pallava king who sacked the Chalukya capital Vatapi and earned the title <em>Vatapikonda</em> was — <em>Narasimhavarman I (Mamalla)</em></li>
+<li>[Expected] The Shore Temple at Mahabalipuram was built by — <em>Narasimhavarman II (Rajasimha)</em></li>
+<li>[Expected] The Brihadesvara Temple at Thanjavur was built by which Chola king? — <em>Rajaraja I (c. 1010 CE)</em></li>
+<li>[Expected] Chola king Rajendra I sent a naval expedition to Srivijaya (SE Asia) around — <em>1025 CE</em></li>
+<li>[Expected] The Uttaramerur inscription is important for documenting — <em>Village assembly (sabha) election rules in the Chola period</em></li>
+</ol>
+<p><strong>Mains (descriptive):</strong></p>
+<ol>
+<li>[Expected] Discuss the evolution of South Indian temple architecture from the Pallava period through the Imperial Cholas. (~200 words)</li>
+<li>[Expected] Examine the significance of the Chola naval expedition to Srivijaya for Indian Ocean trade history.</li>
+<li>[Expected] Describe the Chola system of local administration, with reference to the village assemblies (<em>sabha</em> and <em>ur</em>).</li>
+</ol>
+<h2>Linkages</h2>
+<ul>
+<li>hist-em-chalukya (Chalukyas — Pallava-Chalukya rivalry)</li>
+<li>hist-em-rashtrakuta (Rashtrakutas — rivals of Cholas in south)</li>
+<li>hist-pm-sangam (Sangam age — earlier Tamil polity; Chola ancestors)</li>
+<li>hist-em-yadava (Yadavas — contemporaries in Deccan)</li>
+</ul>
+<div class="disclaimer">Study notes generated for MPSC preparation. Cross-check current schemes,
+latest data and exact dates before the exam.</div></main></body></html>

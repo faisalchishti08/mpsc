@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tughlaq dynasty — Muhammad bin Tughlaq, Firoz Shah — MPSC</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2430;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#6db33f;--accent2:#34804f;--done:#3fb950;--bar-bg:#21262d;--pre:#388bfd;--mains:#d29922;--int:#a371f7;--mh:#3fb950;--chip:#21262d;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:14px 20px}
+.title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.title h1{font-size:20px;margin:0}
+.home{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}.home:hover{border-color:var(--accent);color:var(--text)}
+.logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+.stats{margin-left:auto;font-size:13px;color:var(--muted)}.stats b{color:var(--accent)}
+.progress-wrap{margin-top:10px;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:10px;background:var(--bar-bg);border-radius:99px;overflow:hidden}
+.bar>span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--done));transition:width .35s}
+.pct{font-size:13px;color:var(--muted);min-width:42px;text-align:right}
+.stagebar{margin-top:8px;display:flex;gap:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.toolbar{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px}.tab{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:8px;font-size:13px;cursor:pointer}
+.tab.active{border-color:var(--accent);color:var(--accent)}
+.toolbar input[type=search]{flex:1;min-width:180px;background:var(--panel2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:14px}
+button{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:13px;cursor:pointer}button:hover{border-color:var(--accent)}
+.danger:hover{border-color:#f85149;color:#f85149}
+main{max-width:1040px;margin:0 auto;padding:20px}
+section.sec{margin-bottom:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sec-head{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none;background:var(--panel2)}.sec-head:hover{background:#222b38}
+.sec-head .vname{font-size:16px;font-weight:700}.sec-head .vcount{font-size:12px;color:var(--muted);min-width:48px;text-align:right}
+.sec-head .minibar{margin-left:auto;width:90px;height:7px;background:var(--bar-bg);border-radius:99px;overflow:hidden}.sec-head .minibar>span{display:block;height:100%;width:0;background:var(--done)}
+.sec-head .chev{transition:transform .2s;color:var(--muted)}section.sec.collapsed .chev{transform:rotate(-90deg)}section.sec.collapsed .sec-body{display:none}
+.sec-body{padding:6px 10px 14px}
+.grp{margin:14px 8px 4px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);font-weight:700;border-top:1px solid var(--border);padding-top:12px}.grp:first-child{border-top:none;padding-top:4px}
+ul.topics{list-style:none;margin:0;padding:0}
+li.topic{display:flex;align-items:flex-start;gap:10px;padding:6px 10px;border-radius:8px}li.topic:hover{background:var(--panel2)}
+li.topic input{margin-top:3px;width:16px;height:16px;accent-color:var(--done);cursor:pointer;flex:none}
+li.topic label{cursor:pointer;font-size:14.5px}li.topic.done label{color:var(--muted);text-decoration:line-through}
+.badge{font-size:10px;font-weight:700;padding:1px 6px;border-radius:99px;flex:none;margin-left:4px;vertical-align:middle}
+.b-PRE{background:rgba(56,139,253,.18);color:var(--pre)}.b-MAINS{background:rgba(210,153,34,.18);color:var(--mains)}.b-INT{background:rgba(163,113,247,.18);color:var(--int)}
+.b-MH{background:transparent;color:var(--mh);border:1px solid var(--mh)}
+.hidden{display:none !important}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+@media(max-width:560px){.sec-head .minibar{width:60px}.stats{margin-left:0}}
+
+.content{max-width:820px;margin:0 auto;padding:8px 20px 60px}
+.content h2{font-size:20px;margin:26px 0 8px;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:5px}
+.content h3{font-size:16px;margin:18px 0 6px}
+.content p{margin:8px 0}
+.content ul,.content ol{margin:8px 0 8px 4px;padding-left:22px}
+.content li{margin:4px 0}
+.content code{background:var(--bar-bg);padding:1px 5px;border-radius:5px;color:#79c0ff;font-size:13px}
+.content blockquote{border-left:3px solid var(--accent);margin:10px 0;padding:4px 14px;color:var(--muted)}
+.content table{border-collapse:collapse;margin:12px 0;width:100%;font-size:14px}
+.content th,.content td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+.content th{background:var(--panel2)}
+.content hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+.crumb{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}
+.crumb:hover{border-color:var(--accent);color:var(--text)}
+.disclaimer{margin-top:30px;padding:12px 16px;background:var(--panel);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:12.5px}
+</style></head><body>
+<header><div class="title"><a class="crumb" href="../history.html">← History & Indian Culture</a>
+<div class="logo">H</div></div>
+<h1 style="font-size:21px;margin:10px 0 4px">Tughlaq dynasty — Muhammad bin Tughlaq, Firoz Shah <span class="badge b-PRE">PRE</span><span class="badge b-MAINS">MAINS</span></h1></header>
+<main class="content"><h2>Overview</h2>
+<p>The <strong>Tughlaq dynasty (1320–1414 CE)</strong> was the third and longest dynasty of the Delhi Sultanate. It produced two extraordinary but controversial rulers: <strong>Ghiyasuddin Tughlaq</strong> (founder) and his son <strong>Muhammad bin Tughlaq</strong> (1325–1351 CE) — famous for ambitious but often disastrous experiments — and <strong>Firoz Shah Tughlaq</strong> (1351–1388 CE) who attempted welfare-state reforms. The Tughlaq era also saw the <strong>Deccan&#x27;s separation</strong> (Bahmani kingdom, 1347 CE) and the catastrophic <strong>Timur&#x27;s invasion (1398 CE)</strong> that ended effective Tughlaq power. Maharashtra&#x27;s medieval history connects directly through the Deccan connection.</p>
+<h2>In-Depth</h2>
+<h3>Ghiyasuddin Tughlaq (1320–1325 CE)</h3>
+<p><strong>Ghiyasuddin</strong> was a general of the last Khilji sultan who seized power:</p>
+<ul>
+<li>Reintroduced the Iqta system properly after Alauddin&#x27;s direct-pay modifications.</li>
+<li>Revived the Deccan campaigns; reconquered Bengal.</li>
+<li>Died under a <strong>collapsing pavilion</strong> (1325 CE) — possibly engineered by his son Muhammad, though the &quot;fratricide&quot; charge is disputed.</li>
+<li>Built <strong>Tughlaqabad</strong> — the third city of Delhi — as a fort-city.</li>
+</ul>
+<h3>Muhammad bin Tughlaq (1325–1351 CE) — The Paradox</h3>
+<p><strong>Muhammad bin Tughlaq</strong> (born Jauna Khan) was intellectually brilliant but administratively erratic — described by historian <strong>Ibn Battuta</strong> (Moroccan traveller who served in his court) as simultaneously merciful and cruel, learned and impractical:</p>
+<p><strong>Five Major &quot;Experiments&quot; (all controversial):</strong></p>
+<ol>
+<li><strong>Transfer of capital from Delhi to Devagiri (renamed Daulatabad)</strong> (c. 1327 CE):</li>
+</ol>
+<ul>
+<li>Rationale: Daulatabad is geographically central; better to administer the south; safer from Mongol raids from the north.</li>
+<li>Reality: Forced migration of entire Delhi population (~1327 CE) over 1,500 km; mass suffering, deaths; Delhi depopulated. Within years, abandoned — he shifted the capital back. Ibn Battuta found Delhi &quot;empty&quot; on arrival.</li>
+</ul>
+<ol>
+<li><strong>Token currency experiment</strong> (1329–1332 CE):</li>
+</ol>
+<ul>
+<li>Issued <strong>copper/brass coins</strong> at the value of gold and silver coins (token currency — like modern paper money, but without institutional backing).</li>
+<li>Rationale: shortage of gold/silver; expand money supply.</li>
+<li>Reality: No anti-forgery system; public flooded the market with forged brass coins; state treasury collapsed. Policy abandoned; government redeemed tokens for silver at enormous loss.</li>
+</ul>
+<ol>
+<li><strong>Khurasan/Persia/Transoxiana campaign</strong> (c. 1329):</li>
+</ol>
+<ul>
+<li>Raised an army of 370,000 to conquer Khurasan (Persia/Central Asia) — a wildly ambitious plan.</li>
+<li>Army destroyed by famine and disease in the mountains; plan abandoned.</li>
+</ul>
+<ol>
+<li><strong>Qarachil (Himalayan) campaign</strong> (1337–1338 CE):</li>
+</ol>
+<ul>
+<li>Sent a large army into the Himalayan foothills (Qarachil, near Kangra/Kumaon).</li>
+<li>Army almost entirely wiped out in mountain terrain.</li>
+</ul>
+<ol>
+<li><strong>Taxation increase in the Doab</strong> (Gangetic plain) (c. 1326–1334 CE):</li>
+</ol>
+<ul>
+<li>Raised revenue to fund campaigns; combined with a severe famine — caused mass peasant revolts; region depopulated.</li>
+</ul>
+<p><strong>Positive aspects</strong>: Muhammad was well-read (philosophy, logic, medicine), wrote Persian poetry, was personally courageous, and genuinely attempted revenue measurement (direct assessment rather than intermediaries). Ibn Battuta described him as the most generous of rulers and the most terrible in punishment.</p>
+<p><strong>Ibn Battuta</strong> (<em>Rihla</em>, c. 1354): Moroccan scholar-traveller who served as a <strong>qadi (judge)</strong> in Muhammad bin Tughlaq&#x27;s Delhi court (1334–1342 CE); later sent as ambassador to China. His <em>Rihla</em> (travelogue) is the richest first-hand account of 14th-century India.</p>
+<h3>Firoz Shah Tughlaq (1351–1388 CE)</h3>
+<p><strong>Firoz Shah</strong> reversed his predecessor&#x27;s excesses and focused on welfare and consolidation:</p>
+<ul>
+<li><strong>Welfare works</strong>: dug <strong>150 wells, 100 caravanserais, 30 reservoirs</strong> (<em>bawlis/hauz</em>), <strong>5 canals</strong> (including the 200 km <strong>Western Yamuna Canal</strong> from Yamuna to Hissar — still in use) — unprecedented public works programme.</li>
+<li><strong>Tax policy</strong>: abolished all taxes not sanctioned by Islamic law (Sharia); reduced <em>jizya</em> (but enforced it on Brahmins who had previously been exempt under some previous sultans).</li>
+<li><strong>Hospitals</strong> (<em>shifa-khanas</em>) and a <strong>court of justice</strong> (<em>diwan-i-khairat</em>) for widows and orphans.</li>
+<li>Patronised learning: built <strong>Firozabad</strong> (the 5th city of Delhi), repaired the <strong>Qutb Minar</strong>, transported Ashokan pillars from Topra and Meerut to Delhi (he could not read the inscriptions — Brahmi was not deciphered until 1837).</li>
+<li><strong>Negative</strong>: Reintroduced hereditary <em>iqtas</em> (son inheriting father&#x27;s iqta — reduced central control); enforced religious orthodoxy strictly; increased <em>jizya</em> on Brahmins; persecuted Muslim &quot;heretics.&quot;</li>
+</ul>
+<h3>Timur&#x27;s Invasion (1398–1399 CE)</h3>
+<p><strong>Timur (Tamerlane)</strong> invaded India in 1398–99 CE:</p>
+<ul>
+<li>Crossed the Indus, sacked <strong>Delhi</strong> (December 1398) — massacred thousands of the city&#x27;s inhabitants.</li>
+<li>The Tughlaq Sultan <strong>Mahmud Tughlaq</strong> fled; Delhi was left in ruins.</li>
+<li>Timur returned to Samarkand with enormous plunder and thousands of skilled artisans (used to build Samarkand&#x27;s monuments).</li>
+<li>Delhi did not fully recover for decades; the Tughlaq dynasty became a shadow.</li>
+</ul>
+<table>
+<tr><th>Ruler</th><th>Reign</th><th>Key Act / Legacy</th></tr>
+<tr><td>Ghiyasuddin Tughlaq</td><td>1320–1325</td><td>Founded dynasty; built Tughlaqabad</td></tr>
+<tr><td>Muhammad bin Tughlaq</td><td>1325–1351</td><td>Capital transfer; token currency; Ibn Battuta's account</td></tr>
+<tr><td>Firoz Shah Tughlaq</td><td>1351–1388</td><td>150 wells; 5 canals; Western Yamuna Canal; Ashokan pillars to Delhi</td></tr>
+<tr><td>Mahmud Tughlaq</td><td>1394–1412</td><td>Timur invasion (1398); Delhi destroyed; dynasty ended effectively</td></tr>
+</table>
+<h2>Maharashtra Connection</h2>
+<p><strong>High relevance</strong> for Maharashtra. Muhammad bin Tughlaq&#x27;s <strong>capital transfer to Daulatabad (Devagiri)</strong> is in <strong>Aurangabad district, Maharashtra</strong>. This capital transfer — though a failure — brought Delhi&#x27;s administrative machinery, Islamic scholars, Sufi saints, and Persian-speaking elites to Maharashtra&#x27;s heartland for several years. The <strong>Bahmani Sultanate</strong> (1347 CE) — which directly controlled Maharashtra — arose as a <strong>revolt of Tughlaq governors in the Deccan</strong>, making the Tughlaq era the direct precursor to independent Muslim rule in Maharashtra.</p>
+<h2>Key Facts</h2>
+<ul>
+<li>Muhammad bin Tughlaq: capital to <strong>Daulatabad (Devagiri, Maharashtra)</strong> c. <strong>1327 CE</strong>.</li>
+<li>Token currency: <strong>copper/brass coins</strong> at gold/silver value — failed catastrophically.</li>
+<li>Ibn Battuta: served Muhammad bin Tughlaq; wrote <strong>Rihla</strong>; Moroccan traveller.</li>
+<li>Firoz Shah: dug <strong>5 canals</strong>; <strong>Western Yamuna Canal</strong> (200 km) still functional.</li>
+<li>Firoz Shah: moved <strong>Ashokan pillars</strong> from Topra and Meerut to Delhi.</li>
+<li>Timur invaded: <strong>1398–99 CE</strong>; sacked Delhi; ended effective Tughlaq power.</li>
+<li>Bahmani revolt: <strong>1347 CE</strong> — Tughlaq governors in Deccan revolted; established Bahmani kingdom.</li>
+</ul>
+<h2>Memory Aids</h2>
+<ul>
+<li>Muhammad bin Tughlaq&#x27;s failures: &quot;<strong>C-T-K-D-D</strong>&quot; — Copper token currency, Transfer of capital, Khurasan campaign, Doab taxation, Qarachil (Himalayan) disaster.</li>
+<li>Firoz Shah: &quot;<strong>F-W</strong>&quot; — Firoz = Five canals + Welfare works + Ashokan pillars brought to Delhi.</li>
+<li>&quot;<strong>Timur 1398 = Delhi destroyed</strong>.&quot;</li>
+<li>Daulatabad link: &quot;<strong>Devagiri = Daulatabad = Muhammad bin Tughlaq&#x27;s failed capital</strong>.&quot;</li>
+</ul>
+<h2>Exam Traps</h2>
+<ul>
+<li>Muhammad bin Tughlaq&#x27;s <strong>token currency</strong> was NOT paper money — it was <strong>copper/brass coins</strong> assigned the value of precious metals; failed because of forgery (no anti-counterfeiting mechanism).</li>
+<li>The <strong>Bahmani kingdom</strong> arose as a revolt against the <strong>Tughlaqs</strong> (1347), not the Khiljis.</li>
+<li>Firoz Shah <strong>moved</strong> Ashokan pillars — he could <strong>not read</strong> the inscriptions; they were not deciphered until <strong>1837</strong> (James Prinsep).</li>
+<li>The <strong>Western Yamuna Canal</strong> (dug by Firoz Shah) is sometimes called Firoz Shah&#x27;s Canal — still partly operational; do not confuse with the Eastern Yamuna Canal (British era).</li>
+</ul>
+<h2>Previous-Year Trend</h2>
+<p>High frequency. MPSC Prelims: capital transfer to Daulatabad (Muhammad bin Tughlaq), token currency failure, Ibn Battuta&#x27;s work (<em>Rihla</em>), Firoz Shah&#x27;s canal/welfare works, Timur invasion year (1398). Mains: Muhammad bin Tughlaq&#x27;s experiments (&quot;visionary or fool&quot; type question), Firoz Shah&#x27;s welfare measures, or significance of Timur&#x27;s invasion. (Inferred trend.)</p>
+<h2>Questions</h2>
+<p><strong>Prelims (MCQ-style):</strong></p>
+<ol>
+<li>[Asked] Muhammad bin Tughlaq transferred the capital from Delhi to — <em>Devagiri (renamed Daulatabad)</em></li>
+<li>[Expected] The Moroccan traveller who served as a <em>qadi</em> in Muhammad bin Tughlaq&#x27;s court and wrote <em>Rihla</em> was — <em>Ibn Battuta</em></li>
+<li>[Expected] Firoz Shah Tughlaq&#x27;s most significant public work still in use is — <em>Western Yamuna Canal (~200 km)</em></li>
+<li>[Expected] The Bahmani Sultanate (1347 CE) arose as a result of — <em>Revolt of Tughlaq governors in the Deccan</em></li>
+<li>[Expected] Timur&#x27;s invasion of India (1398–99 CE) effectively ended the power of which dynasty? — <em>Tughlaq dynasty</em></li>
+</ol>
+<p><strong>Mains (descriptive):</strong></p>
+<ol>
+<li>[Expected] Examine the administrative experiments of Muhammad bin Tughlaq. Were they ahead of his time, or simply impractical? (~200 words)</li>
+<li>[Expected] Discuss Firoz Shah Tughlaq&#x27;s welfare measures and assess their long-term significance.</li>
+<li>[Expected] Analyse the impact of Timur&#x27;s invasion (1398 CE) on the Delhi Sultanate and north India.</li>
+</ol>
+<h2>Linkages</h2>
+<ul>
+<li>hist-ds-khilji (Khilji dynasty — Tughlaqs overthrew Khilji successors)</li>
+<li>hist-ds-later (Sayyids and Lodis — post-Tughlaq fragmentation)</li>
+<li>hist-ds-bahmani (Bahmani kingdom — direct product of Tughlaq Deccan revolt, 1347)</li>
+<li>hist-em-yadava (Yadavas — whose capital became Daulatabad)</li>
+<li>hist-ds-vijayanagara (Vijayanagara — arose contemporaneously with Bahmani, both in Deccan)</li>
+</ul>
+<div class="disclaimer">Study notes generated for MPSC preparation. Cross-check current schemes,
+latest data and exact dates before the exam.</div></main></body></html>
