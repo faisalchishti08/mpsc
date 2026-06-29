@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajivikas and other sects — MPSC</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2430;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#6db33f;--accent2:#34804f;--done:#3fb950;--bar-bg:#21262d;--pre:#388bfd;--mains:#d29922;--int:#a371f7;--mh:#3fb950;--chip:#21262d;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:14px 20px}
+.title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.title h1{font-size:20px;margin:0}
+.home{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}.home:hover{border-color:var(--accent);color:var(--text)}
+.logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+.stats{margin-left:auto;font-size:13px;color:var(--muted)}.stats b{color:var(--accent)}
+.progress-wrap{margin-top:10px;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:10px;background:var(--bar-bg);border-radius:99px;overflow:hidden}
+.bar>span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--done));transition:width .35s}
+.pct{font-size:13px;color:var(--muted);min-width:42px;text-align:right}
+.stagebar{margin-top:8px;display:flex;gap:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.toolbar{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px}.tab{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:8px;font-size:13px;cursor:pointer}
+.tab.active{border-color:var(--accent);color:var(--accent)}
+.toolbar input[type=search]{flex:1;min-width:180px;background:var(--panel2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:14px}
+button{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:13px;cursor:pointer}button:hover{border-color:var(--accent)}
+.danger:hover{border-color:#f85149;color:#f85149}
+main{max-width:1040px;margin:0 auto;padding:20px}
+section.sec{margin-bottom:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sec-head{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none;background:var(--panel2)}.sec-head:hover{background:#222b38}
+.sec-head .vname{font-size:16px;font-weight:700}.sec-head .vcount{font-size:12px;color:var(--muted);min-width:48px;text-align:right}
+.sec-head .minibar{margin-left:auto;width:90px;height:7px;background:var(--bar-bg);border-radius:99px;overflow:hidden}.sec-head .minibar>span{display:block;height:100%;width:0;background:var(--done)}
+.sec-head .chev{transition:transform .2s;color:var(--muted)}section.sec.collapsed .chev{transform:rotate(-90deg)}section.sec.collapsed .sec-body{display:none}
+.sec-body{padding:6px 10px 14px}
+.grp{margin:14px 8px 4px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);font-weight:700;border-top:1px solid var(--border);padding-top:12px}.grp:first-child{border-top:none;padding-top:4px}
+ul.topics{list-style:none;margin:0;padding:0}
+li.topic{display:flex;align-items:flex-start;gap:10px;padding:6px 10px;border-radius:8px}li.topic:hover{background:var(--panel2)}
+li.topic input{margin-top:3px;width:16px;height:16px;accent-color:var(--done);cursor:pointer;flex:none}
+li.topic label{cursor:pointer;font-size:14.5px}li.topic.done label{color:var(--muted);text-decoration:line-through}
+.badge{font-size:10px;font-weight:700;padding:1px 6px;border-radius:99px;flex:none;margin-left:4px;vertical-align:middle}
+.b-PRE{background:rgba(56,139,253,.18);color:var(--pre)}.b-MAINS{background:rgba(210,153,34,.18);color:var(--mains)}.b-INT{background:rgba(163,113,247,.18);color:var(--int)}
+.b-MH{background:transparent;color:var(--mh);border:1px solid var(--mh)}
+.hidden{display:none !important}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+@media(max-width:560px){.sec-head .minibar{width:60px}.stats{margin-left:0}}
+
+.content{max-width:820px;margin:0 auto;padding:8px 20px 60px}
+.content h2{font-size:20px;margin:26px 0 8px;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:5px}
+.content h3{font-size:16px;margin:18px 0 6px}
+.content p{margin:8px 0}
+.content ul,.content ol{margin:8px 0 8px 4px;padding-left:22px}
+.content li{margin:4px 0}
+.content code{background:var(--bar-bg);padding:1px 5px;border-radius:5px;color:#79c0ff;font-size:13px}
+.content blockquote{border-left:3px solid var(--accent);margin:10px 0;padding:4px 14px;color:var(--muted)}
+.content table{border-collapse:collapse;margin:12px 0;width:100%;font-size:14px}
+.content th,.content td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+.content th{background:var(--panel2)}
+.content hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+.crumb{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}
+.crumb:hover{border-color:var(--accent);color:var(--text)}
+.disclaimer{margin-top:30px;padding:12px 16px;background:var(--panel);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:12.5px}
+</style></head><body>
+<header><div class="title"><a class="crumb" href="../history.html">← History & Indian Culture</a>
+<div class="logo">H</div></div>
+<h1 style="font-size:21px;margin:10px 0 4px">Ajivikas and other sects <span class="badge b-PRE">PRE</span><span class="badge b-MAINS">MAINS</span></h1></header>
+<main class="content"><h2>Overview</h2>
+<p>The <strong>Ajivikas</strong> were a major heterodox (Nastika) philosophical movement of ancient India (~6th–5th c. BCE) founded by <strong>Makkhali Gosala</strong>, a contemporary of both Mahavira and the Buddha. Along with the Ajivikas, other heterodox schools — <strong>Charvakas/Lokayatas (materialists), Ajnanis (sceptics/agnostics)</strong> — challenged Brahmanical orthodoxy. These &quot;nastika&quot; schools (those who reject Vedic authority) form an important but often overlooked part of the intellectual ferment that produced Buddhism and Jainism. MPSC asks on the defining doctrines of each school, especially <strong>Niyati (fatalism)</strong> of the Ajivikas.</p>
+<h2>In-Depth</h2>
+<h3>The Ajivikas</h3>
+<p><strong>Founder</strong>: <strong>Makkhali Gosala</strong> (~484–468 BCE?). He is mentioned in Buddhist (Majjhima Nikaya, Samaññaphala Sutta) and Jain texts (Bhagavati Sutra) as a rival of both Buddha and Mahavira. He even lived with Mahavira for a time before breaking away.</p>
+<p><strong>Core Doctrine — Niyati (Absolute Determinism)</strong>:</p>
+<ul>
+<li>The central teaching of Ajivikas is <strong>Niyati</strong> — complete and absolute fatalism/determinism.</li>
+<li>All events in the universe are pre-determined; nothing can change one&#x27;s fate — no amount of effort, asceticism, or good deeds can accelerate or delay liberation.</li>
+<li>The soul (Jiva) will automatically pass through exactly <strong>84,00,000 (8.4 million) births</strong> in a fixed cycle, after which it will attain liberation regardless of actions.</li>
+<li>This is the most radical form of determinism in ancient philosophy — eliminating free will entirely.</li>
+</ul>
+<p><strong>Contrast with contemporaries</strong>:</p>
+<ul>
+<li>Mahavira (Jainism): Liberation through effort, austerity, and adherence to five vows.</li>
+<li>Buddha (Buddhism): Liberation through the Eightfold Path and personal effort (no fixed fate).</li>
+<li>Ajivikas: Liberation fixed, automatic, inevitable — effort is irrelevant.</li>
+</ul>
+<p><strong>Survival</strong>: Ajivikas declined by ~14th c. CE but had significant influence for centuries. <strong>Ashoka and his grandson Dasharatha</strong> gave cave donations to Ajivikas (Barabar Caves, Bihar; Nagarjuni Caves) — showing royal patronage even after the Mauryan Buddhist conversion.</p>
+<h3>Charvakas / Lokayata (Materialism)</h3>
+<ul>
+<li>India&#x27;s only thoroughgoing <strong>materialist and atheist</strong> school.</li>
+<li>Attributed to <strong>Brihaspati</strong> (legendary founder) and <strong>Charvaka</strong> (a teacher — source of the name).</li>
+<li>Core doctrine: Only the material world exists; no soul, no rebirth, no karma, no God.</li>
+<li>&quot;While life remains, let a man live happily; let him feed on ghee even though he runs in debt&quot; — attributed Charvaka saying.</li>
+<li>Only valid knowledge source: <strong>direct perception (Pratyaksha)</strong> — inference and verbal testimony rejected.</li>
+<li><strong>Perception</strong> is the only pramana (valid means of knowledge); inference can be wrong; Vedas are authored by frauds and cheats.</li>
+<li>All religious rituals are invented by priests for their own benefit.</li>
+<li>Ethics: Pursue pleasure (Kama) and avoid pain; the &quot;highest good&quot; is sensory enjoyment.</li>
+</ul>
+<p><strong>Historical value</strong>: No original Charvaka texts survive — we know their views only through critics (Buddhist, Jain, Hindu refutations). This suggests systematic suppression or neglect of preservation.</p>
+<h3>Ajnanis / Sceptics (Sanjaya Belatthiputta)</h3>
+<ul>
+<li><strong>Sanjaya Belatthiputta</strong> (~5th c. BCE) led this school of radical scepticism/agnosticism.</li>
+<li>Refused to affirm any metaphysical claim: &quot;Is there an afterlife? I don&#x27;t know. Is there not? I don&#x27;t know. Both? I don&#x27;t know. Neither? I don&#x27;t know.&quot;</li>
+<li>Called <strong>Eel-wrigglers</strong> (Amaravikkhepika) in Buddhist texts — they wriggle out of any definite position.</li>
+<li>Many of the Buddha&#x27;s early disciples (including Sariputta and Moggallana) came from Sanjaya&#x27;s group.</li>
+</ul>
+<h3>The Six Teachers (Chha Titthiya)</h3>
+<p>Buddhist texts record <strong>six major teachers</strong> contemporary with the Buddha, representing different heterodox views:</p>
+<ol>
+<li><strong>Purana Kassapa</strong>: Amoralism — actions have no moral consequences (neither good nor bad karma).</li>
+<li><strong>Makkhali Gosala</strong>: Ajivikas — Niyati (absolute determinism).</li>
+<li><strong>Ajita Kesakambali</strong>: Charvakas — materialism; death ends all; no rebirth.</li>
+<li><strong>Pakudha Kaccayana</strong>: Eternalism — seven eternal, uncreatable elements (earth, water, fire, air, pleasure, pain, soul).</li>
+<li><strong>Nigantha Nataputta</strong> (= Mahavira): Jainism — karma, liberation through austerity.</li>
+<li><strong>Sanjaya Belatthiputta</strong>: Agnosticism/scepticism.</li>
+</ol>
+<table>
+<tr><th>School</th><th>Key Figure</th><th>Core Doctrine</th><th>Fate of School</th></tr>
+<tr><td>Ajivikas</td><td>Makkhali Gosala</td><td>Niyati — absolute fatalism; 8.4 million births pre-fixed</td><td>Survived to ~14th c. CE; Ashoka gave cave donations</td></tr>
+<tr><td>Charvakas/Lokayata</td><td>Charvaka / Brihaspati</td><td>Materialism; no soul; perception-only epistemology; enjoy life</td><td>No original texts; known through critics; died out</td></tr>
+<tr><td>Ajnanis/Sceptics</td><td>Sanjaya Belatthiputta</td><td>Radical agnosticism; refuse to affirm anything</td><td>Merged into Buddhism (Sariputta, Moggallana converted to Buddha)</td></tr>
+<tr><td>Jainism</td><td>Mahavira (Nigantha Nataputta)</td><td>Karma + effort → liberation; Ahimsa, Anekantavada</td><td>Surviving world religion</td></tr>
+</table>
+<h2>Maharashtra Connection</h2>
+<p>No direct Maharashtra-specific connection for Ajivikas or Charvakas. However, Maharashtra&#x27;s <strong>rationalist and social reform tradition</strong> — Phule, Ambedkar, Gopal Ganesh Agarkar (rationalist journalist, 1856–1895) — echoes the Charvaka spirit of questioning supernatural authority and Brahmanical monopoly. Agarkar&#x27;s journal <em>Sudharak</em> explicitly promoted rationalism and rejected caste and religion&#x27;s role in public life.</p>
+<h2>Key Facts</h2>
+<ul>
+<li>Ajivika founder: <strong>Makkhali Gosala</strong>.</li>
+<li>Ajivika core: <strong>Niyati</strong> (absolute fatalism); <strong>8.4 million births</strong> pre-fixed.</li>
+<li>Ashoka gave donations to Ajivikas: <strong>Barabar Caves</strong> (Bihar).</li>
+<li>Charvakas: <strong>Materialists</strong>; only perception (Pratyaksha) valid; no soul, no karma, no God.</li>
+<li>Sanjaya Belatthiputta: <strong>Agnostic/sceptic</strong>; &quot;eel-wriggler.&quot;</li>
+<li>Six teachers include Makkhali Gosala, Ajita Kesakambali, Sanjaya, and Mahavira (Nigantha Nataputta).</li>
+</ul>
+<h2>Memory Aids</h2>
+<ul>
+<li>&quot;<strong>Gosala = determinism; Charvaka = eat ghee; Sanjaya = maybe maybe</strong>.&quot;</li>
+<li>Niyati = &quot;<strong>8.4 million births fixed</strong>&quot; — no shortcuts, no free will.</li>
+<li>Charvakas: &quot;<strong>Perception only; eat drink live; no afterlife</strong>.&quot;</li>
+<li>Six teachers: &quot;<strong>P-M-A-P-N-S</strong>&quot; = Purana, Makkhali, Ajita, Pakudha, Nigantha (Mahavira), Sanjaya.</li>
+</ul>
+<h2>Exam Traps</h2>
+<ul>
+<li><strong>Ajivika ≠ Atheist</strong>: They believed in the soul (Jiva) and rebirth but denied free will — a subtle distinction from Charvakas who deny soul entirely.</li>
+<li><strong>Charvakas accept only Pratyaksha</strong> (perception) as valid — they reject inference (Anumana) unlike almost all other Indian schools.</li>
+<li><strong>Sanjaya ≠ Jainism/Buddhism</strong> — he was a sceptic who refused to commit to any position; he is listed separately.</li>
+<li>Ashoka&#x27;s <strong>Barabar Caves</strong> donations were to <strong>Ajivikas</strong>, NOT Buddhists — an important trap since Ashoka is associated with Buddhism.</li>
+</ul>
+<h2>Previous-Year Trend</h2>
+<p>MPSC Prelims: Ajivikas&#x27; Niyati doctrine, Charvakas&#x27; materialism, the six heterodox teachers — occasionally tested. More likely in Mains as analytical questions about intellectual diversity in ancient India or challenges to Vedic orthodoxy. (Inferred trend.)</p>
+<h2>Questions</h2>
+<p><strong>Prelims (MCQ-style):</strong></p>
+<ol>
+<li>[Expected] The doctrine of &#x27;Niyati&#x27; (absolute determinism/fatalism) is associated with which ancient Indian school? — <em>Ajivikas (Makkhali Gosala)</em></li>
+<li>[Expected] Which Indian philosophical school accepted only Pratyaksha (direct perception) as a valid means of knowledge and rejected the existence of the soul and afterlife? — <em>Charvaka/Lokayata</em></li>
+<li>[Expected] Ashoka donated the Barabar Caves in Bihar to which religious community? — <em>Ajivikas</em></li>
+<li>[Expected] Sanjaya Belatthiputta was known in Buddhist texts as an &#x27;eel-wriggler&#x27;. This refers to his? — <em>Radical scepticism — refusal to take any definitive position on metaphysical questions</em></li>
+</ol>
+<p><strong>Mains (descriptive):</strong></p>
+<ol>
+<li>[Expected] Discuss the major heterodox philosophical schools of ancient India (Ajivikas, Charvakas, Sceptics) and assess their challenges to Brahmanical orthodoxy.</li>
+<li>[Expected] &quot;The intellectual ferment of the 6th–5th century BCE in India produced Buddhism, Jainism, and several other radical schools.&quot; Examine this claim with examples.</li>
+</ol>
+<h2>Linkages</h2>
+<ul>
+<li>hist-rel-jainism (Mahavira as one of the six teachers)</li>
+<li>hist-rel-buddhism (Buddha as contemporary; sceptics converted to Buddhism)</li>
+<li>hist-ved-varna (Context — Vedic Brahmanical orthodoxy being challenged)</li>
+<li>hist-maur-ashoka (Ashoka&#x27;s Barabar Cave donations to Ajivikas)</li>
+</ul>
+<div class="disclaimer">Study notes generated for MPSC preparation. Cross-check current schemes,
+latest data and exact dates before the exam.</div></main></body></html>

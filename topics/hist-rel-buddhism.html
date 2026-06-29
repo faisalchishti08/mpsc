@@ -1,0 +1,172 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buddhism — Buddha, four noble truths — MPSC</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2430;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#6db33f;--accent2:#34804f;--done:#3fb950;--bar-bg:#21262d;--pre:#388bfd;--mains:#d29922;--int:#a371f7;--mh:#3fb950;--chip:#21262d;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:14px 20px}
+.title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.title h1{font-size:20px;margin:0}
+.home{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}.home:hover{border-color:var(--accent);color:var(--text)}
+.logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+.stats{margin-left:auto;font-size:13px;color:var(--muted)}.stats b{color:var(--accent)}
+.progress-wrap{margin-top:10px;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:10px;background:var(--bar-bg);border-radius:99px;overflow:hidden}
+.bar>span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--done));transition:width .35s}
+.pct{font-size:13px;color:var(--muted);min-width:42px;text-align:right}
+.stagebar{margin-top:8px;display:flex;gap:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.toolbar{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px}.tab{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:8px;font-size:13px;cursor:pointer}
+.tab.active{border-color:var(--accent);color:var(--accent)}
+.toolbar input[type=search]{flex:1;min-width:180px;background:var(--panel2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:14px}
+button{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:13px;cursor:pointer}button:hover{border-color:var(--accent)}
+.danger:hover{border-color:#f85149;color:#f85149}
+main{max-width:1040px;margin:0 auto;padding:20px}
+section.sec{margin-bottom:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sec-head{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none;background:var(--panel2)}.sec-head:hover{background:#222b38}
+.sec-head .vname{font-size:16px;font-weight:700}.sec-head .vcount{font-size:12px;color:var(--muted);min-width:48px;text-align:right}
+.sec-head .minibar{margin-left:auto;width:90px;height:7px;background:var(--bar-bg);border-radius:99px;overflow:hidden}.sec-head .minibar>span{display:block;height:100%;width:0;background:var(--done)}
+.sec-head .chev{transition:transform .2s;color:var(--muted)}section.sec.collapsed .chev{transform:rotate(-90deg)}section.sec.collapsed .sec-body{display:none}
+.sec-body{padding:6px 10px 14px}
+.grp{margin:14px 8px 4px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);font-weight:700;border-top:1px solid var(--border);padding-top:12px}.grp:first-child{border-top:none;padding-top:4px}
+ul.topics{list-style:none;margin:0;padding:0}
+li.topic{display:flex;align-items:flex-start;gap:10px;padding:6px 10px;border-radius:8px}li.topic:hover{background:var(--panel2)}
+li.topic input{margin-top:3px;width:16px;height:16px;accent-color:var(--done);cursor:pointer;flex:none}
+li.topic label{cursor:pointer;font-size:14.5px}li.topic.done label{color:var(--muted);text-decoration:line-through}
+.badge{font-size:10px;font-weight:700;padding:1px 6px;border-radius:99px;flex:none;margin-left:4px;vertical-align:middle}
+.b-PRE{background:rgba(56,139,253,.18);color:var(--pre)}.b-MAINS{background:rgba(210,153,34,.18);color:var(--mains)}.b-INT{background:rgba(163,113,247,.18);color:var(--int)}
+.b-MH{background:transparent;color:var(--mh);border:1px solid var(--mh)}
+.hidden{display:none !important}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+@media(max-width:560px){.sec-head .minibar{width:60px}.stats{margin-left:0}}
+
+.content{max-width:820px;margin:0 auto;padding:8px 20px 60px}
+.content h2{font-size:20px;margin:26px 0 8px;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:5px}
+.content h3{font-size:16px;margin:18px 0 6px}
+.content p{margin:8px 0}
+.content ul,.content ol{margin:8px 0 8px 4px;padding-left:22px}
+.content li{margin:4px 0}
+.content code{background:var(--bar-bg);padding:1px 5px;border-radius:5px;color:#79c0ff;font-size:13px}
+.content blockquote{border-left:3px solid var(--accent);margin:10px 0;padding:4px 14px;color:var(--muted)}
+.content table{border-collapse:collapse;margin:12px 0;width:100%;font-size:14px}
+.content th,.content td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+.content th{background:var(--panel2)}
+.content hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+.crumb{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}
+.crumb:hover{border-color:var(--accent);color:var(--text)}
+.disclaimer{margin-top:30px;padding:12px 16px;background:var(--panel);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:12.5px}
+</style></head><body>
+<header><div class="title"><a class="crumb" href="../history.html">← History & Indian Culture</a>
+<div class="logo">H</div></div>
+<h1 style="font-size:21px;margin:10px 0 4px">Buddhism — Buddha, four noble truths <span class="badge b-PRE">PRE</span><span class="badge b-MAINS">MAINS</span></h1></header>
+<main class="content"><h2>Overview</h2>
+<p><strong>Buddhism</strong> was founded by <strong>Siddhartha Gautama (c.563–483 BCE)</strong>, known as the <strong>Buddha</strong> (&quot;the Enlightened One&quot;), a Kshatriya prince of the Shakya clan in Kapilavastu (present-day Nepal/UP border). It rejected the Vedic varna system, sacrificial rituals, and Brahman authority, offering a practical path of ethical conduct, meditation, and wisdom to overcome suffering. Buddhism became a world religion; it shaped Indian art, philosophy, and statecraft before declining in India itself. MPSC tests extensively on the Buddha&#x27;s life, the Four Noble Truths, Eightfold Path, and key Buddhist concepts.</p>
+<h2>In-Depth</h2>
+<h3>Life of Siddhartha Gautama</h3>
+<table>
+<tr><th>Event</th><th>Place</th><th>Approximate Date</th><th>Significance</th></tr>
+<tr><td>Birth</td><td>Lumbini (Nepal)</td><td>c.563 BCE</td><td>Father Shuddhodana (Shakya chief); mother Maya (died 7 days after birth); raised by aunt Mahaprajapati; four signs: old man, sick man, corpse, ascetic</td></tr>
+<tr><td>Marriage</td><td>Kapilavastu</td><td>—</td><td>Married Yashodhara; son Rahula; left home at ~29 (the "Great Renunciation")</td></tr>
+<tr><td>Enlightenment (Bodhi)</td><td>Bodh Gaya (under Bodhi tree, on bank of Niranjana river)</td><td>c.528 BCE (~35 years old)</td><td>Attained enlightenment after rejecting extreme asceticism; Middle Path realised</td></tr>
+<tr><td>First Sermon (Dhammachakrapravartana)</td><td>Deer Park, Sarnath (near Varanasi)</td><td>c.528 BCE</td><td>"Setting in motion of the wheel of Dhamma"; first five disciples (Pancavargiya) taught</td></tr>
+<tr><td>Death (Parinirvana)</td><td>Kushinagar (UP)</td><td>c.483 BCE (age ~80)</td><td>Died under two Sal trees; last words: "All conditioned things are impermanent; strive with diligence"</td></tr>
+</table>
+<h3>Four Noble Truths (Ariya Saccas)</h3>
+<p>The core teaching of Buddhism:</p>
+<ol>
+<li><strong>Dukkha</strong>: Existence involves suffering/dissatisfaction (birth, disease, old age, death, unfulfilled desires are all dukkha).</li>
+<li><strong>Samudaya</strong> (Tanha): Suffering has a cause — craving/desire (Tanha = thirst for sensual pleasure, existence, non-existence).</li>
+<li><strong>Nirodha</strong>: Suffering can be ended — by extinguishing craving, one attains Nibbana (Nirvana).</li>
+<li><strong>Magga</strong>: There is a path to ending suffering — the <strong>Noble Eightfold Path</strong>.</li>
+</ol>
+<h3>Noble Eightfold Path (Ariya Atthangika Magga)</h3>
+<p>The practical path to Nirvana — the <strong>Middle Way</strong> between extreme self-indulgence and extreme asceticism:</p>
+<table>
+<tr><th>Category</th><th>Components</th></tr>
+<tr><td>Wisdom (Prajna)</td><td>1. Right View (Samma Ditthi), 2. Right Intention (Samma Sankappa)</td></tr>
+<tr><td>Ethical Conduct (Sila)</td><td>3. Right Speech (Samma Vaca), 4. Right Action (Samma Kammanta), 5. Right Livelihood (Samma Ajiva)</td></tr>
+<tr><td>Mental Discipline (Samadhi)</td><td>6. Right Effort (Samma Vayama), 7. Right Mindfulness (Samma Sati), 8. Right Concentration (Samma Samadhi)</td></tr>
+</table>
+<h3>Key Concepts</h3>
+<ul>
+<li><strong>Nirvana</strong>: Literally &quot;blowing out&quot; — extinction of desire, ego, and the three fires (greed, hatred, delusion); liberation from the cycle of rebirth (Samsara). NOT the same as Hindu Moksha (soul merging with Brahman) — Buddhism denies a permanent soul.</li>
+<li><strong>Anatman (Anatta)</strong>: &quot;No-self&quot; — the Buddhist doctrine that there is no permanent, unchanging self or soul; what we think of as &quot;self&quot; is a constantly changing bundle of physical and mental processes. Fundamental departure from Brahmanical/Hindu Atman concept.</li>
+<li><strong>Anicca (Impermanence)</strong>: All conditioned things are impermanent — everything changes; nothing is fixed.</li>
+<li><strong>Dependent Origination (Pratityasamutpada)</strong>: All phenomena arise in dependence on conditions; nothing exists independently. The chain of 12 links (Nidanas) explains how ignorance leads through a chain of conditions to rebirth and suffering.</li>
+<li><strong>Middle Way</strong>: The Buddha&#x27;s path between extreme self-indulgence (his earlier princely life) and extreme self-mortification (his years of asceticism). Moderation is the key.</li>
+</ul>
+<h3>Three Jewels (Triratna) of Buddhism</h3>
+<ol>
+<li><strong>Buddha</strong>: The teacher; the Enlightened One.</li>
+<li><strong>Dhamma</strong>: The teaching; the truth.</li>
+<li><strong>Sangha</strong>: The community of monks (and later nuns and lay followers).</li>
+</ol>
+<p>&quot;I take refuge in the Buddha, the Dhamma, and the Sangha&quot; (the Trisharana formula).</p>
+<h3>Five Precepts (Panchashila) for Lay Buddhists</h3>
+<ol>
+<li>Abstain from taking life (Ahimsa).</li>
+<li>Abstain from taking what is not given (non-stealing).</li>
+<li>Abstain from sexual misconduct.</li>
+<li>Abstain from false speech.</li>
+<li>Abstain from intoxicants.</li>
+</ol>
+<h2>Maharashtra Connection</h2>
+<ul>
+<li><strong>Ajanta Caves</strong> (Aurangabad, UNESCO WHS 1983): 30 Buddhist rock-cut caves (~2nd c. BCE–6th c. CE); finest examples of Buddhist art — murals depicting Jataka tales and the Buddha&#x27;s life. Patronised by Satavahanas, Vakatakas.</li>
+<li><strong>Karla Caves</strong> (Lonavala, Pune): Largest Buddhist Chaitya (prayer hall) in India — <strong>Karla Chaitya</strong> (~2nd–1st c. BCE); Satavahana-era; impressive wooden/stone columns.</li>
+<li><strong>Bhaja Caves</strong> (near Lonavala): Early Buddhist viharas and chaitya; ~2nd c. BCE.</li>
+<li><strong>Kanheri Caves</strong> (Mumbai): Over 100 Buddhist caves; 1st–9th c. CE; largest Buddhist cave complex in Maharashtra.</li>
+<li><strong>Nashik Caves (Pandu Lena)</strong>: ~1st–4th c. CE; Satavahana inscriptions; Hinayana Buddhist caves.</li>
+<li><strong>Ambedkar&#x27;s Buddhist Conversion (1956)</strong>: Dr B.R. Ambedkar led ~500,000 Dalits in mass conversion to Buddhism at Nagpur (Oct 14, 1956) — the largest mass religious conversion in 20th century India; &quot;Navayana&quot; Buddhism (his interpretation emphasising social justice). Nagpur&#x27;s <strong>Deekshabhoomi</strong> is now a major pilgrimage site.</li>
+</ul>
+<h2>Key Facts</h2>
+<ul>
+<li>Birth: <strong>Lumbini</strong> (~563 BCE); Enlightenment: <strong>Bodh Gaya</strong> (~528 BCE).</li>
+<li>First sermon: <strong>Sarnath</strong> (Deer Park) — Dhammachakrapravartana.</li>
+<li>Parinirvana: <strong>Kushinagar</strong> (~483 BCE).</li>
+<li>Four Noble Truths: <strong>Dukkha, Samudaya, Nirodha, Magga</strong>.</li>
+<li>Eightfold Path: 8 steps in 3 categories (Prajna, Sila, Samadhi).</li>
+<li><strong>Anatman</strong>: No permanent self — key departure from Hinduism.</li>
+<li><strong>Triratna</strong>: Buddha, Dhamma, Sangha.</li>
+<li>Ambedkar conversion: <strong>Nagpur, 14 Oct 1956</strong>.</li>
+</ul>
+<h2>Memory Aids</h2>
+<ul>
+<li>Buddha&#x27;s life: &quot;<strong>L-B-S-K</strong>&quot; = Lumbini (birth), Bodh Gaya (enlightenment), Sarnath (first sermon), Kushinagar (death).</li>
+<li>Four Truths: &quot;<strong>D-S-N-M</strong>&quot; = Dukkha, Samudaya (cause), Nirodha (end), Magga (path).</li>
+<li>Eightfold: &quot;<strong>2-3-3 = Wisdom-Ethics-Meditation</strong>.&quot;</li>
+<li>Triratna: &quot;<strong>B-D-S</strong>&quot; = Buddha, Dhamma, Sangha.</li>
+</ul>
+<h2>Exam Traps</h2>
+<ul>
+<li><strong>Lumbini is in Nepal</strong> (modern), not India — but in Mauryan-era geography it was part of the Shakya territory adjoining the Terai.</li>
+<li><strong>Anatman (no-self)</strong> is the key philosophical difference from Hinduism&#x27;s Atman concept.</li>
+<li><strong>Nirvana ≠ Hindu Moksha</strong>: In Buddhism, there is no permanent soul to merge with Brahman.</li>
+<li>The first sermon was at <strong>Sarnath (Deer Park)</strong>, NOT Bodh Gaya (that was the enlightenment).</li>
+</ul>
+<h2>Previous-Year Trend</h2>
+<p>Very high frequency — every MPSC Prelims has 2–3 Buddhism questions: places associated with Buddha&#x27;s life, Four Noble Truths, Eightfold Path categories, Anatman concept, and Maharashtra Buddhist sites. Mains asks for doctrinal comparison with Hinduism/Jainism or the social impact of Buddhism. (Inferred trend.)</p>
+<h2>Questions</h2>
+<p><strong>Prelims (MCQ-style):</strong></p>
+<ol>
+<li>[Asked] Where did Siddhartha Gautama attain enlightenment (Bodhi)? — <em>Bodh Gaya (under the Bodhi tree, Niranjana river)</em></li>
+<li>[Asked] The first sermon of the Buddha, the Dhammachakrapravartana, was delivered at? — <em>Deer Park, Sarnath (near Varanasi)</em></li>
+<li>[Expected] Which Buddhist doctrine denies the existence of a permanent, unchanging self or soul? — <em>Anatman (Anatta / No-self doctrine)</em></li>
+<li>[Expected] The Noble Eightfold Path is grouped into three categories: Prajna (Wisdom), Sila (Ethics), and? — <em>Samadhi (Mental Discipline/Meditation)</em></li>
+<li>[Expected] The Three Jewels (Triratna) of Buddhism are? — <em>Buddha, Dhamma, Sangha</em></li>
+</ol>
+<p><strong>Mains (descriptive):</strong></p>
+<ol>
+<li>[Expected] Explain the Four Noble Truths and the Noble Eightfold Path. How do they form a complete system for overcoming suffering?</li>
+<li>[Expected] Compare the concepts of Moksha in Hinduism, Nirvana in Buddhism, and liberation in Jainism.</li>
+<li>[Expected] &quot;Buddhism was a social revolution as much as a spiritual one.&quot; Examine with reference to its challenge to the varna system.</li>
+</ol>
+<h2>Linkages</h2>
+<ul>
+<li>hist-rel-buddhism-councils (Buddhist councils — Hinayana/Mahayana split)</li>
+<li>hist-rel-jainism (Parallel reforms; Mahavira contemporary of Buddha)</li>
+<li>hist-ved-varna (Social context — Buddhism&#x27;s rejection of caste)</li>
+<li>hist-maur-ashoka (Ashoka&#x27;s conversion to Buddhism)</li>
+<li>mh-mi-tourism (Ajanta, Karla, Kanheri — Maharashtra Buddhist heritage)</li>
+</ul>
+<div class="disclaimer">Study notes generated for MPSC preparation. Cross-check current schemes,
+latest data and exact dates before the exam.</div></main></body></html>
