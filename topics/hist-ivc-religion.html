@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Religion, art and seals — MPSC</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2430;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#6db33f;--accent2:#34804f;--done:#3fb950;--bar-bg:#21262d;--pre:#388bfd;--mains:#d29922;--int:#a371f7;--mh:#3fb950;--chip:#21262d;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:14px 20px}
+.title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.title h1{font-size:20px;margin:0}
+.home{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}.home:hover{border-color:var(--accent);color:var(--text)}
+.logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+.stats{margin-left:auto;font-size:13px;color:var(--muted)}.stats b{color:var(--accent)}
+.progress-wrap{margin-top:10px;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:10px;background:var(--bar-bg);border-radius:99px;overflow:hidden}
+.bar>span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--done));transition:width .35s}
+.pct{font-size:13px;color:var(--muted);min-width:42px;text-align:right}
+.stagebar{margin-top:8px;display:flex;gap:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.toolbar{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px}.tab{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:8px;font-size:13px;cursor:pointer}
+.tab.active{border-color:var(--accent);color:var(--accent)}
+.toolbar input[type=search]{flex:1;min-width:180px;background:var(--panel2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:14px}
+button{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:13px;cursor:pointer}button:hover{border-color:var(--accent)}
+.danger:hover{border-color:#f85149;color:#f85149}
+main{max-width:1040px;margin:0 auto;padding:20px}
+section.sec{margin-bottom:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sec-head{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none;background:var(--panel2)}.sec-head:hover{background:#222b38}
+.sec-head .vname{font-size:16px;font-weight:700}.sec-head .vcount{font-size:12px;color:var(--muted);min-width:48px;text-align:right}
+.sec-head .minibar{margin-left:auto;width:90px;height:7px;background:var(--bar-bg);border-radius:99px;overflow:hidden}.sec-head .minibar>span{display:block;height:100%;width:0;background:var(--done)}
+.sec-head .chev{transition:transform .2s;color:var(--muted)}section.sec.collapsed .chev{transform:rotate(-90deg)}section.sec.collapsed .sec-body{display:none}
+.sec-body{padding:6px 10px 14px}
+.grp{margin:14px 8px 4px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);font-weight:700;border-top:1px solid var(--border);padding-top:12px}.grp:first-child{border-top:none;padding-top:4px}
+ul.topics{list-style:none;margin:0;padding:0}
+li.topic{display:flex;align-items:flex-start;gap:10px;padding:6px 10px;border-radius:8px}li.topic:hover{background:var(--panel2)}
+li.topic input{margin-top:3px;width:16px;height:16px;accent-color:var(--done);cursor:pointer;flex:none}
+li.topic label{cursor:pointer;font-size:14.5px}li.topic.done label{color:var(--muted);text-decoration:line-through}
+.badge{font-size:10px;font-weight:700;padding:1px 6px;border-radius:99px;flex:none;margin-left:4px;vertical-align:middle}
+.b-PRE{background:rgba(56,139,253,.18);color:var(--pre)}.b-MAINS{background:rgba(210,153,34,.18);color:var(--mains)}.b-INT{background:rgba(163,113,247,.18);color:var(--int)}
+.b-MH{background:transparent;color:var(--mh);border:1px solid var(--mh)}
+.hidden{display:none !important}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+@media(max-width:560px){.sec-head .minibar{width:60px}.stats{margin-left:0}}
+
+.content{max-width:820px;margin:0 auto;padding:8px 20px 60px}
+.content h2{font-size:20px;margin:26px 0 8px;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:5px}
+.content h3{font-size:16px;margin:18px 0 6px}
+.content p{margin:8px 0}
+.content ul,.content ol{margin:8px 0 8px 4px;padding-left:22px}
+.content li{margin:4px 0}
+.content code{background:var(--bar-bg);padding:1px 5px;border-radius:5px;color:#79c0ff;font-size:13px}
+.content blockquote{border-left:3px solid var(--accent);margin:10px 0;padding:4px 14px;color:var(--muted)}
+.content table{border-collapse:collapse;margin:12px 0;width:100%;font-size:14px}
+.content th,.content td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+.content th{background:var(--panel2)}
+.content hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+.crumb{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}
+.crumb:hover{border-color:var(--accent);color:var(--text)}
+.disclaimer{margin-top:30px;padding:12px 16px;background:var(--panel);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:12.5px}
+</style></head><body>
+<header><div class="title"><a class="crumb" href="../history.html">← History & Indian Culture</a>
+<div class="logo">H</div></div>
+<h1 style="font-size:21px;margin:10px 0 4px">Religion, art and seals <span class="badge b-PRE">PRE</span><span class="badge b-MAINS">MAINS</span></h1></header>
+<main class="content"><h2>Overview</h2>
+<p>Harappan religion is studied through material evidence alone — <strong>seals, terracotta figurines, fire altars, burials, and structures</strong> — since the script remains undeciphered. The evidence suggests worship of a <strong>Mother Goddess, proto-Shiva figure, animals (especially bull, pipal tree), and possibly water</strong> (Great Bath). There are no confirmed temples; religion appears to have been home-centred or conducted at community spaces. Harappan religion contains elements that may connect to later Hinduism, though direct continuity is debated.</p>
+<h2>In-Depth</h2>
+<h3>Evidence for Religious Practices</h3>
+<table>
+<tr><th>Object/Feature</th><th>Site</th><th>Interpretation</th></tr>
+<tr><td>Mother Goddess figurines (terracotta)</td><td>Widespread; Mohenjo-daro, Harappa</td><td>Female form with elaborate headdress; may represent a fertility/earth goddess; analogous to other ancient goddesses</td></tr>
+<tr><td>Pashupati seal (Marshall's "proto-Shiva")</td><td>Mohenjo-daro</td><td>Seated male figure in yogic posture; three-faced; surrounded by animals (rhino, buffalo, elephant, tiger, deer); "horned" — John Marshall identified as proto-Shiva/Pashupati (debated)</td></tr>
+<tr><td>Great Bath</td><td>Mohenjo-daro (Citadel)</td><td>Large public pool; bitumen-sealed; interpreted as ritual bathing tank — predecessor of sacred tank tradition in later Indian temples</td></tr>
+<tr><td>Fire Altars</td><td>Kalibangan (Citadel)</td><td>Seven fire altars in a row on the citadel; closest parallel to Vedic fire rituals (yajna); unique to Kalibangan among Harappan sites</td></tr>
+<tr><td>Pipal tree seals</td><td>Mohenjo-daro, Harappa</td><td>Pipal (sacred fig) shown in seals; deity inside/behind pipal; pipal sacred in later Hindu, Buddhist traditions</td></tr>
+<tr><td>Unicorn seal</td><td>Most abundant seal type in IVC</td><td>Single-horned animal (unicorn) before a "filter" or incense stand; most common seal motif (~60% of all seals); meaning unclear</td></tr>
+<tr><td>Bull imagery</td><td>Seals, terracotta figurines</td><td>Humped zebu bull — sacred animal; connected to Shiva's Nandi in later tradition; prominent in rituals</td></tr>
+<tr><td>Swastika symbols</td><td>Seals, pottery</td><td>Ancient solar/auspicious symbol; present in IVC — continuity into Hindu/Buddhist use</td></tr>
+<tr><td>Burial practices</td><td>Harappa, Kalibangan, Lothal</td><td>Extended burials with grave goods (pottery, ornaments); some double burials; coffin burials at Harappa; no large royal tombs</td></tr>
+</table>
+<h3>Seals and Script</h3>
+<ul>
+<li>Approximately <strong>2,500 seals</strong> discovered from IVC sites; mostly square, made of <strong>steatite (soapstone)</strong>.</li>
+<li>Each seal typically shows an <strong>animal + Harappan script inscription</strong> above.</li>
+<li>The <strong>Harappan script</strong> (~400–600 signs) is a <strong>pictographic/logosyllabic</strong> system; written <strong>right to left</strong> (boustrophedon in some cases).</li>
+<li><strong>NOT deciphered</strong> despite many attempts — the lack of a bilingual inscription (like the Rosetta Stone) remains the obstacle.</li>
+<li>Seals were probably used as <strong>trade/identity markers</strong> — pressed into clay to seal goods or identify ownership.</li>
+</ul>
+<h3>The &quot;Proto-Shiva&quot; Question</h3>
+<p>The <strong>Pashupati Seal</strong> (Mohenjo-daro) depicts a seated male in yogic posture surrounded by animals. John Marshall (1931) identified this as &quot;proto-Shiva&quot; — a lord of animals (Pashupati) with yogic/meditative elements prefiguring Shiva&#x27;s iconography. Counter-arguments:</p>
+<ol>
+<li>The figure may be an early depiction of a deity common to multiple Asian cultures.</li>
+<li>The &quot;three faces&quot; is disputed — may be a profile view.</li>
+<li>Direct continuity from IVC to Vedic/Hindu tradition is not established.</li>
+</ol>
+<p>The debate remains unresolved but the seal is widely cited as evidence of religious continuity.</p>
+<h3>Nature Worship and Animal Symbolism</h3>
+<ul>
+<li><strong>Pipal tree</strong> (Ficus religiosa) — shown in seals with deity inside the tree; sacred in subsequent Hindu and Buddhist traditions (Bodhi tree = pipal).</li>
+<li><strong>Bull</strong> (humped zebu): Central religious animal; likely sacrificial; analogous to Vedic and Tamil Sangam bull-worship.</li>
+<li><strong>Tiger, elephant, rhinoceros, crocodile</strong>: Appear on seals, suggesting a symbolic or ritual relationship with wild animals.</li>
+</ul>
+<h3>Religious Continuity Debate</h3>
+<p>Scholars like <strong>D.D. Kosambi, Shereen Ratnagar</strong> argue that some Harappan religious elements — Mother Goddess, pipal worship, ritual bathing, sacred animals — continued into post-Harappan religious life and influenced later Hinduism. Others (like Romila Thapar) urge caution: the script is undeciphered, so religious texts and meanings cannot be read; the material parallels may be coincidental.</p>
+<h2>Maharashtra Connection</h2>
+<p>Not directly Maharashtra-specific. However, the <strong>pipal tree</strong> and <strong>bull worship</strong> evident in Harappan religion have deep resonance in Maharashtra&#x27;s ritual culture (Nandi/bull in Shaivite shrines; pipal worship in villages). Maharashtra&#x27;s Chalcolithic (Jorwe) sites at Inamgaon show <strong>terracotta figurines</strong> that may represent a local continuation of Mother Goddess traditions.</p>
+<h2>Key Facts</h2>
+<ul>
+<li>Most common seal motif: <strong>Unicorn</strong> (~60% of all seals).</li>
+<li>Pashupati seal: <strong>Mohenjo-daro</strong>; identified as &quot;proto-Shiva&quot; by <strong>John Marshall (1931)</strong>.</li>
+<li>Harappan script: ~<strong>400–600 signs</strong>; <strong>undeciphered</strong>; written right to left.</li>
+<li>Fire altars unique to: <strong>Kalibangan</strong>.</li>
+<li>Seals material: <strong>Steatite (soapstone)</strong>.</li>
+<li>Great Bath: ritual bathing; at <strong>Mohenjo-daro</strong>.</li>
+<li>Pipal tree: depicted on seals; later sacred in Hindu and Buddhist traditions.</li>
+<li>No confirmed temples identified in Harappan cities.</li>
+</ul>
+<h2>Memory Aids</h2>
+<ul>
+<li>&quot;<strong>U for Unicorn = most common seal</strong>&quot; — unicorn tops all animal seals.</li>
+<li>&quot;<strong>Pashupati = yoga pose + animals = Mohenjo-daro = Marshall 1931</strong>.&quot;</li>
+<li>Fire altars = <strong>ONLY Kalibangan</strong> — &quot;<strong>K for Kali (fire)</strong>&quot;.</li>
+<li>Script: &quot;<strong>~400 signs, right to left, not deciphered</strong>.&quot;</li>
+</ul>
+<h2>Exam Traps</h2>
+<ul>
+<li>The <strong>Harappan script is NOT deciphered</strong> — do not claim any known meaning for specific signs.</li>
+<li><strong>Pashupati seal</strong> is at <strong>Mohenjo-daro</strong>, NOT Harappa.</li>
+<li>Fire altars are <strong>ONLY at Kalibangan</strong>, not a universal Harappan feature.</li>
+<li>The unicorn seal is the <strong>most common</strong> motif — not the bull or elephant.</li>
+</ul>
+<h2>Previous-Year Trend</h2>
+<p>High frequency in MPSC Prelims — seal types (unicorn most common), fire altars (Kalibangan), Pashupati seal (Mohenjo-daro), Harappan script (undeciphered) are repeated MCQ topics. Mains may ask on evidence for religious continuity from Harappan to later Hindu traditions. (Inferred trend.)</p>
+<h2>Questions</h2>
+<p><strong>Prelims (MCQ-style):</strong></p>
+<ol>
+<li>[Asked] The Pashupati seal, depicting a seated figure in yogic posture surrounded by animals, was found at? — <em>Mohenjo-daro</em></li>
+<li>[Expected] What is the most commonly found seal motif in the Indus Valley Civilisation? — <em>Unicorn</em></li>
+<li>[Expected] Fire altars suggesting ritual fire worship were found at which Harappan site? — <em>Kalibangan (Rajasthan)</em></li>
+<li>[Expected] The Harappan script is written in which direction? — <em>Right to left (and remains undeciphered)</em></li>
+<li>[Expected] Harappan seals were predominantly made of? — <em>Steatite (soapstone)</em></li>
+</ol>
+<p><strong>Mains (descriptive):</strong></p>
+<ol>
+<li>[Expected] Discuss the nature of religion in the Harappan civilisation based on archaeological evidence. What elements show possible continuity with later Hindu traditions?</li>
+<li>[Expected] Critically examine the identification of the &#x27;Pashupati seal&#x27; figure as a proto-Shiva deity.</li>
+<li>[Expected] Why does the undeciphered Harappan script pose a fundamental challenge to understanding IVC religion and society?</li>
+</ol>
+<h2>Linkages</h2>
+<ul>
+<li>hist-ivc-town (Great Bath — religious/ritual significance)</li>
+<li>hist-ivc-economy (Seals — trade function)</li>
+<li>hist-ivc-script (Harappan script — detailed)</li>
+<li>hist-ved-early (Vedic religion — comparison/continuity question)</li>
+<li>hist-pre-chalco (Inamgaon terracotta figurines — Jorwe continuity)</li>
+</ul>
+<div class="disclaimer">Study notes generated for MPSC preparation. Cross-check current schemes,
+latest data and exact dates before the exam.</div></main></body></html>

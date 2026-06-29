@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mesolithic age — microliths, rock art — MPSC</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2430;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#6db33f;--accent2:#34804f;--done:#3fb950;--bar-bg:#21262d;--pre:#388bfd;--mains:#d29922;--int:#a371f7;--mh:#3fb950;--chip:#21262d;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:14px 20px}
+.title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.title h1{font-size:20px;margin:0}
+.home{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}.home:hover{border-color:var(--accent);color:var(--text)}
+.logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+.stats{margin-left:auto;font-size:13px;color:var(--muted)}.stats b{color:var(--accent)}
+.progress-wrap{margin-top:10px;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:10px;background:var(--bar-bg);border-radius:99px;overflow:hidden}
+.bar>span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--done));transition:width .35s}
+.pct{font-size:13px;color:var(--muted);min-width:42px;text-align:right}
+.stagebar{margin-top:8px;display:flex;gap:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.toolbar{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px}.tab{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:8px;font-size:13px;cursor:pointer}
+.tab.active{border-color:var(--accent);color:var(--accent)}
+.toolbar input[type=search]{flex:1;min-width:180px;background:var(--panel2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:14px}
+button{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:13px;cursor:pointer}button:hover{border-color:var(--accent)}
+.danger:hover{border-color:#f85149;color:#f85149}
+main{max-width:1040px;margin:0 auto;padding:20px}
+section.sec{margin-bottom:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sec-head{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none;background:var(--panel2)}.sec-head:hover{background:#222b38}
+.sec-head .vname{font-size:16px;font-weight:700}.sec-head .vcount{font-size:12px;color:var(--muted);min-width:48px;text-align:right}
+.sec-head .minibar{margin-left:auto;width:90px;height:7px;background:var(--bar-bg);border-radius:99px;overflow:hidden}.sec-head .minibar>span{display:block;height:100%;width:0;background:var(--done)}
+.sec-head .chev{transition:transform .2s;color:var(--muted)}section.sec.collapsed .chev{transform:rotate(-90deg)}section.sec.collapsed .sec-body{display:none}
+.sec-body{padding:6px 10px 14px}
+.grp{margin:14px 8px 4px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);font-weight:700;border-top:1px solid var(--border);padding-top:12px}.grp:first-child{border-top:none;padding-top:4px}
+ul.topics{list-style:none;margin:0;padding:0}
+li.topic{display:flex;align-items:flex-start;gap:10px;padding:6px 10px;border-radius:8px}li.topic:hover{background:var(--panel2)}
+li.topic input{margin-top:3px;width:16px;height:16px;accent-color:var(--done);cursor:pointer;flex:none}
+li.topic label{cursor:pointer;font-size:14.5px}li.topic.done label{color:var(--muted);text-decoration:line-through}
+.badge{font-size:10px;font-weight:700;padding:1px 6px;border-radius:99px;flex:none;margin-left:4px;vertical-align:middle}
+.b-PRE{background:rgba(56,139,253,.18);color:var(--pre)}.b-MAINS{background:rgba(210,153,34,.18);color:var(--mains)}.b-INT{background:rgba(163,113,247,.18);color:var(--int)}
+.b-MH{background:transparent;color:var(--mh);border:1px solid var(--mh)}
+.hidden{display:none !important}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+@media(max-width:560px){.sec-head .minibar{width:60px}.stats{margin-left:0}}
+
+.content{max-width:820px;margin:0 auto;padding:8px 20px 60px}
+.content h2{font-size:20px;margin:26px 0 8px;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:5px}
+.content h3{font-size:16px;margin:18px 0 6px}
+.content p{margin:8px 0}
+.content ul,.content ol{margin:8px 0 8px 4px;padding-left:22px}
+.content li{margin:4px 0}
+.content code{background:var(--bar-bg);padding:1px 5px;border-radius:5px;color:#79c0ff;font-size:13px}
+.content blockquote{border-left:3px solid var(--accent);margin:10px 0;padding:4px 14px;color:var(--muted)}
+.content table{border-collapse:collapse;margin:12px 0;width:100%;font-size:14px}
+.content th,.content td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+.content th{background:var(--panel2)}
+.content hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+.crumb{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}
+.crumb:hover{border-color:var(--accent);color:var(--text)}
+.disclaimer{margin-top:30px;padding:12px 16px;background:var(--panel);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:12.5px}
+</style></head><body>
+<header><div class="title"><a class="crumb" href="../history.html">← History & Indian Culture</a>
+<div class="logo">H</div></div>
+<h1 style="font-size:21px;margin:10px 0 4px">Mesolithic age — microliths, rock art <span class="badge b-PRE">PRE</span><span class="badge b-MAINS">MAINS</span></h1></header>
+<main class="content"><h2>Overview</h2>
+<p>The <strong>Mesolithic Age</strong> (Middle Stone Age, ~10,000–4,000 BCE in India) bridges the Paleolithic and Neolithic. Its defining features are <strong>microlithic tools</strong> (tiny, geometric stone blades), more sophisticated <strong>rock art</strong>, and the beginning of semi-settled or semi-nomadic life, possibly including early animal domestication. <strong>Bhimbetka</strong> spans both Paleolithic and Mesolithic. MPSC tests on microlithic tool characteristics, key sites (Bagor, Adamgarh), and the transition to food production.</p>
+<h2>In-Depth</h2>
+<h3>Defining Characteristics of Mesolithic</h3>
+<ol>
+<li><strong>Microlithic tools</strong>: Very small (1–5 cm) geometric stone tools — blades, lunates (crescents), triangles, trapezoids. Made from flint, chert, chalcedony. Used as composite tools — inserted into bone or wood handles.</li>
+<li><strong>Rock art</strong>: Continued and expanded from Upper Paleolithic; paintings at Bhimbetka, Adamgarh (MP), Pachmarhi (MP) depict hunting, dancing, community life in vivid polychrome.</li>
+<li><strong>Semi-nomadic/semi-settled</strong>: Groups stayed longer near rivers and water bodies; seasonal camps near food resources.</li>
+<li><strong>Early domestication</strong>: Evidence of early <strong>dog domestication</strong> at Bagor (Rajasthan). Some sites show early cattle/sheep/goat bones — debate on whether herded or hunted.</li>
+<li><strong>Fishing and gathering</strong>: Coastal and riverine Mesolithic communities relied on shellfish, fish, and gathered plant foods (tubers, fruits).</li>
+</ol>
+<h3>Key Sites</h3>
+<table>
+<tr><th>Site</th><th>State/District</th><th>Key Features</th></tr>
+<tr><td>Bhimbetka</td><td>Raisen, Madhya Pradesh</td><td>Rock shelters; paintings dating to Mesolithic; continuity from Paleolithic</td></tr>
+<tr><td>Adamgarh</td><td>Hoshangabad (now Narmadapuram), MP</td><td>Rock paintings; one of the earliest evidence of animal domestication in India</td></tr>
+<tr><td>Bagor</td><td>Bhilwara, Rajasthan</td><td>One of the largest Mesolithic sites; ~5th–2nd millennium BCE; evidence of animal bones; pottery in later phases</td></tr>
+<tr><td>Sarai Nahar Rai</td><td>Pratapgarh, Uttar Pradesh</td><td>Mesolithic burials; microlithic tools; skeletal remains of Mesolithic people</td></tr>
+<tr><td>Mahadaha</td><td>Pratapgarh, UP</td><td>Mesolithic site; burials; fishing implements</td></tr>
+<tr><td>Langhnaj</td><td>Mehsana, Gujarat</td><td>Mesolithic settlement; microlithic tools; faunal remains</td></tr>
+<tr><td>Sanganakallu</td><td>Bellary, Karnataka</td><td>Mesolithic and Neolithic overlap; important for south Indian prehistory</td></tr>
+</table>
+<h3>Mesolithic Rock Art</h3>
+<p>Mesolithic rock paintings at Bhimbetka and Adamgarh are the richest visual record of prehistoric life in India:</p>
+<ul>
+<li><strong>Subjects</strong>: Animals (bison, deer, rhinoceros, elephant), hunting scenes, dancing and ritual scenes, battle scenes between communities.</li>
+<li><strong>Colours</strong>: Red (iron oxide/haematite), white (limestone/gypsum), green (copper ore), yellow (ochre).</li>
+<li><strong>Technique</strong>: Painted with fingers, twigs, or hair brushes.</li>
+<li>Paintings continued to be created over centuries — some are superimposed on earlier paintings, creating stratigraphic layers.</li>
+</ul>
+<h3>Transition to Neolithic</h3>
+<p>The Mesolithic-Neolithic boundary is gradual and varied across India:</p>
+<ul>
+<li>In the <strong>Ganga Plain</strong> (~7th–6th millennium BCE), microlithic industries persisted even as Neolithic settlements emerged.</li>
+<li>In the <strong>Deccan/South India</strong>, Neolithic cultures appear ~3000–2500 BCE; microlithic traditions continued in coastal and forested regions much longer.</li>
+<li>The key shift: Mesolithic people <strong>did not produce food</strong> (they hunted and gathered); Neolithic people <strong>began producing food</strong> (agriculture, herding). Some Mesolithic communities may have had proto-agricultural practices.</li>
+</ul>
+<h3>Physical Characteristics of Mesolithic People</h3>
+<p>Skeletal evidence (Sarai Nahar Rai, Mahadaha, Damdama — all UP):</p>
+<ul>
+<li>Tall stature; long-headed (dolichocephalic); robust; life expectancy ~35 years.</li>
+<li>Lived in open-air camps near rivers.</li>
+<li>Buried their dead in extended position (supine); grave goods (microliths) placed with the dead.</li>
+</ul>
+<h2>Maharashtra Connection</h2>
+<ul>
+<li><strong>Inamgaon and Nevasa</strong> have evidence of Mesolithic occupation layers before their Chalcolithic phase.</li>
+<li>Maharashtra&#x27;s forest zones (Satpuda, Sahyadri) had Mesolithic hunter-gatherer communities that persisted into historical times — some scholars link traits of Mesolithic culture to ancestral practices of modern tribal communities like Katkari and Warli.</li>
+<li>The Deccan&#x27;s microlithic sites are studied primarily by <strong>Deccan College (Pune)</strong> — Maharashtra is the centre of prehistoric research for the region.</li>
+</ul>
+<h2>Key Facts</h2>
+<ul>
+<li>Mesolithic tools: <strong>Microliths</strong> — tiny geometric blades (lunate, triangle, trapezoid).</li>
+<li>Best rock art site: <strong>Bhimbetka</strong> (Mesolithic phase: ~10,000–8,000 BCE paintings onward).</li>
+<li>First evidence of dog domestication in India: <strong>Adamgarh, MP</strong>.</li>
+<li>Largest Mesolithic site: <strong>Bagor, Rajasthan</strong>.</li>
+<li>Mesolithic burials found at: <strong>Sarai Nahar Rai, Mahadaha, Damdama</strong> (all UP).</li>
+<li>Rock painting colours: red (haematite), white (limestone), green (copper ore).</li>
+<li>Period: ~10,000–4,000 BCE in India (varies regionally).</li>
+</ul>
+<h2>Memory Aids</h2>
+<ul>
+<li>&quot;<strong>Micro tools, Mega art</strong>&quot; — Mesolithic = tiny tools + giant rock painting legacy.</li>
+<li>Sites: &quot;<strong>B-A-B-S</strong>&quot; — Bhimbetka, Adamgarh, Bagor, Sarai Nahar Rai.</li>
+<li>Tool shapes: &quot;<strong>LTT</strong>&quot; — Lunate, Triangle, Trapezoid.</li>
+<li>Adamgarh = <strong>Animal domestication evidence</strong> in India (earliest).</li>
+</ul>
+<h2>Exam Traps</h2>
+<ul>
+<li><strong>Bhimbetka</strong> is famous for BOTH Paleolithic and Mesolithic — don&#x27;t assign it exclusively to one period.</li>
+<li>Microliths are <strong>Mesolithic</strong> tools; do NOT call them Paleolithic. Paleolithic tools are large (handaxe, cleaver).</li>
+<li>Adamgarh is in <strong>Madhya Pradesh (Hoshangabad)</strong>, NOT in Rajasthan — easy confusion with Bagor.</li>
+<li>Mesolithic people were <strong>NOT farmers</strong> — agriculture is Neolithic. Some had proto-herding, but full food production came only in Neolithic.</li>
+</ul>
+<h2>Previous-Year Trend</h2>
+<p>MPSC Prelims asks definition of microliths, site identification for Mesolithic, and rock art facts. Sometimes asks which site has earliest animal domestication evidence. Mains may ask for a comparative chronological table of prehistoric ages. (Inferred trend.)</p>
+<h2>Questions</h2>
+<p><strong>Prelims (MCQ-style):</strong></p>
+<ol>
+<li>[Expected] The characteristic stone tool of the Mesolithic Age is? — <em>Microlith (geometric: lunate, triangle, trapezoid)</em></li>
+<li>[Expected] Which site in India has the earliest evidence of domestication of animals in the Mesolithic period? — <em>Adamgarh, Hoshangabad, Madhya Pradesh</em></li>
+<li>[Expected] The Mesolithic rock paintings found at Bhimbetka were made predominantly with which colour? — <em>Red (ochre/haematite)</em></li>
+<li>[Expected] Sarai Nahar Rai and Mahadaha, famous for Mesolithic burials, are located in which state? — <em>Uttar Pradesh (Pratapgarh)</em></li>
+<li>[Expected] The largest known Mesolithic site in India is? — <em>Bagor, Rajasthan</em></li>
+</ol>
+<p><strong>Mains (descriptive):</strong></p>
+<ol>
+<li>[Expected] Describe the main features of the Mesolithic Age in India with emphasis on tool technology and rock art.</li>
+<li>[Expected] How does Mesolithic evidence help us understand the transition from food-gathering to food-producing economies in India?</li>
+</ol>
+<h2>Linkages</h2>
+<ul>
+<li>hist-pre-paleolithic (Paleolithic — preceding phase)</li>
+<li>hist-pre-neolithic (Neolithic — subsequent phase; agriculture)</li>
+<li>hist-src-archaeo (Archaeological sources — tool typology, excavation)</li>
+<li>hist-pre-chalco (Chalcolithic — Maharashtra Jorwe culture)</li>
+</ul>
+<div class="disclaimer">Study notes generated for MPSC preparation. Cross-check current schemes,
+latest data and exact dates before the exam.</div></main></body></html>
