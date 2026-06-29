@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indo-Islamic architecture — MPSC</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2430;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#6db33f;--accent2:#34804f;--done:#3fb950;--bar-bg:#21262d;--pre:#388bfd;--mains:#d29922;--int:#a371f7;--mh:#3fb950;--chip:#21262d;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:14px 20px}
+.title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.title h1{font-size:20px;margin:0}
+.home{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}.home:hover{border-color:var(--accent);color:var(--text)}
+.logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+.stats{margin-left:auto;font-size:13px;color:var(--muted)}.stats b{color:var(--accent)}
+.progress-wrap{margin-top:10px;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:10px;background:var(--bar-bg);border-radius:99px;overflow:hidden}
+.bar>span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--done));transition:width .35s}
+.pct{font-size:13px;color:var(--muted);min-width:42px;text-align:right}
+.stagebar{margin-top:8px;display:flex;gap:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.toolbar{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px}.tab{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:8px;font-size:13px;cursor:pointer}
+.tab.active{border-color:var(--accent);color:var(--accent)}
+.toolbar input[type=search]{flex:1;min-width:180px;background:var(--panel2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:14px}
+button{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:13px;cursor:pointer}button:hover{border-color:var(--accent)}
+.danger:hover{border-color:#f85149;color:#f85149}
+main{max-width:1040px;margin:0 auto;padding:20px}
+section.sec{margin-bottom:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sec-head{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none;background:var(--panel2)}.sec-head:hover{background:#222b38}
+.sec-head .vname{font-size:16px;font-weight:700}.sec-head .vcount{font-size:12px;color:var(--muted);min-width:48px;text-align:right}
+.sec-head .minibar{margin-left:auto;width:90px;height:7px;background:var(--bar-bg);border-radius:99px;overflow:hidden}.sec-head .minibar>span{display:block;height:100%;width:0;background:var(--done)}
+.sec-head .chev{transition:transform .2s;color:var(--muted)}section.sec.collapsed .chev{transform:rotate(-90deg)}section.sec.collapsed .sec-body{display:none}
+.sec-body{padding:6px 10px 14px}
+.grp{margin:14px 8px 4px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);font-weight:700;border-top:1px solid var(--border);padding-top:12px}.grp:first-child{border-top:none;padding-top:4px}
+ul.topics{list-style:none;margin:0;padding:0}
+li.topic{display:flex;align-items:flex-start;gap:10px;padding:6px 10px;border-radius:8px}li.topic:hover{background:var(--panel2)}
+li.topic input{margin-top:3px;width:16px;height:16px;accent-color:var(--done);cursor:pointer;flex:none}
+li.topic label{cursor:pointer;font-size:14.5px}li.topic.done label{color:var(--muted);text-decoration:line-through}
+.badge{font-size:10px;font-weight:700;padding:1px 6px;border-radius:99px;flex:none;margin-left:4px;vertical-align:middle}
+.b-PRE{background:rgba(56,139,253,.18);color:var(--pre)}.b-MAINS{background:rgba(210,153,34,.18);color:var(--mains)}.b-INT{background:rgba(163,113,247,.18);color:var(--int)}
+.b-MH{background:transparent;color:var(--mh);border:1px solid var(--mh)}
+.hidden{display:none !important}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+@media(max-width:560px){.sec-head .minibar{width:60px}.stats{margin-left:0}}
+
+.content{max-width:820px;margin:0 auto;padding:8px 20px 60px}
+.content h2{font-size:20px;margin:26px 0 8px;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:5px}
+.content h3{font-size:16px;margin:18px 0 6px}
+.content p{margin:8px 0}
+.content ul,.content ol{margin:8px 0 8px 4px;padding-left:22px}
+.content li{margin:4px 0}
+.content code{background:var(--bar-bg);padding:1px 5px;border-radius:5px;color:#79c0ff;font-size:13px}
+.content blockquote{border-left:3px solid var(--accent);margin:10px 0;padding:4px 14px;color:var(--muted)}
+.content table{border-collapse:collapse;margin:12px 0;width:100%;font-size:14px}
+.content th,.content td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+.content th{background:var(--panel2)}
+.content hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+.crumb{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}
+.crumb:hover{border-color:var(--accent);color:var(--text)}
+.disclaimer{margin-top:30px;padding:12px 16px;background:var(--panel);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:12.5px}
+</style></head><body>
+<header><div class="title"><a class="crumb" href="../history.html">← History & Indian Culture</a>
+<div class="logo">H</div></div>
+<h1 style="font-size:21px;margin:10px 0 4px">Indo-Islamic architecture <span class="badge b-PRE">PRE</span><span class="badge b-MAINS">MAINS</span></h1></header>
+<main class="content"><h2>Overview</h2>
+<p><strong>Indo-Islamic architecture</strong> emerged from the fusion of Central Asian–Persian building traditions with indigenous Indian craftsmanship after the establishment of the Delhi Sultanate (1206). It introduced the <strong>true arch, true dome, minaret and geometric ornamentation</strong> to India, evolving through distinct Sultanate, Provincial Sultanate and Mughal phases. MPSC asks about key monuments, their patrons, and stylistic features in both Prelims and Mains.</p>
+<h2>In-Depth</h2>
+<h3>Defining Features of Indo-Islamic Style</h3>
+<p>Indo-Islamic architecture broke from earlier temple traditions in three core ways:</p>
+<ol>
+<li><strong>Structural</strong> — true arch (keystone) and true dome replaced the corbelled arch and post-and-beam of Hindu-Buddhist structures.</li>
+<li><strong>Decorative</strong> — geometric (arabesque), floral, and calligraphic ornamentation replaced figural sculpture (Islamic prohibition).</li>
+<li><strong>Material</strong> — extensive use of <strong>lime mortar</strong> (compared to dry-masonry of temples) and reuse of Hindu–Jain temple material (<em>spolia</em>) in early Sultanate buildings.</li>
+</ol>
+<h3>Early Sultanate Phase (1206–1320) — Slave &amp; Khilji</h3>
+<ul>
+<li><strong>Quwwat-ul-Islam Mosque, Delhi (1193)</strong> — oldest surviving mosque in India; built by <strong>Qutb-ud-din Aibak</strong> using material from 27 Hindu/Jain temples. Features the famous <strong>Iron Pillar</strong> (Gupta era, 4th c. CE).</li>
+<li><strong>Qutb Minar, Delhi</strong> — begun by Aibak, completed by <strong>Iltutmish</strong>; 5 storeys, 72.5 m; UNESCO World Heritage Site. Each storey uses alternating angular/round fluting.</li>
+<li><strong>Iltutmish&#x27;s Tomb</strong> (1235) — first Islamic tomb in India; geometric star-pattern ceiling.</li>
+<li><strong>Alai Darwaza (1311)</strong> by Alauddin Khilji — first true dome in Indian architecture; red sandstone with white marble inlay; honeycomb squinch (pendentive) technique.</li>
+</ul>
+<h3>Tughlaq Phase (1320–1414)</h3>
+<p>Characterised by austerity: <strong>massive sloped walls (batter), rubble masonry, grey sandstone</strong>, absence of elaborate ornamentation.</p>
+<ul>
+<li><strong>Tughlaqabad Fort</strong> — Ghiyasuddin Tughlaq&#x27;s fortified city; first garrison-capital.</li>
+<li><strong>Firuzabad</strong> — Firuz Shah Tughlaq&#x27;s new city; Ashokan pillars transported here.</li>
+<li><strong>Khirki Mosque and Begumpur Mosque</strong> — major congregational mosques of the Tughlaq period.</li>
+</ul>
+<h3>Lodi and Sayyid Phase (1414–1526)</h3>
+<ul>
+<li>Octagonal tomb popularised: <strong>Lodi Gardens, Delhi</strong> contains tombs of Sayyid and Lodi rulers; octagonal plan with high drum allows better dome proportions.</li>
+<li><strong>Moth ki Masjid</strong> (Ibrahim Lodi era) — refined ornamentation.</li>
+</ul>
+<h3>Provincial Sultanate Architecture</h3>
+<p>Beyond Delhi, distinct regional styles developed:</p>
+<table>
+<tr><th>Region/Sultanate</th><th>Style Feature</th><th>Key Monument</th></tr>
+<tr><td>Bengal (Ilyas Shahi)</td><td>Curved roof (bangla roof), local brick</td><td>Adina Mosque, Pandua</td></tr>
+<tr><td>Gujarat (Muzaffarid)</td><td>Perforated stone jali screens, corbelled brackets</td><td>Jama Masjid Ahmedabad</td></tr>
+<tr><td>Malwa (Khalji)</td><td>Massive pylons, local yellow stone</td><td>Jahaz Mahal, Mandu</td></tr>
+<tr><td>Bijapur (Adil Shahi)</td><td>Large dome, decorative plasterwork</td><td>Gol Gumbaz (1656) — largest dome in India</td></tr>
+<tr><td>Bidar (Bahmani)</td><td>Persian tilework, Bidri metalwork link</td><td>Madrasa of Mahmud Gawan</td></tr>
+</table>
+<h3>Transition to Mughal Style</h3>
+<p>The <strong>Lodi→Mughal</strong> transition brought two key innovations: use of <strong>red sandstone as primary material</strong> (Sher Shah Suri&#x27;s Qila-i-Kuhna Mosque, 1541) and introduction of <strong>double dome</strong> (outer shell for profile, inner for interior space). The Mughal period perfected these into marble inlay and charbagh gardens.</p>
+<h2>Maharashtra Connection</h2>
+<p><strong>Bijapur (present-day Karnataka but formerly within the Deccan Sultanate sphere)</strong> and <strong>Bidar</strong> are architecturally significant for the Deccan style. Within Maharashtra, the <strong>Daulatabad Fort (Devgiri)</strong> shows Islamic additions to a Yadava base — Chand Minar (1445) at Daulatabad is a notable minaret. <strong>Aurangabad caves</strong> and <strong>Bibi Ka Maqbara (1660)</strong> — the &quot;Taj of the Deccan&quot; — are major examples of Mughal-Deccani synthesis within present Maharashtra.</p>
+<h2>Key Facts</h2>
+<ul>
+<li>Oldest mosque in India: <strong>Quwwat-ul-Islam (1193)</strong> by Qutb-ud-din Aibak.</li>
+<li>Qutb Minar height: <strong>72.5 m</strong>, completed by Iltutmish.</li>
+<li>First true dome in India: <strong>Alai Darwaza (1311)</strong>, Alauddin Khilji.</li>
+<li>Largest pre-Mughal dome: <strong>Gol Gumbaz, Bijapur (1656)</strong> — diameter 44 m; famous whispering gallery.</li>
+<li>Tughlaq style hallmark: <strong>sloped/battered walls, grey stone, austerity</strong>.</li>
+<li>Provincial style with jali screens: <strong>Gujarat Sultanate</strong>.</li>
+<li>Double dome introduced by: Mughal period (first major use at <strong>Humayun&#x27;s Tomb, 1570</strong>).</li>
+<li>Chand Minar at <strong>Daulatabad (Maharashtra)</strong> built 1445.</li>
+</ul>
+<h2>Memory Aids</h2>
+<ul>
+<li>Sultanate arch progression: <strong>&quot;Corbelled → Alai Darwaza (true arch, 1311) → Double dome (Humayun)&quot;</strong>.</li>
+<li>Qutb Minar = <strong>Q = Qutb-ud-din started, Iltutmish finished</strong>.</li>
+<li>Gol Gumbaz = <strong>&quot;Gol = round, biggest dome, Bijapur, Adil Shahi&quot;</strong>.</li>
+<li>Tughlaq = <strong>&quot;Tough and grey&quot;</strong> (austerity, grey stone).</li>
+</ul>
+<h2>Exam Traps</h2>
+<ul>
+<li><strong>Qutb Minar was started by Aibak but completed by Iltutmish</strong> — questions often ask who &quot;built&quot; it; both names appear in options.</li>
+<li><strong>Alai Darwaza (1311) ≠ Alai Minar</strong> — Alauddin also began a much taller second minaret (Alai Minar) but it was never completed.</li>
+<li><strong>Gol Gumbaz is in Bijapur (Karnataka), not Aurangabad</strong> — don&#x27;t confuse with Bibi Ka Maqbara.</li>
+<li>The <strong>Iron Pillar</strong> in the Quwwat-ul-Islam complex is <strong>Gupta period, not Sultanate</strong> — it predates the mosque by ~800 years.</li>
+</ul>
+<h2>Previous-Year Trend</h2>
+<p>Moderate frequency in MPSC Prelims as factual MCQs — key patrons and dates for Qutb Minar, Alai Darwaza, Gol Gumbaz. Mains: &quot;Discuss the distinctive features of Indo-Islamic architecture&quot; is a recurring GS Paper 1 question. Cave and stupa architecture compared with Indo-Islamic is also asked. (Inferred trend.)</p>
+<h2>Questions</h2>
+<p><strong>Prelims (MCQ-style):</strong></p>
+<ol>
+<li>[Asked] The Qutb Minar was completed by which ruler? — <em>Iltutmish</em></li>
+<li>[Asked] The first true dome in Indian architecture was used in which building? — <em>Alai Darwaza (1311)</em></li>
+<li>[Expected] Gol Gumbaz is the tomb of which ruler? — <em>Muhammad Adil Shah of Bijapur</em></li>
+<li>[Expected] Which architectural feature distinguishes Tughlaq-period buildings from earlier Sultanate buildings? — <em>Sloped/battered walls and austere grey sandstone</em></li>
+<li>[Expected] The Quwwat-ul-Islam mosque was built by? — <em>Qutb-ud-din Aibak (1193)</em></li>
+</ol>
+<p><strong>Mains (descriptive):</strong></p>
+<ol>
+<li>[Expected] Describe the chief features of Indo-Islamic architecture and explain how it differed from earlier Indian architectural traditions. (~200 words)</li>
+<li>[Expected] Trace the evolution of Indo-Islamic architecture from the Slave dynasty to the Lodi period, highlighting stylistic changes.</li>
+<li>[Expected] What role did provincial Sultanates play in diversifying Indo-Islamic architectural styles?</li>
+</ol>
+<h2>Linkages</h2>
+<ul>
+<li>hist-art-temple (Temple architecture — Nagara, Dravida for comparison)</li>
+<li>hist-mug-art (Mughal art and architecture — continuation)</li>
+<li>hist-ds-bahmani (Bidar/Bijapur architectural heritage)</li>
+<li>hist-art-cave (Ajanta, Ellora — contrasting Buddhist/Hindu tradition)</li>
+</ul>
+<div class="disclaimer">Study notes generated for MPSC preparation. Cross-check current schemes,
+latest data and exact dates before the exam.</div></main></body></html>

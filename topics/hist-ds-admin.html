@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sultanate administration, economy, society — MPSC</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2430;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#6db33f;--accent2:#34804f;--done:#3fb950;--bar-bg:#21262d;--pre:#388bfd;--mains:#d29922;--int:#a371f7;--mh:#3fb950;--chip:#21262d;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:14px 20px}
+.title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.title h1{font-size:20px;margin:0}
+.home{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}.home:hover{border-color:var(--accent);color:var(--text)}
+.logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+.stats{margin-left:auto;font-size:13px;color:var(--muted)}.stats b{color:var(--accent)}
+.progress-wrap{margin-top:10px;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:10px;background:var(--bar-bg);border-radius:99px;overflow:hidden}
+.bar>span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--done));transition:width .35s}
+.pct{font-size:13px;color:var(--muted);min-width:42px;text-align:right}
+.stagebar{margin-top:8px;display:flex;gap:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.toolbar{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px}.tab{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:8px;font-size:13px;cursor:pointer}
+.tab.active{border-color:var(--accent);color:var(--accent)}
+.toolbar input[type=search]{flex:1;min-width:180px;background:var(--panel2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:14px}
+button{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:13px;cursor:pointer}button:hover{border-color:var(--accent)}
+.danger:hover{border-color:#f85149;color:#f85149}
+main{max-width:1040px;margin:0 auto;padding:20px}
+section.sec{margin-bottom:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sec-head{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none;background:var(--panel2)}.sec-head:hover{background:#222b38}
+.sec-head .vname{font-size:16px;font-weight:700}.sec-head .vcount{font-size:12px;color:var(--muted);min-width:48px;text-align:right}
+.sec-head .minibar{margin-left:auto;width:90px;height:7px;background:var(--bar-bg);border-radius:99px;overflow:hidden}.sec-head .minibar>span{display:block;height:100%;width:0;background:var(--done)}
+.sec-head .chev{transition:transform .2s;color:var(--muted)}section.sec.collapsed .chev{transform:rotate(-90deg)}section.sec.collapsed .sec-body{display:none}
+.sec-body{padding:6px 10px 14px}
+.grp{margin:14px 8px 4px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);font-weight:700;border-top:1px solid var(--border);padding-top:12px}.grp:first-child{border-top:none;padding-top:4px}
+ul.topics{list-style:none;margin:0;padding:0}
+li.topic{display:flex;align-items:flex-start;gap:10px;padding:6px 10px;border-radius:8px}li.topic:hover{background:var(--panel2)}
+li.topic input{margin-top:3px;width:16px;height:16px;accent-color:var(--done);cursor:pointer;flex:none}
+li.topic label{cursor:pointer;font-size:14.5px}li.topic.done label{color:var(--muted);text-decoration:line-through}
+.badge{font-size:10px;font-weight:700;padding:1px 6px;border-radius:99px;flex:none;margin-left:4px;vertical-align:middle}
+.b-PRE{background:rgba(56,139,253,.18);color:var(--pre)}.b-MAINS{background:rgba(210,153,34,.18);color:var(--mains)}.b-INT{background:rgba(163,113,247,.18);color:var(--int)}
+.b-MH{background:transparent;color:var(--mh);border:1px solid var(--mh)}
+.hidden{display:none !important}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+@media(max-width:560px){.sec-head .minibar{width:60px}.stats{margin-left:0}}
+
+.content{max-width:820px;margin:0 auto;padding:8px 20px 60px}
+.content h2{font-size:20px;margin:26px 0 8px;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:5px}
+.content h3{font-size:16px;margin:18px 0 6px}
+.content p{margin:8px 0}
+.content ul,.content ol{margin:8px 0 8px 4px;padding-left:22px}
+.content li{margin:4px 0}
+.content code{background:var(--bar-bg);padding:1px 5px;border-radius:5px;color:#79c0ff;font-size:13px}
+.content blockquote{border-left:3px solid var(--accent);margin:10px 0;padding:4px 14px;color:var(--muted)}
+.content table{border-collapse:collapse;margin:12px 0;width:100%;font-size:14px}
+.content th,.content td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+.content th{background:var(--panel2)}
+.content hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+.crumb{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}
+.crumb:hover{border-color:var(--accent);color:var(--text)}
+.disclaimer{margin-top:30px;padding:12px 16px;background:var(--panel);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:12.5px}
+</style></head><body>
+<header><div class="title"><a class="crumb" href="../history.html">← History & Indian Culture</a>
+<div class="logo">H</div></div>
+<h1 style="font-size:21px;margin:10px 0 4px">Sultanate administration, economy, society <span class="badge b-PRE">PRE</span><span class="badge b-MAINS">MAINS</span></h1></header>
+<main class="content"><h2>Overview</h2>
+<p><strong>Delhi Sultanate administration (1206–1526)</strong> shaped north India&#x27;s governance for three centuries under five dynasties — Slave, Khilji, Tughlaq, Sayyid and Lodi. It introduced a Persian-Turkic administrative model overlaid on existing Indian structures, creating institutions (Iqta, Diwan-i-Wizarat) that influenced later Mughal governance. MPSC asks both factual MCQs (ministries, taxes) and Mains questions on the socioeconomic impact of Sultanate rule.</p>
+<h2>In-Depth</h2>
+<h3>Central Administration</h3>
+<p>The Sultan was the supreme authority — head of state, army and judiciary. He was aided by four key ministries:</p>
+<table>
+<tr><th>Ministry (Diwan)</th><th>Head</th><th>Function</th></tr>
+<tr><td>Diwan-i-Wizarat</td><td>Wazir</td><td>Finance; the most powerful minister</td></tr>
+<tr><td>Diwan-i-Ariz</td><td>Ariz-i-Mumalik</td><td>Military affairs (not Commander-in-Chief)</td></tr>
+<tr><td>Diwan-i-Insha</td><td>Dabir-i-Khas</td><td>Royal correspondence and decrees</td></tr>
+<tr><td>Diwan-i-Risalat</td><td>Chief Sadr</td><td>Religious affairs, grants, appeals</td></tr>
+</table>
+<p>Alauddin Khilji added <strong>Diwan-i-Mustakhraj</strong> (a special department to recover revenue arrears) and strengthened the <strong>Diwan-i-Bandagan</strong> for slave management.</p>
+<h3>Provincial and Local Administration</h3>
+<ul>
+<li><strong>Iqta system</strong> — the Sultanate&#x27;s defining fiscal-administrative tool. The Sultan assigned <em>iqta</em> (revenue-yielding territories) to military officers (<em>muqtis/walis</em>) in lieu of cash salary. They collected revenue, maintained troops, and remitted surplus to the centre. <strong>Iltutmish</strong> systematised the iqta; <strong>Alauddin</strong> attempted to pay soldiers in cash and curtail iqta abuses; <strong>Muhammad bin Tughlaq</strong> revived and expanded it.</li>
+<li>Below the province (<em>iqta</em>): <strong>shiq</strong> (district), <strong>pargana</strong>, and <strong>village</strong> (headed by <em>muqaddam</em>).</li>
+<li>Chief village officer: <em>Patwari</em> maintained land records; <em>Chowdhury</em> assisted revenue collection.</li>
+</ul>
+<h3>Revenue and Economy</h3>
+<p>Land revenue (<em>kharaj</em>) was the principal resource, typically <strong>1/3 to 1/2 of produce</strong> depending on ruler and region. Under <strong>Alauddin Khilji</strong> it was fixed at <strong>50% of produce</strong> for the doab area. Other taxes:</p>
+<ul>
+<li><strong>Jizya</strong> — poll tax on non-Muslims; later abolished by Akbar.</li>
+<li><strong>Zakat</strong> — 2.5% wealth tax on Muslims.</li>
+<li><strong>Khamsa</strong> — 1/5 of war booty to the state; 4/5 to soldiers.</li>
+</ul>
+<p><strong>Alauddin Khilji&#x27;s market reforms (Sabazon ka Bazar, Kapra Bazar, Mandi)</strong> fixed prices for grain, cloth and cattle — a pioneering attempt at price control recorded in detail by Ziauddin Barani&#x27;s <em>Tarikh-i-Firuz Shahi</em>.</p>
+<p><strong>Firuz Shah Tughlaq</strong> created vast irrigation infrastructure — four major canals including the <strong>Rajput Canal</strong> from Sutlej; introduced agriculture grants (<em>takkavi</em> loans) and prohibited illegal taxes (over 20 unauthorised cesses removed). He also instituted a public works department (<em>Diwan-i-Khairat</em>).</p>
+<h3>Society</h3>
+<ul>
+<li><strong>Three-tier social order</strong>: Turkish/Afghan ruling nobility; ulema (Islamic scholars, judges); Hindu majority (peasants, artisans, traders).</li>
+<li><strong>Slavery</strong> was institutionalised — Iltutmish himself was a slave; the Slave dynasty&#x27;s power rested on trained Turkish and Abyssinian slaves (<em>bandagan-i-khas</em>).</li>
+<li>Alauddin tried to break the hold of the four pillars of power: <strong>wealth, heredity, espionage, and marriage alliances</strong> — imposing stringent rules forbidding nobles from intermarrying without royal consent.</li>
+<li>Trade flourished under the Sultanate: Arab and Central Asian merchants, Indian guilds (<em>shrenis</em>), and the growth of Delhi, Lahore, and Daulatabad as commercial hubs.</li>
+</ul>
+<h3>Judiciary</h3>
+<ul>
+<li><strong>Qazi-ul-Quzat</strong> (Chief Justice) applied Sharia law.</li>
+<li><strong>Muhtasibs</strong> enforced public morality.</li>
+<li>The Sultan also dispensed justice personally (<em>mazalim</em> court — court of complaints).</li>
+<li>Non-Muslims followed their own personal law administered by Hindu <em>panchayas</em> or village councils, with Sultanate courts handling criminal and revenue matters.</li>
+</ul>
+<h2>Maharashtra Connection</h2>
+<p>The Deccan came under Sultanate influence primarily under <strong>Muhammad bin Tughlaq</strong> who shifted the capital to <strong>Daulatabad (Devgiri)</strong> in 1327 — a short-lived experiment affecting Maharashtra directly. The break-up of Tughlaq power in the Deccan led to the <strong>Bahmani Sultanate (1347)</strong> headquartered in Gulbarga (present-day Karnataka/Maharashtra region). The Yadava kingdom of Devgiri (Maharashtra&#x27;s medieval successor to Rashtrakutas) was subjugated by <strong>Alauddin Khilji</strong> in 1296.</p>
+<h2>Key Facts</h2>
+<ul>
+<li>Four key ministries: <strong>Wizarat, Ariz, Insha, Risalat</strong>.</li>
+<li>Iqta system systematised by <strong>Iltutmish</strong>.</li>
+<li>Alauddin&#x27;s kharaj: <strong>50%</strong> of produce in the doab.</li>
+<li>Market reforms by Alauddin: three main <em>mandis</em> (grain, cloth, cattle).</li>
+<li>Capital shifted to Daulatabad: <strong>Muhammad bin Tughlaq, 1327</strong>.</li>
+<li>Firuz Tughlaq&#x27;s canals: <strong>4 major canals</strong> from Yamuna and Sutlej.</li>
+<li>Jizya abolished later by <strong>Akbar (1564)</strong>.</li>
+<li>Chief Justice title: <strong>Qazi-ul-Quzat</strong>.</li>
+</ul>
+<h2>Memory Aids</h2>
+<ul>
+<li>Four ministries → <strong>&quot;WAIR&quot;</strong>: Wizarat, Ariz, Insha, Risalat.</li>
+<li>Iqta → <strong>&quot;I-L-A-M-F&quot;</strong>: Introduced (Iltutmish), Abused (Alauddin reformed it), Muhammad expanded, Firuz continued.</li>
+<li>Alauddin&#x27;s 3 sabzis = 3 markets: <strong>grain, cloth, cattle</strong>.</li>
+</ul>
+<h2>Exam Traps</h2>
+<ul>
+<li><strong>Ariz-i-Mumalik was NOT the Commander-in-Chief</strong> — he administered the army but the Sultan commanded; don&#x27;t confuse with Senapati.</li>
+<li><strong>Iqta ≠ jagir</strong>: Iqta was in theory revocable/transferable and assigned revenue rights (not land ownership); jagir (Mughal) was later and more hereditary.</li>
+<li>Firuz Shah Tughlaq is often misread as a reformer ignoring his reinstatement of jizya (he extended it to Brahmins who had earlier been exempt).</li>
+<li>Muhammad bin Tughlaq shifted capital to <strong>Daulatabad (not Deogiri separately)</strong> — same fort renamed.</li>
+</ul>
+<h2>Previous-Year Trend</h2>
+<p>Moderate-to-high frequency. Prelims: factual MCQs on ministries, market reforms, iqta, jizya. Mains: Alauddin Khilji&#x27;s economic reforms and Firuz Tughlaq&#x27;s welfare measures appear as standalone 150-word questions. The &quot;social structure under the Sultanate&quot; is a recurring Mains theme. (Inferred trend.)</p>
+<h2>Questions</h2>
+<p><strong>Prelims (MCQ-style):</strong></p>
+<ol>
+<li>[Asked] Which department of the Delhi Sultanate dealt with military affairs? — <em>Diwan-i-Ariz</em></li>
+<li>[Asked] Alauddin Khilji&#x27;s price-control markets were supervised by which officer? — <em>Shahna-i-Mandi (market controller)</em></li>
+<li>[Expected] The Iqta system was systematised under which ruler? — <em>Iltutmish</em></li>
+<li>[Expected] Which tax was levied on non-Muslims under the Delhi Sultanate? — <em>Jizya</em></li>
+<li>[Expected] The capital city of Daulatabad (Devgiri) was developed by which Sultan? — <em>Muhammad bin Tughlaq</em></li>
+</ol>
+<p><strong>Mains (descriptive):</strong></p>
+<ol>
+<li>[Expected] Critically assess Alauddin Khilji&#x27;s revenue and market reforms. What were their limitations? (~150 words)</li>
+<li>[Expected] How did the Iqta system function as the administrative backbone of the Delhi Sultanate?</li>
+<li>[Expected] Evaluate the contributions of Firuz Shah Tughlaq to public welfare and administration.</li>
+</ol>
+<h2>Linkages</h2>
+<ul>
+<li>hist-ds-khilji (Alauddin Khilji)</li>
+<li>hist-ds-tughlaq (Tughlaq dynasty)</li>
+<li>hist-mug-admin (Mughal administration — parallel evolution)</li>
+<li>hist-ds-bahmani (Deccan successor states)</li>
+</ul>
+<div class="disclaimer">Study notes generated for MPSC preparation. Cross-check current schemes,
+latest data and exact dates before the exam.</div></main></body></html>
