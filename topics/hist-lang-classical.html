@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classical languages of India (incl. Marathi) — MPSC</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2430;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#6db33f;--accent2:#34804f;--done:#3fb950;--bar-bg:#21262d;--pre:#388bfd;--mains:#d29922;--int:#a371f7;--mh:#3fb950;--chip:#21262d;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:14px 20px}
+.title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.title h1{font-size:20px;margin:0}
+.home{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}.home:hover{border-color:var(--accent);color:var(--text)}
+.logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+.stats{margin-left:auto;font-size:13px;color:var(--muted)}.stats b{color:var(--accent)}
+.progress-wrap{margin-top:10px;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:10px;background:var(--bar-bg);border-radius:99px;overflow:hidden}
+.bar>span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--done));transition:width .35s}
+.pct{font-size:13px;color:var(--muted);min-width:42px;text-align:right}
+.stagebar{margin-top:8px;display:flex;gap:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.toolbar{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px}.tab{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:8px;font-size:13px;cursor:pointer}
+.tab.active{border-color:var(--accent);color:var(--accent)}
+.toolbar input[type=search]{flex:1;min-width:180px;background:var(--panel2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:14px}
+button{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:13px;cursor:pointer}button:hover{border-color:var(--accent)}
+.danger:hover{border-color:#f85149;color:#f85149}
+main{max-width:1040px;margin:0 auto;padding:20px}
+section.sec{margin-bottom:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sec-head{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none;background:var(--panel2)}.sec-head:hover{background:#222b38}
+.sec-head .vname{font-size:16px;font-weight:700}.sec-head .vcount{font-size:12px;color:var(--muted);min-width:48px;text-align:right}
+.sec-head .minibar{margin-left:auto;width:90px;height:7px;background:var(--bar-bg);border-radius:99px;overflow:hidden}.sec-head .minibar>span{display:block;height:100%;width:0;background:var(--done)}
+.sec-head .chev{transition:transform .2s;color:var(--muted)}section.sec.collapsed .chev{transform:rotate(-90deg)}section.sec.collapsed .sec-body{display:none}
+.sec-body{padding:6px 10px 14px}
+.grp{margin:14px 8px 4px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);font-weight:700;border-top:1px solid var(--border);padding-top:12px}.grp:first-child{border-top:none;padding-top:4px}
+ul.topics{list-style:none;margin:0;padding:0}
+li.topic{display:flex;align-items:flex-start;gap:10px;padding:6px 10px;border-radius:8px}li.topic:hover{background:var(--panel2)}
+li.topic input{margin-top:3px;width:16px;height:16px;accent-color:var(--done);cursor:pointer;flex:none}
+li.topic label{cursor:pointer;font-size:14.5px}li.topic.done label{color:var(--muted);text-decoration:line-through}
+.badge{font-size:10px;font-weight:700;padding:1px 6px;border-radius:99px;flex:none;margin-left:4px;vertical-align:middle}
+.b-PRE{background:rgba(56,139,253,.18);color:var(--pre)}.b-MAINS{background:rgba(210,153,34,.18);color:var(--mains)}.b-INT{background:rgba(163,113,247,.18);color:var(--int)}
+.b-MH{background:transparent;color:var(--mh);border:1px solid var(--mh)}
+.hidden{display:none !important}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+@media(max-width:560px){.sec-head .minibar{width:60px}.stats{margin-left:0}}
+
+.content{max-width:820px;margin:0 auto;padding:8px 20px 60px}
+.content h2{font-size:20px;margin:26px 0 8px;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:5px}
+.content h3{font-size:16px;margin:18px 0 6px}
+.content p{margin:8px 0}
+.content ul,.content ol{margin:8px 0 8px 4px;padding-left:22px}
+.content li{margin:4px 0}
+.content code{background:var(--bar-bg);padding:1px 5px;border-radius:5px;color:#79c0ff;font-size:13px}
+.content blockquote{border-left:3px solid var(--accent);margin:10px 0;padding:4px 14px;color:var(--muted)}
+.content table{border-collapse:collapse;margin:12px 0;width:100%;font-size:14px}
+.content th,.content td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+.content th{background:var(--panel2)}
+.content hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+.crumb{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}
+.crumb:hover{border-color:var(--accent);color:var(--text)}
+.disclaimer{margin-top:30px;padding:12px 16px;background:var(--panel);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:12.5px}
+</style></head><body>
+<header><div class="title"><a class="crumb" href="../history.html">← History & Indian Culture</a>
+<div class="logo">H</div></div>
+<h1 style="font-size:21px;margin:10px 0 4px">Classical languages of India (incl. Marathi) <span class="badge b-PRE">PRE</span><span class="badge b-MAINS">MAINS</span><span class="badge b-MH">MH</span></h1></header>
+<main class="content"><h2>Overview</h2>
+<p><strong>Classical language status</strong> in India is granted by the Government of India to languages meeting specific criteria of antiquity, large body of original literature, and distinct character from modern languages. Currently <strong>6 languages</strong> have classical status: Sanskrit, Tamil, Kannada, Telugu, Malayalam, and <strong>Marathi</strong> (2024). This topic is extremely high-priority for MPSC — Marathi&#x27;s recognition as a classical language is a direct Maharashtra-specific current affairs fact. The topic also covers India&#x27;s 22 Scheduled Languages (8th Schedule) and the three-language formula.</p>
+<h2>In-Depth</h2>
+<h3>Classical Languages of India</h3>
+<p><strong>Criteria for Classical Language Status</strong> (as revised):</p>
+<ol>
+<li>High antiquity of its early texts/recorded history over a period of <strong>1,500–2,000 years</strong>.</li>
+<li>A body of ancient literature/texts, which is considered a <strong>valuable heritage</strong>.</li>
+<li>The literary tradition should be <strong>original</strong> and not borrowed from another speech community.</li>
+<li>The classical language and literature being distinct from its modern form — with possible discontinuity between the classical language and its later forms/offshoots.</li>
+</ol>
+<table>
+<tr><th>Language</th><th>Year of Classical Status</th><th>State(s)</th><th>Antiquity Note</th></tr>
+<tr><td><strong>Tamil</strong></td><td>2004 (first)</td><td>Tamil Nadu</td><td>Sangam literature; ~3rd c. BCE–3rd c. CE; Tolkappiyam (grammar); Thirukkural</td></tr>
+<tr><td><strong>Sanskrit</strong></td><td>2005</td><td>Pan-India (no native state)</td><td>Rigveda (~1500 BCE); oldest attested Indo-European language; Vedic + Classical forms</td></tr>
+<tr><td><strong>Kannada</strong></td><td>2008</td><td>Karnataka</td><td>Kavirajamarga (~850 CE, earliest known Kannada text); Pampa/Ponna/Ranna (Trikavi)</td></tr>
+<tr><td><strong>Telugu</strong></td><td>2008</td><td>Andhra Pradesh, Telangana</td><td>Mahanandi inscriptions (~575 CE); Nannaya (11th c.) began Telugu Mahabharata</td></tr>
+<tr><td><strong>Malayalam</strong></td><td>2013</td><td>Kerala</td><td>Manipravalam literature; Lilatilakam (grammar); originally Sanskrit + Tamil mix</td></tr>
+<tr><td><strong>Marathi</strong></td><td><strong>2024</strong></td><td>Maharashtra</td><td>Shilahara inscriptions (~11th c.); Dnyaneshwari (1290 CE); ancient literature basis</td></tr>
+<tr><td><strong>Pali</strong></td><td><strong>2024</strong></td><td>Pan-India (Buddhist)</td><td>Tipitaka (Pali Canon); language of Theravada Buddhism; used by Ashoka's inscriptions</td></tr>
+<tr><td><strong>Prakrit</strong></td><td><strong>2024</strong></td><td>Pan-India (Jain)</td><td>Jain canonical texts; Ardhamagadhi Prakrit; predecessor to Hindi and many modern languages</td></tr>
+<tr><td><strong>Assamese</strong></td><td><strong>2024</strong></td><td>Assam</td><td>Charyapada connection; Madhava Kandali (14th c.) Ramayana translation</td></tr>
+<tr><td><strong>Bengali</strong></td><td><strong>2024</strong></td><td>West Bengal</td><td>Charyapada (~10th–12th c.); Mangalkavya; Tagore's Nobel-prize legacy</td></tr>
+</table>
+<p><strong>Key update</strong>: In <strong>October 2024</strong>, the Cabinet approved classical status for <strong>Marathi, Pali, Prakrit, Assamese, and Bengali</strong> — bringing total from 6 to <strong>11 classical languages</strong>.</p>
+<h3>8th Schedule Languages (Scheduled Languages)</h3>
+<p>The Eighth Schedule of the Indian Constitution lists the <strong>official languages</strong> of India (not all are in 8th Schedule; Classical ≠ 8th Schedule):</p>
+<ul>
+<li><strong>Original 14 (1950)</strong>: Assamese, Bengali, Gujarati, Hindi, Kannada, Kashmiri, Malayalam, Marathi, Oriya (now Odia), Punjabi, Sanskrit, Tamil, Telugu, Urdu.</li>
+<li><strong>21st Amendment (1967)</strong>: Added <strong>Sindhi</strong> (15th).</li>
+<li><strong>71st Amendment (1992)</strong>: Added <strong>Konkani, Manipuri, Nepali</strong> (18th total).</li>
+<li><strong>92nd Amendment (2003)</strong>: Added <strong>Bodo, Dogri, Maithili, Santhali</strong> (22nd total).</li>
+<li><strong>Current total: 22 languages</strong> in the 8th Schedule.</li>
+</ul>
+<p><strong>Marathi</strong> is in the 8th Schedule since original 1950.</p>
+<h3>Official Language of India: Hindi and English</h3>
+<ul>
+<li><strong>Article 343</strong>: Hindi in Devanagari script = official language of the Union.</li>
+<li><strong>Article 344/351</strong>: Official Language Commission; promotion of Hindi.</li>
+<li><strong>Official Languages Act 1963</strong>: English to continue as associate official language.</li>
+<li><strong>Three-Language Formula</strong>: recommended by Kothari Commission; teach mother tongue, Hindi, and English (or one other South Indian language in Hindi-speaking states).</li>
+</ul>
+<h3>Sanskrit&#x27;s Special Status</h3>
+<ul>
+<li>In the 8th Schedule; no native state; <strong>Uttarakhand</strong> declared Sanskrit as second official language (2010).</li>
+<li>Only language that is both in 8th Schedule AND is a Classical Language AND has no native majority speech community.</li>
+<li>Used in court oaths, national anthem partial phrases, national motto (<em>Satyameva Jayate</em> — from Mundaka Upanishad, Sanskrit).</li>
+</ul>
+<h3>Classical Tamil — Specific Details</h3>
+<ul>
+<li><strong>Tamil</strong> was the first to receive Classical status (2004) — under PM Vajpayee (NDA).</li>
+<li><strong>Sangam literature</strong>: oldest surviving Indian secular literature; ~3rd c. BCE–3rd c. CE; collections: Ettutogai (8 anthologies), Pattupattu (10 idylls).</li>
+<li><strong>Tolkappiyam</strong>: oldest Tamil grammar (~2nd–1st c. BCE); grammar + poetics.</li>
+<li><strong>Thirukkural</strong> (Thiruvalluvar): 1330 couplets; ethics, politics, love; UNESCO advisory panel cited it; translated into 80+ languages.</li>
+</ul>
+<h2>Maharashtra Connection</h2>
+<ul>
+<li><strong>Marathi received Classical Language status in October 2024</strong> — this is the single most important Maharashtra-specific fact in this topic.</li>
+<li>The Cabinet decision was made on <strong>October 3, 2024</strong> (ahead of Maharashtra assembly elections).</li>
+<li>Basis for Marathi&#x27;s classical status:</li>
+<li><strong>Shilahara copperplate inscriptions</strong> (11th c.) contain early Marathi.</li>
+<li><strong>Dnyaneshwari (1290 CE)</strong>: Dnyaneshwar&#x27;s Marathi commentary on Bhagavad Gita — foundational literary text.</li>
+<li><strong>Lilavati</strong> (Hemadpant, Yadava period): administrative text.</li>
+<li>Long literary tradition through Namdev, Eknath, Tukaram, Ramdas.</li>
+<li><strong>Marathi is in the 8th Schedule</strong> since 1950 and is the official language of Maharashtra.</li>
+<li><strong>Marathi classical status demand</strong> was a long-standing political-cultural demand; granted October 2024.</li>
+</ul>
+<h2>Key Facts</h2>
+<ul>
+<li>First classical language: <strong>Tamil (2004)</strong>.</li>
+<li>Total classical languages after 2024: <strong>11</strong> (Tamil, Sanskrit, Kannada, Telugu, Malayalam, Marathi, Pali, Prakrit, Assamese, Bengali — note: verify exact final count).</li>
+<li><strong>Marathi classical status: October 2024</strong>.</li>
+<li>Total 8th Schedule languages: <strong>22</strong>.</li>
+<li>8th Schedule is part of <strong>Indian Constitution</strong> (not the OL Act).</li>
+<li><strong>Sanskrit</strong> in 8th Schedule but no native state; Uttarakhand = official second language (state).</li>
+</ul>
+<h2>Memory Aids</h2>
+<ul>
+<li>First 6 classical languages (pre-2024): <strong>&quot;T-S-K-T-M-M&quot; = Tamil, Sanskrit, Kannada, Telugu, Malayalam, Marathi</strong> (chronological: 2004, 2005, 2008, 2008, 2013, 2024).</li>
+<li>8th Schedule growth: <strong>&quot;14 → 15 (1967 Sindhi) → 18 (1992: Konkani+Manipuri+Nepali) → 22 (2003: Bodo+Dogri+Maithili+Santhali)&quot;</strong>.</li>
+<li>Tamil first classical: <strong>&quot;2004 = Tamil = Vajpayee&quot;</strong>.</li>
+</ul>
+<h2>Exam Traps</h2>
+<ul>
+<li><strong>Classical language ≠ 8th Schedule language</strong> — they are independent categories.</li>
+<li><strong>Tamil was first (2004), not Sanskrit</strong> — common incorrect assumption.</li>
+<li><strong>Marathi 2024</strong> — very recent; check if question is pre/post this date.</li>
+<li><strong>22 Scheduled Languages</strong> (not 18 or 14) — current count after 92nd Amendment.</li>
+<li><strong>Odia</strong> (formerly Oriya) is in 8th Schedule; correct spelling is &quot;Odia&quot; since Odisha Renaming Act 2011.</li>
+</ul>
+<h2>Previous-Year Trend</h2>
+<p>High frequency for Maharashtra prelims/mains — Marathi&#x27;s Classical language status is almost certain in 2024–25 papers. Prelims: first classical language, Marathi status year, 8th Schedule total. Mains: Significance of classical language status for Marathi culture. (Inferred trend.)</p>
+<h2>Questions</h2>
+<p><strong>Prelims (MCQ-style):</strong></p>
+<ol>
+<li>[Expected] Marathi was accorded the status of a Classical Language of India in? — <em>2024</em></li>
+<li>[Asked] Which was the first language to be accorded Classical Language status in India? — <em>Tamil (2004)</em></li>
+<li>[Expected] How many languages are currently listed in the Eighth Schedule of the Indian Constitution? — <em>22</em></li>
+<li>[Expected] Which of the following was added to the Eighth Schedule by the 92nd Constitutional Amendment (2003)? — <em>Maithili (and Bodo, Dogri, Santhali)</em></li>
+</ol>
+<p><strong>Mains (descriptive):</strong></p>
+<ol>
+<li>[Expected] Discuss the significance of Marathi being accorded the status of a Classical Language of India in 2024. What are the criteria for classical language status?</li>
+<li>[Expected] Write a brief note on the evolution of the Eighth Schedule of the Indian Constitution. What is the current number of Scheduled Languages?</li>
+</ol>
+<h2>Linkages</h2>
+<ul>
+<li>hist-bhk-dnyaneshwar (Dnyaneshwari — literary basis for Marathi classical claim)</li>
+<li>hist-art-literature (Marathi literary tradition — Sangam parallel)</li>
+<li>hist-mar-society (Marathi culture, Warkari tradition)</li>
+<li>pol-lang-policy (Language policy — three-language formula, official language)</li>
+<li>hist-cult-coins (Ancient inscriptions in classical languages)</li>
+</ul>
+<div class="disclaimer">Study notes generated for MPSC preparation. Cross-check current schemes,
+latest data and exact dates before the exam.</div></main></body></html>
