@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanskrit, Prakrit, Tamil and regional literature — MPSC</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2430;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#6db33f;--accent2:#34804f;--done:#3fb950;--bar-bg:#21262d;--pre:#388bfd;--mains:#d29922;--int:#a371f7;--mh:#3fb950;--chip:#21262d;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:14px 20px}
+.title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.title h1{font-size:20px;margin:0}
+.home{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}.home:hover{border-color:var(--accent);color:var(--text)}
+.logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+.stats{margin-left:auto;font-size:13px;color:var(--muted)}.stats b{color:var(--accent)}
+.progress-wrap{margin-top:10px;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:10px;background:var(--bar-bg);border-radius:99px;overflow:hidden}
+.bar>span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--done));transition:width .35s}
+.pct{font-size:13px;color:var(--muted);min-width:42px;text-align:right}
+.stagebar{margin-top:8px;display:flex;gap:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.toolbar{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px}.tab{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:8px;font-size:13px;cursor:pointer}
+.tab.active{border-color:var(--accent);color:var(--accent)}
+.toolbar input[type=search]{flex:1;min-width:180px;background:var(--panel2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:14px}
+button{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:13px;cursor:pointer}button:hover{border-color:var(--accent)}
+.danger:hover{border-color:#f85149;color:#f85149}
+main{max-width:1040px;margin:0 auto;padding:20px}
+section.sec{margin-bottom:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sec-head{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none;background:var(--panel2)}.sec-head:hover{background:#222b38}
+.sec-head .vname{font-size:16px;font-weight:700}.sec-head .vcount{font-size:12px;color:var(--muted);min-width:48px;text-align:right}
+.sec-head .minibar{margin-left:auto;width:90px;height:7px;background:var(--bar-bg);border-radius:99px;overflow:hidden}.sec-head .minibar>span{display:block;height:100%;width:0;background:var(--done)}
+.sec-head .chev{transition:transform .2s;color:var(--muted)}section.sec.collapsed .chev{transform:rotate(-90deg)}section.sec.collapsed .sec-body{display:none}
+.sec-body{padding:6px 10px 14px}
+.grp{margin:14px 8px 4px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);font-weight:700;border-top:1px solid var(--border);padding-top:12px}.grp:first-child{border-top:none;padding-top:4px}
+ul.topics{list-style:none;margin:0;padding:0}
+li.topic{display:flex;align-items:flex-start;gap:10px;padding:6px 10px;border-radius:8px}li.topic:hover{background:var(--panel2)}
+li.topic input{margin-top:3px;width:16px;height:16px;accent-color:var(--done);cursor:pointer;flex:none}
+li.topic label{cursor:pointer;font-size:14.5px}li.topic.done label{color:var(--muted);text-decoration:line-through}
+.badge{font-size:10px;font-weight:700;padding:1px 6px;border-radius:99px;flex:none;margin-left:4px;vertical-align:middle}
+.b-PRE{background:rgba(56,139,253,.18);color:var(--pre)}.b-MAINS{background:rgba(210,153,34,.18);color:var(--mains)}.b-INT{background:rgba(163,113,247,.18);color:var(--int)}
+.b-MH{background:transparent;color:var(--mh);border:1px solid var(--mh)}
+.hidden{display:none !important}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+@media(max-width:560px){.sec-head .minibar{width:60px}.stats{margin-left:0}}
+
+.content{max-width:820px;margin:0 auto;padding:8px 20px 60px}
+.content h2{font-size:20px;margin:26px 0 8px;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:5px}
+.content h3{font-size:16px;margin:18px 0 6px}
+.content p{margin:8px 0}
+.content ul,.content ol{margin:8px 0 8px 4px;padding-left:22px}
+.content li{margin:4px 0}
+.content code{background:var(--bar-bg);padding:1px 5px;border-radius:5px;color:#79c0ff;font-size:13px}
+.content blockquote{border-left:3px solid var(--accent);margin:10px 0;padding:4px 14px;color:var(--muted)}
+.content table{border-collapse:collapse;margin:12px 0;width:100%;font-size:14px}
+.content th,.content td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+.content th{background:var(--panel2)}
+.content hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+.crumb{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}
+.crumb:hover{border-color:var(--accent);color:var(--text)}
+.disclaimer{margin-top:30px;padding:12px 16px;background:var(--panel);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:12.5px}
+</style></head><body>
+<header><div class="title"><a class="crumb" href="../history.html">← History & Indian Culture</a>
+<div class="logo">H</div></div>
+<h1 style="font-size:21px;margin:10px 0 4px">Sanskrit, Prakrit, Tamil and regional literature <span class="badge b-PRE">PRE</span><span class="badge b-MAINS">MAINS</span></h1></header>
+<main class="content"><h2>Overview</h2>
+<p>Indian literary tradition spans <strong>Vedic Sanskrit</strong> (1500 BCE), <strong>Epic and Puranic</strong> literature, <strong>Pali/Prakrit Buddhist-Jain</strong> texts, <strong>Sangam Tamil</strong> (1st–3rd c. CE), and the emergence of <strong>regional bhakti literature</strong> (7th–17th c.) in Marathi, Hindi, Bengali, Kannada, Telugu and others. MPSC asks about key authors, their languages, works, and the significance of the bhakti literary movement — with special emphasis on <strong>Marathi literature</strong>.</p>
+<h2>In-Depth</h2>
+<h3>Vedic and Epic Sanskrit Literature</h3>
+<p><strong>Vedas</strong> (1500–600 BCE): Four Vedas — Rigveda (hymns), Samaveda (melodies), Yajurveda (ritual), Atharvaveda (spells/medicine). Rigveda is the oldest text in any Indo-European language.</p>
+<p><strong>Upanishads</strong> (800–200 BCE): Philosophical texts appended to Vedas; 108 in number; principal 12–13 (Brihadaranyaka, Chandogya, Kena, Katha, etc.); foundation of Vedanta philosophy. <em>Tat tvam asi</em> (&quot;Thou art that&quot;) and <em>Aham Brahmasmi</em> (&quot;I am Brahman&quot;) — core philosophical statements.</p>
+<p><strong>Epics</strong>:</p>
+<ul>
+<li><strong>Mahabharata</strong>: attributed to <strong>Vyasa</strong>; ~100,000 verses (longest poem in the world); includes <strong>Bhagavad Gita</strong> (Chapter 6, 18 chapters of philosophical dialogue between Krishna and Arjuna).</li>
+<li><strong>Ramayana</strong>: attributed to <strong>Valmiki</strong>; ~24,000 verses; 7 kandas; the <em>Adi Kavya</em> (first poem).</li>
+</ul>
+<p><strong>Classical Sanskrit Literature</strong> (Gupta period, 4th–6th c. CE):</p>
+<ul>
+<li><strong>Kalidasa</strong>: <em>Abhijnanasakuntalam</em> (drama), <em>Meghaduta</em>, <em>Raghuvamsha</em>, <em>Kumarasambhava</em> — considered greatest Sanskrit poet.</li>
+<li><strong>Banabhatta</strong> (Harsha&#x27;s court): <em>Harshacharita</em> (biography of Harsha), <em>Kadambari</em> (Sanskrit novel).</li>
+<li><strong>Vishakhadatta</strong>: <em>Mudrarakshasa</em> (political drama).</li>
+<li><strong>Shudraka</strong>: <em>Mricchakatika</em> (social drama).</li>
+</ul>
+<h3>Pali and Prakrit Literature (Buddhist and Jain)</h3>
+<p><strong>Pali</strong> (Buddhist canon):</p>
+<ul>
+<li><strong>Tripitaka</strong> (Pali Canon): Vinaya Pitaka (discipline), Sutta Pitaka (discourses), Abhidhamma Pitaka (philosophy).</li>
+<li><strong>Jataka tales</strong>: 547 stories of the Buddha&#x27;s past lives; rich source of social history.</li>
+<li><strong>Dipavamsa, Mahavamsa</strong>: Sri Lankan chronicles; key sources for Ashokan history.</li>
+</ul>
+<p><strong>Prakrit</strong> (Jain canon):</p>
+<ul>
+<li><strong>Agamas</strong> (Jain scriptures): 12 Angas; in Ardhamagadhi Prakrit.</li>
+<li><strong>Kahakosu</strong> and other Jain texts in Shauraseni Prakrit.</li>
+</ul>
+<h3>Sangam Tamil Literature (1st–3rd c. CE)</h3>
+<p>The <strong>Sangam</strong> (academy/assembly) produced the earliest significant body of secular Tamil literature under the patronage of Pandya kings:</p>
+<ul>
+<li><strong>Three Sangams</strong> (tradition): at Madurai; the third produced surviving texts (~500 CE).</li>
+<li>Surviving texts: <strong>Ettuthokai</strong> (8 anthologies) and <strong>Pattuppattu</strong> (10 idylls); themes — love (<em>akam</em>) and war/heroism (<em>puram</em>).</li>
+<li><strong>Thirukkural</strong> (by <strong>Thiruvalluvar</strong>): ~500 CE; 1,330 couplets; covers <em>Aram</em> (virtue), <em>Porul</em> (polity), <em>Inbam</em> (love); considered the greatest work in Tamil and translatable to 80+ languages.</li>
+<li><strong>Silappatikaram</strong> (by Ilango Adigal): epic; story of Kannagi; considered the first Tamil epic; strong social/judicial themes.</li>
+<li><strong>Manimekalai</strong>: Buddhist Tamil epic (sequel to Silappatikaram).</li>
+</ul>
+<h3>Regional Bhakti Literature</h3>
+<table>
+<tr><th>Language/Tradition</th><th>Key Authors</th><th>Works</th></tr>
+<tr><td>Tamil Bhakti (Alvars/Nayanars)</td><td>Andal, Nammalvar (Alvars); Appar, Sundarar (Nayanars, 7th–9th c.)</td><td>Divya Prabandham (Alvar hymns); Tevaram (Shaiva hymns)</td></tr>
+<tr><td>Kannada</td><td>Pampa, Ranna, Ponna ("Three Gems", ~10th c.); Basavanna (12th c.)</td><td>Adipurana (Pampa); Vachanas (Basavanna) — Lingayat social reform literature</td></tr>
+<tr><td>Telugu</td><td>Nannaya (11th c.); Tikkana (13th c.); Potana (15th c.)</td><td>Telugu Mahabharata (Nannaya-Tikkana); Bhagavatam (Potana)</td></tr>
+<tr><td>Marathi</td><td>Dnyaneshwar (13th c.); Namdev (14th c.); Eknath (16th c.); Tukaram (17th c.); Ramdas (17th c.)</td><td>Dnyaneshwari; abhangas; Eknathi Bhagavat; Dasbodh (Ramdas)</td></tr>
+<tr><td>Hindi/Braj/Awadhi</td><td>Kabir (15th c.); Surdas (16th c.); Tulsidas (16th c.); Mirabai (16th c.)</td><td>Bijak (Kabir); Sursagar (Surdas); Ramcharitmanas (Tulsidas)</td></tr>
+<tr><td>Bengali</td><td>Chandidas (14th c.); Chaitanya (15th–16th c.)</td><td>Srikrishnakirtan; Vaishnava padavali</td></tr>
+</table>
+<h3>Marathi Literature — Special Focus</h3>
+<p><strong>Medieval (Warkari tradition)</strong>:</p>
+<ul>
+<li><strong>Dnyaneshwari (1290)</strong>: Marathi commentary on Bhagavad Gita by <strong>Dnyaneshwar</strong> (13 years old); established Marathi as a literary language.</li>
+<li><strong>Amrutanubhav</strong>: philosophical work by Dnyaneshwar.</li>
+<li><strong>Eknathi Bhagavat</strong>: retelling of the 11th Skandha of Bhagavata Purana by <strong>Eknath</strong>.</li>
+<li><strong>Dasbodh</strong>: 20 chapters of spiritual wisdom by <strong>Samartha Ramdas</strong> (Shivaji&#x27;s guru); deals with practical ethics, statecraft, devotion.</li>
+<li>Thousands of <strong>abhangas</strong> by Tukaram, Namdev — the backbone of Warkari singing tradition (<em>kirtan</em>).</li>
+</ul>
+<p><strong>Modern (19th–20th c.)</strong>:</p>
+<ul>
+<li><strong>Balshastri Jambhekar</strong> (1812–1846): first Marathi journalist; started <em>Darpan</em> (1832) — the first Marathi newspaper.</li>
+<li><strong>Jyotirao Phule</strong> (1827–1890): <em>Gulamgiri</em> (1873) — exposed caste oppression; <em>Shetkaryacha Asud</em>; radical social reformer.</li>
+<li><strong>Sane Guruji (Pandurang Sadashiv Sane, 1899–1950)</strong>: <em>Shyamchi Aai</em> — most beloved Marathi novel.</li>
+<li><strong>Vishnu Sakharam Khandekar</strong>: Jnanpith Award winner (1974) for <em>Yayati</em> — first Marathi Jnanpith.</li>
+</ul>
+<h2>Maharashtra Connection</h2>
+<p>Directly central:</p>
+<ul>
+<li><strong>Marathi literature</strong> from Dnyaneshwar (1290) to the modern novel is among India&#x27;s richest regional traditions.</li>
+<li><strong>Jnanpith Awards to Marathi</strong>: V.S. Khandekar (1974), V.V. Shirwadkar &quot;Kusumagraj&quot; (1987), Vinda Karandikar (2006), Bhalchandra Nemade (2014).</li>
+<li><strong>Dnyaneshwar, Eknath, Tukaram, Ramdas</strong> — the four pillars of Marathi spiritual literature; their works still recited in Warkari tradition.</li>
+<li><strong>Darpan (1832)</strong> — first Marathi newspaper; pioneered Marathi prose journalism.</li>
+</ul>
+<h2>Key Facts</h2>
+<ul>
+<li>Mahabharata: <strong>~100,000 verses</strong>; includes Bhagavad Gita; attributed to <strong>Vyasa</strong>.</li>
+<li>Ramayana: <strong>~24,000 verses</strong>; <em>Adi Kavya</em>; attributed to <strong>Valmiki</strong>.</li>
+<li><strong>Thirukkural</strong>: <strong>Thiruvalluvar</strong>; 1,330 couplets; Tamil.</li>
+<li><strong>Silappatikaram</strong>: Ilango Adigal; first Tamil epic.</li>
+<li><strong>Dnyaneshwari</strong>: 1290; Dnyaneshwar; Marathi Bhagavad Gita commentary.</li>
+<li>First Marathi newspaper: <strong>Darpan (1832)</strong> by <strong>Balshastri Jambhekar</strong>.</li>
+<li>First Marathi Jnanpith: <strong>V.S. Khandekar (1974)</strong> for <em>Yayati</em>.</li>
+<li>Shyamchi Aai: <strong>Sane Guruji</strong>; beloved Marathi novel.</li>
+</ul>
+<h2>Memory Aids</h2>
+<ul>
+<li>Tamil epics: <strong>&quot;Sila-Mani&quot; = Silappatikaram + Manimekalai</strong> (by Ilango Adigal and Sattanar).</li>
+<li>Thiruvalluvar = <strong>Thirukkural = 1,330 = Tamil wisdom</strong>.</li>
+<li>Marathi milestones: <strong>&quot;Dnyaneshwari 1290 → Darpan 1832 → Jnanpith 1974.&quot;</strong></li>
+<li>Hindi bhakti: <strong>&quot;K-S-T-M&quot; = Kabir, Surdas, Tulsidas, Mirabai</strong>.</li>
+</ul>
+<h2>Exam Traps</h2>
+<ul>
+<li><strong>Dnyaneshwari (1290)</strong> was composed when Dnyaneshwar was <strong>~13 years old</strong> — this fact sometimes appears as a question.</li>
+<li><strong>Thirukkural has 1,330 couplets</strong> — not 108 or 500 as sometimes stated in wrong options.</li>
+<li><strong>Silappatikaram (Ilango Adigal) ≠ Manimekalai (Sattanar)</strong> — two different epics by different authors.</li>
+<li><strong>Dasbodh was by Samartha Ramdas</strong> (Shivaji&#x27;s guru), not by Tukaram or Dnyaneshwar.</li>
+</ul>
+<h2>Previous-Year Trend</h2>
+<p>High frequency. Prelims: Sangam literature (Thirukkural, Silappatikaram), Sanskrit authors (Kalidasa), Marathi saints and texts, Jnanpith winners in Marathi. Mains: &quot;Discuss the contribution of bhakti literature to Indian regional languages&quot; and &quot;Write a note on Marathi literature from Dnyaneshwar to the modern period.&quot; (Inferred trend.)</p>
+<h2>Questions</h2>
+<p><strong>Prelims (MCQ-style):</strong></p>
+<ol>
+<li>[Asked] &#x27;Thirukkural&#x27;, the Tamil classic of 1,330 couplets, was written by? — <em>Thiruvalluvar</em></li>
+<li>[Asked] Dnyaneshwari, the Marathi commentary on the Bhagavad Gita, was written in? — <em>1290 CE by Sant Dnyaneshwar</em></li>
+<li>[Expected] The first Marathi newspaper, &#x27;Darpan&#x27; (1832), was started by? — <em>Balshastri Jambhekar</em></li>
+<li>[Expected] Which Marathi author won the first Jnanpith Award for Marathi literature (1974)? — <em>V.S. Khandekar (for Yayati)</em></li>
+<li>[Expected] The Silappatikaram is the first epic in which language? — <em>Tamil (by Ilango Adigal)</em></li>
+</ol>
+<p><strong>Mains (descriptive):</strong></p>
+<ol>
+<li>[Expected] Trace the development of Marathi literature from the Warkari saints to the modern period, highlighting key works and authors. (~200 words)</li>
+<li>[Expected] Discuss the significance of Sangam literature as a source of early South Indian history and culture.</li>
+<li>[Expected] How did the bhakti movement enrich regional literature across India? Illustrate with examples.</li>
+</ol>
+<h2>Linkages</h2>
+<ul>
+<li>hist-mar-society (Warkari tradition — Marathi saints in social context)</li>
+<li>hist-rel-bhakti (Bhakti movement — literary tradition)</li>
+<li>hist-art-music (Abhangas, Natyasangeet — music-literature interface)</li>
+<li>hist-art-theatre (Kalidasa, Natyashastra — Sanskrit drama literature)</li>
+<li>hist-ved-literature (Vedic literature — earliest layer)</li>
+</ul>
+<div class="disclaimer">Study notes generated for MPSC preparation. Cross-check current schemes,
+latest data and exact dates before the exam.</div></main></body></html>

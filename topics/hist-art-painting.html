@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painting traditions — miniature, folk — MPSC</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2430;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#6db33f;--accent2:#34804f;--done:#3fb950;--bar-bg:#21262d;--pre:#388bfd;--mains:#d29922;--int:#a371f7;--mh:#3fb950;--chip:#21262d;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:14px 20px}
+.title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.title h1{font-size:20px;margin:0}
+.home{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}.home:hover{border-color:var(--accent);color:var(--text)}
+.logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+.stats{margin-left:auto;font-size:13px;color:var(--muted)}.stats b{color:var(--accent)}
+.progress-wrap{margin-top:10px;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:10px;background:var(--bar-bg);border-radius:99px;overflow:hidden}
+.bar>span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--done));transition:width .35s}
+.pct{font-size:13px;color:var(--muted);min-width:42px;text-align:right}
+.stagebar{margin-top:8px;display:flex;gap:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.toolbar{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px}.tab{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:8px;font-size:13px;cursor:pointer}
+.tab.active{border-color:var(--accent);color:var(--accent)}
+.toolbar input[type=search]{flex:1;min-width:180px;background:var(--panel2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:14px}
+button{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:13px;cursor:pointer}button:hover{border-color:var(--accent)}
+.danger:hover{border-color:#f85149;color:#f85149}
+main{max-width:1040px;margin:0 auto;padding:20px}
+section.sec{margin-bottom:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sec-head{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none;background:var(--panel2)}.sec-head:hover{background:#222b38}
+.sec-head .vname{font-size:16px;font-weight:700}.sec-head .vcount{font-size:12px;color:var(--muted);min-width:48px;text-align:right}
+.sec-head .minibar{margin-left:auto;width:90px;height:7px;background:var(--bar-bg);border-radius:99px;overflow:hidden}.sec-head .minibar>span{display:block;height:100%;width:0;background:var(--done)}
+.sec-head .chev{transition:transform .2s;color:var(--muted)}section.sec.collapsed .chev{transform:rotate(-90deg)}section.sec.collapsed .sec-body{display:none}
+.sec-body{padding:6px 10px 14px}
+.grp{margin:14px 8px 4px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);font-weight:700;border-top:1px solid var(--border);padding-top:12px}.grp:first-child{border-top:none;padding-top:4px}
+ul.topics{list-style:none;margin:0;padding:0}
+li.topic{display:flex;align-items:flex-start;gap:10px;padding:6px 10px;border-radius:8px}li.topic:hover{background:var(--panel2)}
+li.topic input{margin-top:3px;width:16px;height:16px;accent-color:var(--done);cursor:pointer;flex:none}
+li.topic label{cursor:pointer;font-size:14.5px}li.topic.done label{color:var(--muted);text-decoration:line-through}
+.badge{font-size:10px;font-weight:700;padding:1px 6px;border-radius:99px;flex:none;margin-left:4px;vertical-align:middle}
+.b-PRE{background:rgba(56,139,253,.18);color:var(--pre)}.b-MAINS{background:rgba(210,153,34,.18);color:var(--mains)}.b-INT{background:rgba(163,113,247,.18);color:var(--int)}
+.b-MH{background:transparent;color:var(--mh);border:1px solid var(--mh)}
+.hidden{display:none !important}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+@media(max-width:560px){.sec-head .minibar{width:60px}.stats{margin-left:0}}
+
+.content{max-width:820px;margin:0 auto;padding:8px 20px 60px}
+.content h2{font-size:20px;margin:26px 0 8px;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:5px}
+.content h3{font-size:16px;margin:18px 0 6px}
+.content p{margin:8px 0}
+.content ul,.content ol{margin:8px 0 8px 4px;padding-left:22px}
+.content li{margin:4px 0}
+.content code{background:var(--bar-bg);padding:1px 5px;border-radius:5px;color:#79c0ff;font-size:13px}
+.content blockquote{border-left:3px solid var(--accent);margin:10px 0;padding:4px 14px;color:var(--muted)}
+.content table{border-collapse:collapse;margin:12px 0;width:100%;font-size:14px}
+.content th,.content td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+.content th{background:var(--panel2)}
+.content hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+.crumb{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}
+.crumb:hover{border-color:var(--accent);color:var(--text)}
+.disclaimer{margin-top:30px;padding:12px 16px;background:var(--panel);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:12.5px}
+</style></head><body>
+<header><div class="title"><a class="crumb" href="../history.html">← History & Indian Culture</a>
+<div class="logo">H</div></div>
+<h1 style="font-size:21px;margin:10px 0 4px">Painting traditions — miniature, folk <span class="badge b-PRE">PRE</span><span class="badge b-MAINS">MAINS</span></h1></header>
+<main class="content"><h2>Overview</h2>
+<p>Indian painting traditions span from <strong>prehistoric rock art (Bhimbetka, 30,000+ BCE)</strong> through ancient murals (Ajanta, 2nd c. BCE–6th c. CE), medieval miniatures (Rajput, Mughal, Pahari), to living folk traditions (Madhubani, Warli, Pattachitra). MPSC tests the identification of painting schools, their patrons, key features, and folk paintings — especially Maharashtra&#x27;s <strong>Warli</strong> tradition.</p>
+<h2>In-Depth</h2>
+<h3>Ancient and Medieval Mural Painting</h3>
+<p><strong>Bhimbetka Rock Shelters (Madhya Pradesh)</strong>:</p>
+<ul>
+<li>Prehistoric rock paintings; earliest dated to <strong>30,000 BCE</strong> (Upper Palaeolithic); depict animals, hunting, dance, domestic life.</li>
+<li>UNESCO WHS (2003).</li>
+</ul>
+<p><strong>Ajanta Murals (5th–6th c. CE, Maharashtra)</strong>:</p>
+<ul>
+<li>Finest surviving ancient mural paintings; Buddhist themes (Jataka tales, Bodhisattvas).</li>
+<li><strong>Technique</strong>: <em>Fresco secco</em> — painted on dry lime plaster.</li>
+<li><strong>Cave 1</strong>: Bodhisattva Padmapani; <strong>Cave 16</strong>: The Dying Princess; <strong>Cave 17</strong>: most paintings.</li>
+<li>Pigments: lapis lazuli (blue), ochre, lamp black — mineral-based.</li>
+</ul>
+<p><strong>Badami and Ajanta style</strong> also seen at <strong>Sittanavasal (Tamil Nadu)</strong> and <strong>Sigiriya (Sri Lanka)</strong>.</p>
+<h3>Miniature Painting Schools</h3>
+<p>Miniature painting developed from manuscript illustration (9th–12th c.) into elaborate court art:</p>
+<table>
+<tr><th>School</th><th>Period</th><th>Patron</th><th>Style / Theme</th></tr>
+<tr><td><strong>Mughal</strong></td><td>16th–18th c.</td><td>Mughal Emperors</td><td>Persian + Indian blend; realistic portraiture; fine brushwork; Hamzanama, Akbarnama</td></tr>
+<tr><td><strong>Rajput (Rajasthani)</strong></td><td>16th–19th c.</td><td>Rajput kings (Mewar, Marwar, Bundi, Kotah)</td><td>Bold colours; flat perspective; devotional (Radha-Krishna); prominent female figures</td></tr>
+<tr><td><strong>Pahari</strong></td><td>17th–19th c.</td><td>Hill states (Himachal Pradesh — Basohli, Kangra, Guler)</td><td>Lyrical; Radha-Krishna devotion; Gita Govinda illustrations; soft colours (Kangra)</td></tr>
+<tr><td><strong>Deccan</strong></td><td>16th–18th c.</td><td>Bijapur, Ahmednagar, Golkonda Sultans</td><td>Persian influence; distinct from Mughal; Bijapur Ibrahim Adil Shah II (patron of musicians)</td></tr>
+</table>
+<p><strong>Mughal Miniature Details</strong>:</p>
+<ul>
+<li><strong>Humayun</strong> brought Persian masters Mir Sayyid Ali and Abdus Samad from Safavid court.</li>
+<li><strong>Akbar&#x27;s Hamzanama</strong>: ~1,400 paintings on cloth, 14 volumes, 14 years (1562–1577); largest illustrated manuscript.</li>
+<li><strong>Jahangir</strong>: greatest naturalist; <strong>Ustad Mansur</strong> painted the Dodo, Siberian Crane, Bengal Florican with scientific accuracy.</li>
+<li><strong>Basawan</strong> (Akbar&#x27;s court): best Indian-born Mughal painter; combined Indian anatomy with Persian composition.</li>
+<li>After Aurangzeb&#x27;s court restrictions, Mughal artists dispersed to Rajput courts → enriched Rajput painting.</li>
+</ul>
+<p><strong>Rajput Painting Sub-Schools</strong>:</p>
+<ul>
+<li><strong>Mewar</strong> (Udaipur): earliest; flat perspective; Rasikapriya, Ramayana themes.</li>
+<li><strong>Bundi-Kotah</strong>: hunting scenes, animals; vibrant.</li>
+<li><strong>Kishangarh</strong>: idealized female beauty; <strong>Bani Thani</strong> — the &quot;Indian Mona Lisa&quot; (portrait of a singer-devotee of Savant Singh, ruler of Kishangarh); now on an Indian postage stamp.</li>
+</ul>
+<p><strong>Pahari Sub-Schools</strong>:</p>
+<ul>
+<li><strong>Basohli</strong>: bold, vivid colours; jewel-like; early (17th c.); Gita Govinda.</li>
+<li><strong>Kangra</strong>: most famous Pahari school (18th c.); soft, lyrical; Radha-Krishna romance; linear elegance; Nainsukh (18th c.) is the master.</li>
+<li><strong>Guler</strong>: transitional; Naturalistic.</li>
+</ul>
+<h3>Folk and Tribal Painting Traditions</h3>
+<table>
+<tr><th>Tradition</th><th>State</th><th>Medium/Feature</th></tr>
+<tr><td><strong>Madhubani (Mithila)</strong></td><td>Bihar</td><td>Geometric patterns, natural dyes; women on walls/floors; Sita-Ram, nature themes</td></tr>
+<tr><td><strong>Warli</strong></td><td>Maharashtra</td><td>White on brown mud; geometric — circle (sun/moon), triangle (mountains), square (sacred enclosure); human figures; wedding, harvest themes</td></tr>
+<tr><td><strong>Pattachitra</strong></td><td>Odisha</td><td>Cloth scroll; Jagannath themes; palm leaf manuscripts</td></tr>
+<tr><td><strong>Gond</strong></td><td>Madhya Pradesh</td><td>Tribal; dots and lines; nature, forest deities</td></tr>
+<tr><td><strong>Kalamkari</strong></td><td>Andhra Pradesh</td><td>Natural dye resist-printing; cotton; mythological narrative</td></tr>
+<tr><td><strong>Phad</strong></td><td>Rajasthan</td><td>Scroll painting; narrative; Devnarayan/Pabuji legends</td></tr>
+<tr><td><strong>Tanjore (Thanjavur) painting</strong></td><td>Tamil Nadu</td><td>Gold leaf; jewels; deity figures; rigid frontal posture</td></tr>
+</table>
+<h3>GI Tags in Painting</h3>
+<p>Several painting traditions have <strong>Geographical Indication (GI) tags</strong>:</p>
+<ul>
+<li>Madhubani: GI tag (2007); Pattachitra: GI tag; Kalamkari: GI; Tanjore painting: GI.</li>
+<li><strong>Warli</strong> painting does not yet have a national GI tag (as of knowledge cutoff) but is protected under Maharashtra&#x27;s cultural schemes.</li>
+</ul>
+<h2>Maharashtra Connection</h2>
+<p><strong>Warli painting</strong> is Maharashtra&#x27;s signature folk art:</p>
+<ul>
+<li>Origin: <strong>Warli tribe</strong> of the Sahyadri/Nashik/Palghar/Thane tribal belt.</li>
+<li>Traditionally painted by women on mud walls for festivals (especially marriage).</li>
+<li><strong>Medium</strong>: White (rice paste pigment) on brown/ochre (cow dung) background.</li>
+<li><strong>Geometric vocabulary</strong>: Circle = sun/moon; Triangle = mountain/trees; Square = sacred ground; Straight line = human stick figure. No perspective; top-down view.</li>
+<li><strong>Tarpa dance</strong> — a common Warli motif showing men and women dancing in a circle around a Tarpa (wind instrument) player.</li>
+<li><strong>Jivya Soma Mhase</strong> — the most celebrated Warli artist; credited with taking Warli to canvas and urban galleries (1970s onward); Padma Shri recipient.</li>
+<li>Warli paintings now appear on textiles, merchandise, public murals across India.</li>
+</ul>
+<h2>Key Facts</h2>
+<ul>
+<li><strong>Bhimbetka</strong>: prehistoric rock art; <strong>30,000+ BCE</strong>; <strong>UNESCO WHS 2003</strong>.</li>
+<li><strong>Hamzanama</strong>: Akbar; <strong>~1,400 paintings</strong>, 14 years, painted on cloth.</li>
+<li><strong>Jahangir&#x27;s naturalist painter</strong>: <strong>Ustad Mansur</strong>.</li>
+<li><strong>Bani Thani</strong> = &quot;Indian Mona Lisa&quot;; <strong>Kishangarh school</strong>.</li>
+<li><strong>Kangra school</strong>: finest Pahari miniature; Radha-Krishna; <strong>Nainsukh</strong> master.</li>
+<li><strong>Warli</strong>: Maharashtra; white on brown; Warli tribe; <strong>Jivya Soma Mhase</strong> (Padma Shri).</li>
+<li><strong>Madhubani</strong>: Bihar; women painters; natural dyes; GI tag 2007.</li>
+</ul>
+<h2>Memory Aids</h2>
+<ul>
+<li>Schools: <strong>&quot;Mughal (court) → Rajput (devotional) → Pahari (lyrical) → Deccan (Persian)&quot;</strong>.</li>
+<li>Warli: <strong>&quot;Circle-Triangle-Square = Sun/Moon, Mountain, Sacred&quot;</strong>.</li>
+<li>Bani Thani = <strong>Kishangarh</strong> (K-K link).</li>
+<li>Pahari zenith = <strong>Kangra</strong> (most famous); earliest = <strong>Basohli</strong>.</li>
+</ul>
+<h2>Exam Traps</h2>
+<ul>
+<li><strong>Bani Thani is Kishangarh school (Rajasthan)</strong>, not Mewar or Bundi.</li>
+<li><strong>Ustad Mansur (Jahangir&#x27;s court)</strong> painted naturalist subjects — birds and animals; not Akbar&#x27;s Hamzanama artist.</li>
+<li><strong>Warli paintings are white on brown</strong> (not the reverse); painted by tribal women (not men traditionally).</li>
+<li><strong>Madhubani (Bihar) ≠ Warli (Maharashtra)</strong> — both are folk paintings but different states, styles, communities.</li>
+</ul>
+<h2>Previous-Year Trend</h2>
+<p>High frequency. Prelims: Warli (Maharashtra), Madhubani (Bihar), Bani Thani (Kishangarh), Hamzanama (Akbar), Ustad Mansur. Mains: &quot;Describe the features of Mughal miniature painting and trace how Rajput and Pahari schools evolved from it&quot; and Maharashtra-specific &quot;Write a note on Warli art.&quot; (Inferred trend.)</p>
+<h2>Questions</h2>
+<p><strong>Prelims (MCQ-style):</strong></p>
+<ol>
+<li>[Asked] Warli painting is associated with which state of India? — <em>Maharashtra (Warli tribe)</em></li>
+<li>[Asked] The &#x27;Bani Thani&#x27; painting is associated with which school of Rajput miniature? — <em>Kishangarh school</em></li>
+<li>[Expected] Which Mughal court painter was known for naturalistic depictions of flora and fauna under Jahangir? — <em>Ustad Mansur</em></li>
+<li>[Expected] Bhimbetka rock shelters, with prehistoric paintings over 30,000 years old, are located in? — <em>Madhya Pradesh (UNESCO WHS 2003)</em></li>
+<li>[Expected] Jivya Soma Mhase, recipient of the Padma Shri, is associated with which folk art tradition? — <em>Warli painting (Maharashtra)</em></li>
+</ol>
+<p><strong>Mains (descriptive):</strong></p>
+<ol>
+<li>[Expected] Trace the evolution of miniature painting in India from the Mughal school through Rajput and Pahari traditions. (~200 words)</li>
+<li>[Expected] Write a note on Warli painting — its features, community, and contemporary significance.</li>
+<li>[Expected] Compare any two folk painting traditions of India, highlighting their regional and cultural distinctiveness.</li>
+</ol>
+<h2>Linkages</h2>
+<ul>
+<li>hist-art-cave (Ajanta murals — ancient Indian painting)</li>
+<li>hist-mug-art (Mughal painting — miniature school)</li>
+<li>hist-art-dance (Dance — visual arts and performance arts linked)</li>
+<li>hist-art-indoislamic (Mughal art patronage context)</li>
+<li>mh-cu-folk (Warli — Maharashtra cultural heritage)</li>
+</ul>
+<div class="disclaimer">Study notes generated for MPSC preparation. Cross-check current schemes,
+latest data and exact dates before the exam.</div></main></body></html>
