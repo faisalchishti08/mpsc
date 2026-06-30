@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eknath — MPSC</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2430;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#6db33f;--accent2:#34804f;--done:#3fb950;--bar-bg:#21262d;--pre:#388bfd;--mains:#d29922;--int:#a371f7;--mh:#3fb950;--chip:#21262d;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:14px 20px}
+.title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.title h1{font-size:20px;margin:0}
+.home{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}.home:hover{border-color:var(--accent);color:var(--text)}
+.logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+.stats{margin-left:auto;font-size:13px;color:var(--muted)}.stats b{color:var(--accent)}
+.progress-wrap{margin-top:10px;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:10px;background:var(--bar-bg);border-radius:99px;overflow:hidden}
+.bar>span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--done));transition:width .35s}
+.pct{font-size:13px;color:var(--muted);min-width:42px;text-align:right}
+.stagebar{margin-top:8px;display:flex;gap:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.toolbar{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px}.tab{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:8px;font-size:13px;cursor:pointer}
+.tab.active{border-color:var(--accent);color:var(--accent)}
+.toolbar input[type=search]{flex:1;min-width:180px;background:var(--panel2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:14px}
+button{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:13px;cursor:pointer}button:hover{border-color:var(--accent)}
+.danger:hover{border-color:#f85149;color:#f85149}
+main{max-width:1040px;margin:0 auto;padding:20px}
+section.sec{margin-bottom:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sec-head{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none;background:var(--panel2)}.sec-head:hover{background:#222b38}
+.sec-head .vname{font-size:16px;font-weight:700}.sec-head .vcount{font-size:12px;color:var(--muted);min-width:48px;text-align:right}
+.sec-head .minibar{margin-left:auto;width:90px;height:7px;background:var(--bar-bg);border-radius:99px;overflow:hidden}.sec-head .minibar>span{display:block;height:100%;width:0;background:var(--done)}
+.sec-head .chev{transition:transform .2s;color:var(--muted)}section.sec.collapsed .chev{transform:rotate(-90deg)}section.sec.collapsed .sec-body{display:none}
+.sec-body{padding:6px 10px 14px}
+.grp{margin:14px 8px 4px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);font-weight:700;border-top:1px solid var(--border);padding-top:12px}.grp:first-child{border-top:none;padding-top:4px}
+ul.topics{list-style:none;margin:0;padding:0}
+li.topic{display:flex;align-items:flex-start;gap:10px;padding:6px 10px;border-radius:8px}li.topic:hover{background:var(--panel2)}
+li.topic input{margin-top:3px;width:16px;height:16px;accent-color:var(--done);cursor:pointer;flex:none}
+li.topic label{cursor:pointer;font-size:14.5px}li.topic.done label{color:var(--muted);text-decoration:line-through}
+.badge{font-size:10px;font-weight:700;padding:1px 6px;border-radius:99px;flex:none;margin-left:4px;vertical-align:middle}
+.b-PRE{background:rgba(56,139,253,.18);color:var(--pre)}.b-MAINS{background:rgba(210,153,34,.18);color:var(--mains)}.b-INT{background:rgba(163,113,247,.18);color:var(--int)}
+.b-MH{background:transparent;color:var(--mh);border:1px solid var(--mh)}
+.hidden{display:none !important}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+@media(max-width:560px){.sec-head .minibar{width:60px}.stats{margin-left:0}}
+
+.content{max-width:820px;margin:0 auto;padding:8px 20px 60px}
+.content h2{font-size:20px;margin:26px 0 8px;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:5px}
+.content h3{font-size:16px;margin:18px 0 6px}
+.content p{margin:8px 0}
+.content ul,.content ol{margin:8px 0 8px 4px;padding-left:22px}
+.content li{margin:4px 0}
+.content code{background:var(--bar-bg);padding:1px 5px;border-radius:5px;color:#79c0ff;font-size:13px}
+.content blockquote{border-left:3px solid var(--accent);margin:10px 0;padding:4px 14px;color:var(--muted)}
+.content table{border-collapse:collapse;margin:12px 0;width:100%;font-size:14px}
+.content th,.content td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+.content th{background:var(--panel2)}
+.content hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+.crumb{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}
+.crumb:hover{border-color:var(--accent);color:var(--text)}
+.disclaimer{margin-top:30px;padding:12px 16px;background:var(--panel);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:12.5px}
+</style></head><body>
+<header><div class="title"><a class="crumb" href="../history.html">← History & Indian Culture</a>
+<div class="logo">H</div></div>
+<h1 style="font-size:21px;margin:10px 0 4px">Eknath <span class="badge b-PRE">PRE</span><span class="badge b-MAINS">MAINS</span><span class="badge b-MH">MH</span></h1></header>
+<main class="content"><h2>Overview</h2>
+<p><strong>Sant Eknath</strong> (1533–1599 CE) is the third pillar of the Warkari tradition in Maharashtra, bridging the 13th-century era of Dnyaneshwar and Namdev with the 17th-century flowering of Tukaram and Ramdas. His greatest achievement was <strong>restoring the corrupted text of the Dnyaneshwari</strong> and producing the <strong>Eknathi Bhagavat</strong> — a Marathi commentary on the 11th chapter of the Bhagavat Purana. He was a <strong>householder saint</strong> (<em>grihastha</em>), demonstrating that devotion is compatible with domestic life. He is especially known for his <strong>inclusivity</strong> — eating with untouchables, and challenging caste-based discrimination in devotion. MPSC tests his works, his social reform, and his role in the Warkari chain.</p>
+<h2>In-Depth</h2>
+<h3>Life</h3>
+<ul>
+<li><strong>Born</strong>: 1533 CE, <strong>Paithan</strong> (ancient Pratishthana), Aurangabad district, Maharashtra — on the banks of the Godavari.</li>
+<li><strong>Guru</strong>: <strong>Janardhan Swami</strong> (of Devgad/Daulatabad) — a devotee of Dattatreya.</li>
+<li><strong>Caste</strong>: <strong>Deshastha Brahmin</strong> — but he transcended caste in practice.</li>
+<li><strong>Family</strong>: Married; maintained family life (<em>grihastha</em>) while being a great saint — key distinction from renunciant saints.</li>
+<li><strong>Death</strong>: 1599 CE, <strong>Paithan</strong>; <em>Jalasamadhi</em> (samadhi in water — merged into the Godavari at Paithan).</li>
+</ul>
+<h3>Works</h3>
+<table>
+<tr><th>Work</th><th>Year</th><th>Nature</th></tr>
+<tr><td><strong>Eknathi Bhagavat</strong></td><td>16th c.</td><td>Marathi commentary on the 11th chapter of Bhagavat Purana; 18,000+ verses; masterpiece of Marathi prose-poetry</td></tr>
+<tr><td><strong>Rukmini Swayamvar</strong></td><td>—</td><td>Marathi poem on Rukmini's marriage to Krishna</td></tr>
+<tr><td><strong>Abhangas</strong></td><td>—</td><td>Devotional hymns; Warkari tradition; sung at Pandharpur</td></tr>
+<tr><td><strong>Bharud</strong></td><td>—</td><td>Allegorical folk songs using market-vendor personas; moral/devotional messages in simple folk language</td></tr>
+<tr><td><strong>Dnyaneshwari Restoration</strong></td><td>~1584</td><td>Corrected corrupted manuscripts of Dnyaneshwari and produced standard text used today</td></tr>
+</table>
+<h3>Restoration of Dnyaneshwari</h3>
+<ul>
+<li>By the 16th century (300 years after Dnyaneshwar), the text of the Dnyaneshwari had been <strong>corrupted by scribal errors</strong>, interpolations, and regional variations.</li>
+<li>Eknath <strong>critically edited</strong> the text using multiple manuscripts from across Maharashtra and produced a <strong>corrected standard version</strong> — without which the Dnyaneshwari may have been lost to corruption.</li>
+<li>This act alone makes Eknath indispensable to Marathi literary history.</li>
+</ul>
+<h3>Bharud — Eknath&#x27;s Innovation</h3>
+<ul>
+<li><strong>Bharud</strong> = allegorical compositions where the saint adopts the persona of a common person (vendor, washerman, bangle-seller, Muslim fakir, courtesan) to convey devotional and moral messages.</li>
+<li>Accessible to common people; no Sanskrit; folk language.</li>
+<li>Example: Eknath adopted the persona of a Muslim fakir and described God-devotion in Islamic idiom — demonstrating his synthesis of Hindu and Muslim spiritual values.</li>
+<li>Bharud was a distinctly Maharashtrian contribution to Indian literature and folk performance.</li>
+</ul>
+<h3>Social Reform: Eating with Untouchables</h3>
+<ul>
+<li>Famous story: Eknath invited <strong>Mahar (untouchable) community members</strong> to a meal at his home in Paithan — a radical act in 16th-century Maharashtra.</li>
+<li>He argued that <strong>Vitthal (God) dwells equally in all beings</strong>, including those considered untouchable.</li>
+<li>He also reportedly performed puja (worship) after eating with them, defying the notion that such contact causes ritual pollution.</li>
+<li>Such acts anticipate the later social reform movements of Maharashtra (Phule, Shahu, Ambedkar).</li>
+</ul>
+<h3>Role in Warkari Tradition</h3>
+<ul>
+<li><strong>Compiled and organised</strong> the abhangas of previous Warkari saints (Dnyaneshwar, Namdev) into a standard corpus.</li>
+<li>Trained disciples who continued the tradition; created the organisational structure of Wari more formally.</li>
+<li><strong>Eknath Sashti</strong> (death anniversary, observed as festival); palkhi (palanquin) from Paithan to Pandharpur during Wari.</li>
+</ul>
+<h2>Maharashtra Connection</h2>
+<ul>
+<li><strong>Born and died at Paithan, Aurangabad</strong> (now Chhatrapati Sambhajinagar): ancient capital of Satavahanas; Eknath revitalised its spiritual significance.</li>
+<li><strong>Godavari river</strong>: Jalasamadhi (water samadhi) in the Godavari at Paithan.</li>
+<li><strong>Restored Dnyaneshwari</strong>: without Eknath&#x27;s editorial work, the primary text of Marathi literature may have been lost.</li>
+<li><strong>Bharud tradition</strong>: uniquely Marathi form; Eknath its primary creator.</li>
+<li><strong>Eknath Palkhi</strong>: from Paithan (Aurangabad) to Pandharpur during Ashadhi Wari; third major Warkari palkhi after Dnyaneshwar and Tukaram.</li>
+<li>Eknath&#x27;s challenge to caste (eating with Mahars) is seen as precursor to Maharashtra&#x27;s social reform tradition.</li>
+</ul>
+<h2>Key Facts</h2>
+<ul>
+<li><strong>Born</strong>: 1533 CE, Paithan, Aurangabad.</li>
+<li><strong>Guru</strong>: Janardhan Swami (Dattatreya devotee).</li>
+<li><strong>Major work</strong>: <em>Eknathi Bhagavat</em> (commentary on Bhagavat Purana, Chapter 11).</li>
+<li><strong>Bharud</strong>: allegorical folk songs; folk character personas; Eknath&#x27;s innovation.</li>
+<li><strong>Restored Dnyaneshwari</strong>: corrected 300-year corrupted text (~1584 CE).</li>
+<li><strong>Death</strong>: 1599 CE, Paithan; <em>Jalasamadhi</em> in Godavari.</li>
+<li><strong>Social act</strong>: ate with Mahar (untouchable) community.</li>
+</ul>
+<h2>Memory Aids</h2>
+<ul>
+<li>Eknath&#x27;s contribution: <strong>&quot;3 acts = Eknathi Bhagavat + Bharud + Dnyaneshwari Restoration&quot;</strong>.</li>
+<li>Eknath = <strong>&quot;Grihastha saint (married, householder)&quot;</strong> (contrast: Dnyaneshwar, Ramdas were not).</li>
+<li>Social act: <strong>&quot;Ate with untouchables at Paithan = 16th-c. social reform&quot;</strong>.</li>
+<li>Jalasamadhi: <strong>&quot;Godavari at Paithan&quot;</strong>.</li>
+</ul>
+<h2>Exam Traps</h2>
+<ul>
+<li><strong>Eknathi Bhagavat is on Chapter 11 of Bhagavat Purana</strong>, NOT the entire Bhagavat Purana.</li>
+<li><strong>Dnyaneshwari restoration</strong> is Eknath&#x27;s work (16th c.) — not Tukaram or Ramdas.</li>
+<li><strong>Eknath was a Brahmin</strong> but challenged caste in practice; not to be confused with lower-caste saints.</li>
+<li><strong>Bharud = Eknath&#x27;s innovation</strong> — though later saints also composed Bharuds; it&#x27;s primarily his contribution.</li>
+</ul>
+<h2>Previous-Year Trend</h2>
+<p>Moderate-high for Maharashtra papers. Prelims: Eknathi Bhagavat (Bhagavat Purana Ch.11), Bharud (allegorical, folk personas), Dnyaneshwari restoration, Paithan. Mains: &quot;Discuss Sant Eknath&#x27;s contribution to Marathi literature and social reform.&quot; (Inferred trend.)</p>
+<h2>Questions</h2>
+<p><strong>Prelims (MCQ-style):</strong></p>
+<ol>
+<li>[Asked] Sant Eknath&#x27;s commentary <em>Eknathi Bhagavat</em> is on which chapter of the Bhagavat Purana? — <em>11th chapter</em></li>
+<li>[Expected] Sant Eknath is credited with restoring the corrupted text of? — <em>Dnyaneshwari (Dnyaneshwar&#x27;s Bhagavad Gita commentary)</em></li>
+<li>[Expected] The folk allegorical songs using market-vendor and other common personas to convey spiritual messages, associated with Eknath, are called? — <em>Bharud</em></li>
+<li>[Expected] Sant Eknath&#x27;s death (Jalasamadhi) occurred at which place on the banks of the Godavari? — <em>Paithan (Aurangabad/Chhatrapati Sambhajinagar)</em></li>
+</ol>
+<p><strong>Mains (descriptive):</strong></p>
+<ol>
+<li>[Expected] Discuss Sant Eknath&#x27;s role in preserving and extending the Warkari tradition. Explain the significance of his Bharud compositions as a tool for social reform.</li>
+<li>[Expected] How did Sant Eknath challenge caste discrimination in 16th-century Maharashtra? Place his actions in the context of the Warkari tradition&#x27;s inclusive approach.</li>
+</ol>
+<h2>Linkages</h2>
+<ul>
+<li>hist-bhk-dnyaneshwar (Eknath restored Dnyaneshwari)</li>
+<li>hist-bhk-namdev (Second in Warkari chain; Eknath continued)</li>
+<li>hist-bhk-tukaram (Next in chain; Eknath bridges to Tukaram)</li>
+<li>hist-bhk-nature (Warkari overview)</li>
+<li>hist-mar-society (Eknath&#x27;s social act as reform; Paithan heritage)</li>
+</ul>
+<div class="disclaimer">Study notes generated for MPSC preparation. Cross-check current schemes,
+latest data and exact dates before the exam.</div></main></body></html>
