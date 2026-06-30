@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mimamsa — MPSC</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2430;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#6db33f;--accent2:#34804f;--done:#3fb950;--bar-bg:#21262d;--pre:#388bfd;--mains:#d29922;--int:#a371f7;--mh:#3fb950;--chip:#21262d;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:14px 20px}
+.title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.title h1{font-size:20px;margin:0}
+.home{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}.home:hover{border-color:var(--accent);color:var(--text)}
+.logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+.stats{margin-left:auto;font-size:13px;color:var(--muted)}.stats b{color:var(--accent)}
+.progress-wrap{margin-top:10px;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:10px;background:var(--bar-bg);border-radius:99px;overflow:hidden}
+.bar>span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--done));transition:width .35s}
+.pct{font-size:13px;color:var(--muted);min-width:42px;text-align:right}
+.stagebar{margin-top:8px;display:flex;gap:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.toolbar{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px}.tab{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:8px;font-size:13px;cursor:pointer}
+.tab.active{border-color:var(--accent);color:var(--accent)}
+.toolbar input[type=search]{flex:1;min-width:180px;background:var(--panel2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:14px}
+button{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:13px;cursor:pointer}button:hover{border-color:var(--accent)}
+.danger:hover{border-color:#f85149;color:#f85149}
+main{max-width:1040px;margin:0 auto;padding:20px}
+section.sec{margin-bottom:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sec-head{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none;background:var(--panel2)}.sec-head:hover{background:#222b38}
+.sec-head .vname{font-size:16px;font-weight:700}.sec-head .vcount{font-size:12px;color:var(--muted);min-width:48px;text-align:right}
+.sec-head .minibar{margin-left:auto;width:90px;height:7px;background:var(--bar-bg);border-radius:99px;overflow:hidden}.sec-head .minibar>span{display:block;height:100%;width:0;background:var(--done)}
+.sec-head .chev{transition:transform .2s;color:var(--muted)}section.sec.collapsed .chev{transform:rotate(-90deg)}section.sec.collapsed .sec-body{display:none}
+.sec-body{padding:6px 10px 14px}
+.grp{margin:14px 8px 4px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);font-weight:700;border-top:1px solid var(--border);padding-top:12px}.grp:first-child{border-top:none;padding-top:4px}
+ul.topics{list-style:none;margin:0;padding:0}
+li.topic{display:flex;align-items:flex-start;gap:10px;padding:6px 10px;border-radius:8px}li.topic:hover{background:var(--panel2)}
+li.topic input{margin-top:3px;width:16px;height:16px;accent-color:var(--done);cursor:pointer;flex:none}
+li.topic label{cursor:pointer;font-size:14.5px}li.topic.done label{color:var(--muted);text-decoration:line-through}
+.badge{font-size:10px;font-weight:700;padding:1px 6px;border-radius:99px;flex:none;margin-left:4px;vertical-align:middle}
+.b-PRE{background:rgba(56,139,253,.18);color:var(--pre)}.b-MAINS{background:rgba(210,153,34,.18);color:var(--mains)}.b-INT{background:rgba(163,113,247,.18);color:var(--int)}
+.b-MH{background:transparent;color:var(--mh);border:1px solid var(--mh)}
+.hidden{display:none !important}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+@media(max-width:560px){.sec-head .minibar{width:60px}.stats{margin-left:0}}
+
+.content{max-width:820px;margin:0 auto;padding:8px 20px 60px}
+.content h2{font-size:20px;margin:26px 0 8px;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:5px}
+.content h3{font-size:16px;margin:18px 0 6px}
+.content p{margin:8px 0}
+.content ul,.content ol{margin:8px 0 8px 4px;padding-left:22px}
+.content li{margin:4px 0}
+.content code{background:var(--bar-bg);padding:1px 5px;border-radius:5px;color:#79c0ff;font-size:13px}
+.content blockquote{border-left:3px solid var(--accent);margin:10px 0;padding:4px 14px;color:var(--muted)}
+.content table{border-collapse:collapse;margin:12px 0;width:100%;font-size:14px}
+.content th,.content td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+.content th{background:var(--panel2)}
+.content hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+.crumb{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:8px}
+.crumb:hover{border-color:var(--accent);color:var(--text)}
+.disclaimer{margin-top:30px;padding:12px 16px;background:var(--panel);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:12.5px}
+</style></head><body>
+<header><div class="title"><a class="crumb" href="../history.html">← History & Indian Culture</a>
+<div class="logo">H</div></div>
+<h1 style="font-size:21px;margin:10px 0 4px">Mimamsa <span class="badge b-PRE">PRE</span><span class="badge b-MAINS">MAINS</span></h1></header>
+<main class="content"><h2>Overview</h2>
+<p><strong>Mimamsa</strong> (also <em>Purva Mimamsa</em> = &quot;prior/early inquiry&quot;) is one of India&#x27;s six orthodox philosophical schools, founded by <strong>Jaimini</strong> and systematised in the <em>Mimamasasutras</em> (~4th c. BCE–1st c. CE). It is the school of <strong>Vedic ritual interpretation</strong> — arguing that the Vedas are <strong>eternal, authorless, and infallible</strong>, and that the performance of Vedic rituals (<em>karma</em>) leads to liberation. Mimamsa is uniquely <strong>ritualistic</strong> and stands in contrast to Vedanta&#x27;s emphasis on knowledge. MPSC tests it primarily alongside the other five schools.</p>
+<h2>In-Depth</h2>
+<h3>Core Philosophy</h3>
+<p><strong>Eternal Vedas (Vedapaurusheya)</strong>: Mimamsa&#x27;s most fundamental claim — the Vedas were not authored by any human or divine being; they are eternal (<em>nitya</em>), self-authoritative (<em>swatahpramanya</em>), and infallible. This is the strongest assertion of Vedic authority among all schools.</p>
+<p><strong>Dharma as the Central Concern</strong>: Mimamsa is primarily an interpretation of the <strong>Vedic injunctions (vidhi)</strong> — what one <em>ought to do</em> (positive injunctions) and what one <em>ought not to do</em> (negative prohibitions). Dharma = that which is commanded by the Vedas.</p>
+<p><strong>Karma-Kanda</strong>: Mimamsa focuses exclusively on the <strong>karma-kanda</strong> (ritual action section) of the Vedas — the sacrificial injunctions in the Samhitas and Brahmanas — rather than the <em>jnana-kanda</em> (knowledge section = Upanishads, which Vedanta focuses on).</p>
+<p><strong>Theory of Liberation</strong>: Early Mimamsa did not have a clear liberation doctrine (focused on <em>dharma</em> and heavenly rewards from rituals). Later Mimamsakas (especially <strong>Kumarila Bhatta</strong> and <strong>Prabhakara</strong>) developed the position that the fruit of Vedic action performed without desire (<em>nishkama karma</em>) purifies the soul and ultimately leads to liberation.</p>
+<h3>Key Thinkers</h3>
+<table>
+<tr><th>Thinker</th><th>Period</th><th>Contribution</th></tr>
+<tr><td><strong>Jaimini</strong></td><td>~4th c. BCE</td><td>Founder; <em>Mimamasasutras</em>; 12 chapters</td></tr>
+<tr><td><strong>Shabara</strong></td><td>~1st c. CE</td><td><em>Shabarabhashya</em> — most important commentary on Mimamasasutras</td></tr>
+<tr><td><strong>Kumarila Bhatta</strong></td><td>7th c. CE</td><td><em>Shlokavartika</em>; vigorously refuted Buddhism; major sub-school (Bhatta)</td></tr>
+<tr><td><strong>Prabhakara</strong></td><td>7th c. CE</td><td>Another sub-school (Prabhakara/Guru); different theory of error</td></tr>
+</table>
+<p><strong>Kumarila Bhatta&#x27;s anti-Buddhist arguments</strong> were so powerful that he is credited (in tradition) with contributing to the intellectual decline of Buddhism in India. He debated Buddhist scholars and demolished their philosophical positions using Vedic epistemology.</p>
+<h3>Epistemology</h3>
+<p>Mimamsa accepts <strong>six pramanas</strong> (sources of valid knowledge) — the most in any Indian school:</p>
+<ol>
+<li><strong>Pratyaksha</strong> (perception)</li>
+<li><strong>Anumana</strong> (inference)</li>
+<li><strong>Upamana</strong> (comparison)</li>
+<li><strong>Shabda</strong> (verbal testimony)</li>
+<li><strong>Arthapatti</strong> (postulation/presumption — inferring a necessary fact from a given situation)</li>
+<li><strong>Anupalabdhi</strong> (non-perception — perceiving the absence of something)</li>
+</ol>
+<p><em>Arthapatti</em> example: &quot;Devadatta is alive but not at home&quot; → He must be somewhere else (postulating a necessary conclusion). This is Mimamsa&#x27;s most original epistemological contribution.</p>
+<h3>God in Mimamsa</h3>
+<p>Early Mimamsa did <strong>not require God</strong> — the Vedas are self-authoritative and eternal without needing a divine author. This makes early Mimamsa practically <strong>atheistic</strong> on the question of creation (though it does not deny God&#x27;s existence, it finds him irrelevant to ritual duty).</p>
+<h2>Maharashtra Connection</h2>
+<p>Not directly Maharashtra-specific. However:</p>
+<ul>
+<li>The <strong>Agnihotra ritual</strong> (Vedic fire sacrifice) and related Vedic yajnas have continued in the <strong>Brahmin communities of Maharashtra</strong> (especially the <strong>Chitpavan Brahmins</strong> who dominated the Peshwa administration); these communities maintained Mimamsa-based ritual learning.</li>
+<li><strong>Pune&#x27;s Sanskrit scholars</strong> (under Peshwa patronage) engaged with Mimamsa interpretation in their Dharmashastra texts.</li>
+</ul>
+<h2>Key Facts</h2>
+<ul>
+<li>Founder: <strong>Jaimini</strong>; text: <strong>Mimamasasutras</strong>.</li>
+<li>Focus: <strong>Vedic ritual interpretation</strong>; Karma-Kanda (not Upanishads).</li>
+<li>Vedas are <strong>eternal, authorless (Vedapaurusheya)</strong>.</li>
+<li>Six pramanas: adds <strong>Arthapatti and Anupalabdhi</strong> to the standard four.</li>
+<li>Major commentators: <strong>Shabara, Kumarila Bhatta, Prabhakara</strong>.</li>
+<li><strong>Kumarila Bhatta</strong> — powerful anti-Buddhist polemicist (7th c. CE).</li>
+<li>Paired with: <strong>Vedanta</strong> (Purva/Uttara Mimamsa).</li>
+</ul>
+<h2>Memory Aids</h2>
+<ul>
+<li>Mimamsa = <strong>&quot;Rituals + Vedas eternal + Jaimini&quot;</strong>.</li>
+<li>Six pramanas = standard 4 + <strong>Arthapatti + Anupalabdhi</strong> (Mimamsa adds 2).</li>
+<li>Kumarila = <strong>&quot;Kumar-ila = anti-Buddhist debater&quot;</strong>.</li>
+<li>Purva Mimamsa = <strong>&quot;ritual (Karma-Kanda)&quot;</strong>; Uttara Mimamsa = <strong>&quot;knowledge (Vedanta)&quot;</strong>.</li>
+</ul>
+<h2>Exam Traps</h2>
+<ul>
+<li><strong>Mimamsa focuses on Karma-Kanda (rituals)</strong>, NOT Jnana-Kanda (Upanishads) — that is Vedanta.</li>
+<li><strong>Arthapatti (postulation)</strong> is Mimamsa&#x27;s unique pramana — don&#x27;t confuse with anumana (inference, which is Nyaya&#x27;s specialty).</li>
+<li><strong>Early Mimamsa was essentially atheistic on God-as-creator</strong> — later developments added liberation doctrine; this is a common confusion.</li>
+</ul>
+<h2>Previous-Year Trend</h2>
+<p>Low-to-moderate standalone frequency; appears in &quot;six schools&quot; comparison questions. Prelims: Jaimini, karma-kanda focus, Arthapatti pramana. (Inferred trend.)</p>
+<h2>Questions</h2>
+<p><strong>Prelims (MCQ-style):</strong></p>
+<ol>
+<li>[Expected] The Mimamsa school of Indian philosophy was founded by? — <em>Jaimini</em></li>
+<li>[Expected] Which school of Indian philosophy focuses on interpreting Vedic rituals (Karma-Kanda)? — <em>Mimamsa (Purva Mimamsa)</em></li>
+<li>[Expected] Which pramana (source of knowledge) is uniquely attributed to the Mimamsa school? — <em>Arthapatti (postulation/presumption)</em></li>
+<li>[Expected] Mimamsa is paired with which other orthodox school? — <em>Vedanta (Uttara Mimamsa)</em></li>
+</ol>
+<p><strong>Mains (descriptive):</strong></p>
+<ol>
+<li>[Expected] Describe the central concerns of the Mimamsa school of Indian philosophy and its theory of the eternal Vedas.</li>
+<li>[Expected] What is Arthapatti? Explain with an example how Mimamsa uses postulation as a pramana.</li>
+</ol>
+<h2>Linkages</h2>
+<ul>
+<li>hist-phil-vedanta (Paired school — Vedanta = Uttara Mimamsa)</li>
+<li>hist-phil-nyaya (Comparison — 4 pramanas vs Mimamsa&#x27;s 6)</li>
+<li>hist-ved-literature (Vedic texts — primary source for Mimamsa)</li>
+<li>hist-rel-hinduism (Orthodox Hinduism — ritual practice basis)</li>
+</ul>
+<div class="disclaimer">Study notes generated for MPSC preparation. Cross-check current schemes,
+latest data and exact dates before the exam.</div></main></body></html>
